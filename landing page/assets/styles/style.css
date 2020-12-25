@@ -3,3 +3,122 @@
     padding: 0%;
     font-family: 'Montserrat', sans-serif;
 }
+
+header{
+    height: 130 vh;
+    /* background-position: 70% 40%; */
+    background-image: url(../images/backdrop.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    /* background-color: white; */
+}
+#logo img{
+    width:6vw;
+}
+#plants{
+    width: 50%;
+}
+nav ul {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 0.75rem;
+    /* background-color: black; */
+    align-items: center;
+}
+nav ul li{
+    
+    /* background-color: red; */
+}
+#cc{
+    color: #EBEBEB;
+    position: absolute;
+    margin: 16vw 13vw ;
+    font-size: 6.5vw;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#nm{
+    color: #FFFFFF;
+    position: absolute;
+    margin: 24vw 14vw;
+    font-size: 3vw;
+    letter-spacing: 0.11em;
+    text-shadow: -14px 16px 27px rgba(0, 0, 0, 0.8);
+}
+#button{
+    border: none;
+    position: absolute;
+    background: #B5076B;
+    box-shadow: -14px 16px 27px rgba(0, 0, 0, 0.25), inset 5px -6px 10px rgba(0, 0, 0, 0.25), inset -5px 5px 8px rgba(176, 71, 131, 0.82);
+    border-radius: 25px;
+    margin: 28vw 14vw;
+    padding: 1vw 2vw;
+}
+#contact{
+    line-height: 24px;
+    letter-spacing: 0.07em;
+    color: #FFFFFF;
+    font-size: 1.2vw;
+}
+#sideglass img{
+width: 115%;
+min-height: fit-content;
+}
+
+#sideglass{
+    position: relative;
+    width: 65vw;
+    height: fit-content;
+    overflow-x: hidden;
+    
+    margin: -1vw 0 auto auto;
+    z-index: 1;
+}
+#cube1 img{
+    width: 9vw;
+}
+#cube2 img{
+    width: 15vw;
+}
+#cube3 img{
+    width: 13vw;
+}
+#cube4 img{
+    width: 11vw;
+}
+#cube1,#cube2,#cube3,#cube4{
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+}
+#cube1{
+  top: 0;
+  right: 1vw;
+}
+#cube2{
+   top: 10vw;
+   right: 20vw;
+}
+#cube3{
+    top: 26vw ;
+    right: 6vw;
+}
+#cube4{
+    top:33.5vw ;
+}
+
+@media only screen and (max-width: 450px){
+    header{
+       
+        height:fit-content;
+        background-size: cover;
+    }
+}
+
+
