@@ -4,6 +4,8 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+/* ******header section****** */
+
 header{
     height: 130 vh;
     /* background-position: 70% 40%; */
@@ -111,6 +113,72 @@ min-height: fit-content;
 }
 #cube4{
     top:33.5vw ;
+}
+
+/* ********* about us section******** */
+
+.about-us{
+    height: 70vh;
+    padding: 20vh 5vw 10vh 5vw;
+}
+#box{
+    background-color: #F9F9F9;
+    border-radius: 20px;
+    /* overflow: hidden; */
+    align-items: center;
+    height: 40vw;
+   
+}
+#deslong{
+    position: relative;
+    margin: auto;
+    padding-top: 10vh;
+    width: 65%;
+    font: weight 20;
+    font-size: 3.2vw;
+    line-height: 164.9%;
+    color: #000000;
+    text-align: center;
+
+}
+#desshort{
+    position: relative;
+    margin: auto;
+    padding-top: 2.7vw;
+    width: 83%;
+    font-style: normal;
+    font: weight 100; 
+    font-size: 1.5vw;
+    line-height: 164.9%;
+    color: #423a4f;
+    text-align: center;
+    /* padding-bottom: 10vh; */
+}
+#d3,#d2,#d1{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+#d1 img{
+    width: 10vw;
+}
+#d2 img{
+    width: 15vw;
+}
+#d3 img{
+    width: 7vw;
+}
+#d1{
+    bottom: 32vw;
+    left: 72vw;
+} 
+#d2{
+    bottom:23vw;
+    left: -12vw;
+}
+#d3{
+    bottom: 14vw;
+    left: 53vw;
 }
 
 @media only screen and (max-width: 450px){
