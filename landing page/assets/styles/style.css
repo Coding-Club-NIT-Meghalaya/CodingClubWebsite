@@ -118,16 +118,16 @@ min-height: fit-content;
 /* ********* about us section******** */
 
 .about-us{
-    height: 70vh;
-    padding: 20vh 5vw 10vh 5vw;
+    box-sizing:border-box;
+    
+    padding: 20vh 5vw 20vh 5vw;
 }
 #box{
+    box-sizing: border-box;
     background-color: #F9F9F9;
     border-radius: 20px;
-    /* overflow: hidden; */
-    align-items: center;
     height: 40vw;
-   
+   align-items: center;
 }
 #deslong{
     position: relative;
@@ -152,7 +152,6 @@ min-height: fit-content;
     line-height: 164.9%;
     color: #423a4f;
     text-align: center;
-    /* padding-bottom: 10vh; */
 }
 #d3,#d2,#d1{
     display: inline-block;
@@ -179,6 +178,59 @@ min-height: fit-content;
 #d3{
     bottom: 14vw;
     left: 53vw;
+}
+
+/* ******What we do?****** */
+
+.headingPurple{
+    font-weight: 500;
+    font-size: 4vw;
+    line-height: 164.9%;
+    text-align: center;
+    color: #3C1A63;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -5px 16px 32px rgba(44, 19, 73, 0.2);
+}
+.cards{
+    display: flex;
+    justify-content: space-around;
+   align-items: stretch;
+}
+.icondes{
+    text-align: center;
+    font-size: 2vw;
+    width: 70%;
+    overflow-wrap: normal;
+    
+}
+.whiteBox img{
+    width: 50%;
+    background-color: yellow;
+}
+.whiteBox{
+    box-sizing: border-box;
+    position: relative;
+    width: 20vw;
+    height: 25vw;
+   
+    background: #ff00ffFF;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+}
+.colorBox{
+    margin-top: -20vw;
+    margin-right: -15vw;
+    position: relative;
+    width: 20vw;
+    height: 25vw;
+    left: 57px;
+    top: 48px;
+    z-index: -1;
+    background-color: rgba(255, 106, 137, 0.2);
+    border-radius: 25px;
 }
 
 @media only screen and (max-width: 450px){
