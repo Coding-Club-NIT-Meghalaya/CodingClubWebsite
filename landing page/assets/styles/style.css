@@ -189,30 +189,54 @@ min-height: fit-content;
     text-align: center;
     color: #3C1A63;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -5px 16px 32px rgba(44, 19, 73, 0.2);
+    padding-bottom: 6vw;
 }
 .cards{
     display: flex;
     justify-content: space-around;
-   align-items: stretch;
+    align-items: flex-start;
+}
+.border{
+    background-image: linear-gradient(to right,rgba(0,0,0,0.22), black,rgba(0,0,0,0.22));
+    /* background-color: #B5076B; */
+    width: 80%;
+
 }
 .icondes{
+
     text-align: center;
-    font-size: 2vw;
-    width: 70%;
-    overflow-wrap: normal;
+    font-size: 1.75vw;
+    width: 100%;
+    overflow-wrap: break-word;
+    background-color:rgba(255, 255, 255, 1);
+    margin: auto;
+    margin-top: 1.5px;
+    padding-top: 1vw;
     
 }
 .whiteBox img{
-    width: 50%;
-    background-color: yellow;
+    width: 80%;
+    height: 30%;
+    padding-top: 5vw;
+    
+}
+.cards :nth-child(2) .whiteBox img{
+    height: 45%;
+    padding-top: 3vw;
+    
+}
+.cards :nth-child(2) .whiteBox .border{
+    margin-top: -1.5px;
+}
+.cards :nth-child(2) .whiteBox .icondes{
+    margin-top: 1.5px;
 }
 .whiteBox{
     box-sizing: border-box;
     position: relative;
-    width: 20vw;
-    height: 25vw;
-   
-    background: #ff00ffFF;
+    width: 24vw;
+    height: 28vw;
+    background-color: white;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -221,16 +245,22 @@ min-height: fit-content;
     z-index: 1;
 }
 .colorBox{
-    margin-top: -20vw;
-    margin-right: -15vw;
+    margin-top: -24vw;
+    left: 4vw;
     position: relative;
-    width: 20vw;
-    height: 25vw;
-    left: 57px;
-    top: 48px;
+    width: 24vw;
+    height: 28vw;
+    /* left: 5px;
+    top: 48px; */
     z-index: -1;
     background-color: rgba(255, 106, 137, 0.2);
     border-radius: 25px;
+}
+.cards :nth-child(2) .colorBox{
+    background-color:  rgba(106, 130, 251, 0.2);
+}
+.cards :nth-child(3) .colorBox{
+    background-color:  rgba(225, 0, 255, 0.2);;
 }
 
 @media only screen and (max-width: 450px){
