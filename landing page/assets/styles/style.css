@@ -1,4 +1,5 @@
 *{
+    box-sizing: border-box;
     margin: 0%;
     padding: 0%;
     font-family: 'Montserrat', sans-serif;
@@ -16,7 +17,29 @@ header{
 nav{
     display: flex;
     justify-content: space-around;
+    align-items: center;
     /* background-color: white; */
+}
+.nav-links{
+    list-style: none;
+}
+
+.nav-links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover{
+    color: #3aa7c9
+}
+#logo{
+    cursor: pointer;
 }
 #logo img{
     width:6vw;
@@ -24,20 +47,8 @@ nav{
 #plants{
     width: 50%;
 }
-nav ul {
-    text-decoration: none;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    font-size: 0.75rem;
-    /* background-color: black; */
-    align-items: center;
-}
-nav ul li{
-    
-    /* background-color: red; */
-}
+
+
 #cc{
     color: #EBEBEB;
     position: absolute;
