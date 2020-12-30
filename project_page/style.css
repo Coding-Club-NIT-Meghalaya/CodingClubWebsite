@@ -13,9 +13,9 @@ body{
     align-items: center;
     min-height: 100vh;
     position: relative;
-    background-color: rgb(8, 24, 37);
+    background-color: whitesmoke;
   }
-  body::before{
+  /* body::before{
       content: "";
       background: linear-gradient(#f00,rgb(206, 16, 174));
       position: absolute;
@@ -34,18 +34,17 @@ body{
     height: 100%;
     width: 100%;
     clip-path: circle(20% at left 15%);
-}
+} */
 .card{
     width: 700px;
     /* height: 45vh; */
     box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-    
     border-radius: 9px;
     background: rgba(255, 255, 255, 0.445);
     overflow: hidden;
     border-top: 1px solid rgba(255,255,255,0.4);
     border-left: 1px solid rgba(255,255,255,0.4);
-    padding: 10px 20px;
+     padding: 15px 15px; 
     backdrop-filter: blur(6px);
     transform-style: preserve-3d;
     transform: perspective(1000px);
@@ -53,6 +52,10 @@ body{
     margin: 15px;
 
 }
+a{
+
+text-decoration : none;
+ }
 /* 
 .leftpart{
   float: left;
@@ -64,22 +67,21 @@ body{
     
 }
 */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 500px) {
     
     .card{
-        width: 700px;
-      height: 45vh;
+        width: 80%;
+      /* height: 45vh; */
     box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-    
     border-radius: 9px;
     background: rgba(255, 255, 255, 0.445);
     overflow: hidden;
     border-top: 1px solid rgba(255,255,255,0.4);
     border-left: 1px solid rgba(255,255,255,0.4);
-    padding: 10px 20px;
+    padding: 15px 15px;
     backdrop-filter: blur(6px);
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
+    /* transform-style: preserve-3d;
+    transform: perspective(1000px); */
     cursor: pointer;
     margin: 15px;
     }
@@ -111,4 +113,37 @@ body{
   .card__footer .button {
     margin-right: 15px;
   }
+ .index_bar{
+  font-weight: thick;
+   cursor: pointer;
+   font-size: 1rem;
+  
+   
+ }
  
+.sidebar {
+  padding-top:60%;
+  padding-left: 30%;
+  align-content:center ;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+ /* @media screen and (min-width: 700px)
+ {
+  .abcd {
+    display: none;
+    
+  }
+ } */
+  a:hover ,a:focus{
+   font-size: 1.5rem;
+   font-weight: bold;
+ }
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
