@@ -20,33 +20,24 @@ nav{
     align-items: center;
     /* background-color: white; */
 }
-.nav-links{
+ul{
     list-style: none;
 }
 
 .nav-links li{
     display: inline-block;
-    padding: 0 20px;
+    padding: 0 2vw;
 }
 
 .nav-links li a{
     text-decoration: none;
     color: #FFFFFF;
-    transition: all 0.3s ease 0s;
-}
-
-.nav-links li a:hover{
-    color: #3aa7c9
-}
-#logo{
-    cursor: pointer;
+    font-size: 1.2vw;
 }
 #logo img{
     width:6vw;
 }
-#plants{
-    width: 50%;
-}
+
 
 
 #cc{
@@ -64,7 +55,7 @@ nav{
     letter-spacing: 0.11em;
     text-shadow: -14px 16px 27px rgba(0, 0, 0, 0.8);
 }
-#button{
+.button{
     border: none;
     position: absolute;
     background: #B5076B;
@@ -72,6 +63,9 @@ nav{
     border-radius: 25px;
     margin: 28vw 14vw;
     padding: 1vw 2vw;
+}
+.button img{
+    display: none;
 }
 #contact{
     line-height: 24px;
@@ -115,12 +109,12 @@ min-height: fit-content;
   right: 1vw;
 }
 #cube2{
-   top: 10vw;
-   right: 20vw;
+   top: 8vw;
+   right: 19vw;
 }
 #cube3{
-    top: 26vw ;
-    right: 6vw;
+    top: 25vw ;
+    right: 8.5vw;
 }
 #cube4{
     top:33.5vw ;
@@ -227,12 +221,12 @@ min-height: fit-content;
 }
 .whiteBox img{
     width: 80%;
-    height: 30%;
+    /* height: 30%; */
     padding-top: 5vw;
     
 }
 .cards :nth-child(2) .whiteBox img{
-    height: 45%;
+    /* height: 45%; */
     padding-top: 3vw;
     
 }
@@ -274,6 +268,70 @@ min-height: fit-content;
     background-color:  rgba(225, 0, 255, 0.2);;
 }
 
+/******footer***** */
+footer{
+    margin-top: 10vh;
+    color: white;
+}
+#work{
+    color: white;
+    font-size: 3vw;
+    letter-spacing: 2px;
+    padding-top: 4vw;
+}
+#bgpurple{
+    background-image: url(../images/backdrop.svg); 
+}
+#footer-note{
+    display: flex;
+    justify-content: space-between;
+    margin: 2vw 4vw 0 4vw;
+    padding-bottom: 5vw;
+}
+#plants{
+    width: 50vw;
+    position: relative;
+    right: 0px;
+    left: 47vw;
+}
+#plants img{
+    width: 100%
+}
+#address{
+    font-size: 2.5vw; 
+}
+#follow{
+    font-size: 2vw;
+    line-height: 2.5vw;
+}
+#follow li{
+    font-size: 1.5vw;
+}
+
+/* *****animation styling******** */
+.button_scroll{
+    all: unset;
+    border: none;
+    position: fixed;
+    background: #B5076B;
+    box-shadow:  inset 5px -6px 10px rgba(0, 0, 0, 0.25), inset -5px 5px 8px rgba(176, 71, 131, 0.82);
+    border-radius: 50%;
+    right: 3vw;
+    bottom: 3vw;
+    width: 4vw ;
+    height: 4vw;
+    z-index: 3;
+    padding: 0.5vw;
+
+}
+.button_scroll #contact{
+  display: none;
+}
+.button_scroll img{
+    /* align-self: center; */
+}  
+
+
 @media only screen and (max-width: 450px){
     header{
        
@@ -281,5 +339,4 @@ min-height: fit-content;
         background-size: cover;
     }
 }
-
 
