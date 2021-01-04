@@ -14,16 +14,16 @@ body {
 nav {
   padding-top: 10rem;
   white-space: nowrap;
-  background: white;
+  background: whitesmoke;
   width: 20vw;
   padding-left: 5%;
-  
+  box-shadow: 2px 5px 5px rgba(1,0,0,0.5);
 }
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 /* Only stick if you can fit */
 @media (min-height: 300px) {
@@ -40,7 +40,7 @@ nav ul li a {
 }
 nav ul li a.current {
   background: whitesmoke;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 main {
   padding-bottom: 40rem;
@@ -66,10 +66,10 @@ section {
   margin: 15px;
 
 }
-.ab{
+/* .ab{
   align-content: center;
  vertical-align: -webkit-baseline-middle;
-}
+} */
 .button {
   border-radius: 20px;
   padding: 8px 15px;
@@ -80,6 +80,8 @@ section {
   opacity: 0.8;
   
 }
+
+  
 
 .button:focus, .button:hover {
   opacity: 1;
@@ -99,4 +101,40 @@ section {
 }
 a{
   text-decoration: none;
+}
+@media screen and (min-width:400px)
+{
+  .nav{
+    display: none;
+  }
+}
+@media all and (max-width: 768px) {
+  
+  .abc {display:none;}
+  .card{
+    width: 100vw;
+    /* height: 45vh; */
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.445);
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.4);
+    border-left: 1px solid rgba(255,255,255,0.4);
+     padding: 15px 15px; 
+    backdrop-filter: blur(6px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    cursor: pointer;
+    margin: 15px;
+  
+  }
+  nav {
+    padding-top: 10rem;
+    white-space: nowrap;
+    background: white;
+    width: 0vw;
+    padding-left: 2%;
+    padding-right: 2%;
+    
+  }
 }
