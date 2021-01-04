@@ -9,6 +9,7 @@ body {
   
   /* this breaks position sticky in Firefox */
   /* overflow-x: hidden; */
+  
 }
 
 nav {
@@ -16,7 +17,7 @@ nav {
   white-space: nowrap;
   background: whitesmoke;
   width: 20vw;
-  padding-left: 5%;
+  padding-left: 20%;
   box-shadow: 2px 5px 5px rgba(1,0,0,0.5);
 }
 nav ul {
@@ -66,10 +67,9 @@ section {
   margin: 15px;
 
 }
-/* .ab{
-  align-content: center;
- vertical-align: -webkit-baseline-middle;
-} */
+.ab{
+  padding-left: 10vw;
+}
 .button {
   border-radius: 20px;
   padding: 8px 15px;
@@ -120,7 +120,7 @@ a{
     overflow: hidden;
     border-top: 1px solid rgba(255,255,255,0.4);
     border-left: 1px solid rgba(255,255,255,0.4);
-     padding: 15px 15px; 
+     /* padding: 15px 15px;  */
     backdrop-filter: blur(6px);
     transform-style: preserve-3d;
     transform: perspective(1000px);
@@ -136,5 +136,15 @@ a{
     padding-left: 2%;
     padding-right: 2%;
     
+  }
+  body{
+    margin: 0;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  font-family: system-ui, sans-serif;
+  overflow-x: hidden;
+  }
+  .ab{
+    padding-left: 0vw;
   }
 }
