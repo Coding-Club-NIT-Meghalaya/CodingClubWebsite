@@ -121,3 +121,7 @@ h1{
     font-size: 25px;
 }
 
+.Socials i:hover{
+    color: white;
+}
+
