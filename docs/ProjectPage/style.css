@@ -60,7 +60,6 @@ section {
   border-top: 1px solid rgba(255,255,255,0.4);
   border-left: 1px solid rgba(255,255,255,0.4);
    padding: 15px 15px; 
-  backdrop-filter: blur(6px);
   transform-style: preserve-3d;
   transform: perspective(1000px);
   cursor: pointer;
@@ -120,8 +119,6 @@ a{
     overflow: hidden;
     border-top: 1px solid rgba(255,255,255,0.4);
     border-left: 1px solid rgba(255,255,255,0.4);
-     /* padding: 15px 15px;  */
-    backdrop-filter: blur(6px);
     transform-style: preserve-3d;
     transform: perspective(1000px);
     cursor: pointer;
