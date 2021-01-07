@@ -8,7 +8,7 @@
 /* ******header section****** */
 
 header{
-    height: 130 vh;
+    height: 100 vh;
     /* background-position: 70% 40%; */
     background-image: url(../images/backdrop.svg);
     background-size: contain;
@@ -139,7 +139,7 @@ min-height: fit-content;
     margin: auto;
     padding-top: 10vh;
     width: 65%;
-    font: weight 20;
+    font-weight: 20;
     font-size: 3.2vw;
     line-height: 164.9%;
     color: #000000;
@@ -152,7 +152,7 @@ min-height: fit-content;
     padding-top: 2.7vw;
     width: 83%;
     font-style: normal;
-    font: weight 100; 
+    font-weight: 100; 
     font-size: 1.5vw;
     line-height: 164.9%;
     color: #423a4f;
@@ -310,7 +310,7 @@ footer{
 
 /* *****animation styling******** */
 .button_scroll{
-    all: unset;
+    fill: unset;
     border: none;
     position: fixed;
     background: #B5076B;
