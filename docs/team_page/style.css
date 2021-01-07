@@ -89,6 +89,7 @@ h1{
       rgba(255, 255, 255, 0) 3.51%,
       rgba(255, 255, 255, 0) 111.71%
     );
+    filter: blur(70px);
     filter: drop-shadow(50px 60px 100px rgba(0, 0, 0, 0.05));
   }
 
