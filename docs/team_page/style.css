@@ -10,8 +10,6 @@ body{
     width: 100%;
     background: #4f2c82;
     background-size: cover;
-
-
     /* position: relative; */
 }
 
@@ -64,7 +62,6 @@ h1{
     border-radius: 25px;
     border: 2px solid #0000002a;
     text-align: center;
-    backdrop-filter: blur(20px);
     margin: 20px 0px;
     
 }
@@ -93,7 +90,6 @@ h1{
       rgba(255, 255, 255, 0) 111.71%
     );
     filter: drop-shadow(50px 60px 100px rgba(0, 0, 0, 0.05));
-    backdrop-filter: blur(70px);
   }
 
 .profile-img img{
