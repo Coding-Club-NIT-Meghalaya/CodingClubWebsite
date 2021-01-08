@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,56 +10,28 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/code.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.scss">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <style>
-        .accordion {
-        background-color: transparent;
-        color: #444;
-        cursor: pointer;
-        padding: 22px;
-        width: 100%;
-        border: none transparent;
-        margin-bottom: 5px;
-        text-align: left;
-        outline: none;
-        font-size: 20px;
-        font-family: 'Times New Roman', Times, serif;
-        text-align: left;
-        transition: 0.4s;
-                    filter: blur(.05px);
-                    border-radius: 25px;
-                    z-index: -2;
-        }
 
-        .active, .accordion:hover {
-            background-color: #90d5ec;
-            background-image: linear-gradient(315deg, #90d5ec 0%, #fc575e 74%);
 
-            font-size: 25px;
-        }
 
-        .panel {
-            padding: 0 18px;
-            display: none;
-            border: 2px inset black;
-            border-radius: 25px;
-            text-align: justify;    
-            margin-bottom: 5px;
-            overflow: hidden;
-        }
+
+
     </style>
 </head>
+
 
 <body>
     <header>
         <h1 class="main-title">
-            Resources
+         Resources
         </h1>
         <ul role="tablist" class="tablist">
             <li role="presentation" class="tablist__item">
-                <a href="#content" role="tab" aria-selected="true" class="tablist__link">
+                <a href="#content" role="tab" aria-selected="false" class="tablist__link">
                     <figure class="tablist__figure">
                         <img src="images/presentation.png" alt="content image" class="tablist__image">
                         <figcaption class="tablist__figure-caption">
@@ -92,6 +65,7 @@
 
     <main class="main-body">
 
+
         <div class="container">
 
             <div class="tab-content">
@@ -120,8 +94,49 @@
                                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                                     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             </div>
+                              <button class="accordion">Section 3</button>
+                            <div class="panel">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                        </div>
 
-                        </article>
+                          </article>
+                       <article class="card">
+
+                        <div class="card__body">
+
+                            <div class="card__header">
+                                <h2 class="card__title">Videos</h2>
+                            </div>
+
+                            <div class="scrollmenu">
+
+                                <iframe  class="iframe_video"   src ="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"> </iframe>
+                                <iframe  class="iframe_video"   src ="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"> </iframe>
+                                <iframe  class="iframe_video"   src ="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"> </iframe>
+                                <iframe  class="iframe_video"   src ="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"> </iframe>
+                                <iframe  class="iframe_video"   src ="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"> </iframe>
+                                <iframe  class="iframe_video"   src ="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"> </iframe>
+                                <iframe  class="iframe_video"   src ="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"> </iframe>
+                                <iframe  class="iframe_video"   src ="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"> </iframe>
+                                <iframe  class="iframe_video"   src ="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"> </iframe>
+
+
+
+
+
+
+
+
+</div>
+
+
+                        </div>
+
+                          </article>
+
                     </section>
                 </div>
             </div>
