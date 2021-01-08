@@ -62,6 +62,7 @@ h1{
     border-radius: 25px;
     border: 2px solid #0000002a;
     text-align: center;
+    /* backdrop-filter: blur(70px); */
     margin: 20px 0px;
     
 }
