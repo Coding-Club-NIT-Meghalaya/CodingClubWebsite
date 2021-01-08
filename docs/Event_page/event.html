@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link  rel="stylesheet" type="text/css" href="event.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+     $("#11").click(function(){
+     $("#div1").fadeIn(500);
+     $("#div2").fadeIn(750);
+     $("#div3").fadeIn(1000);
+     $("#div4").fadeIn(1500);
+        });
+
+      
+      });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+      <div style="background-color:white;width:1530px;height:50px;padding-right:20px">
+      <p style="background-color:purple;color:white;font-family: 'Times New Roman', Times, serif;padding:15px 10px 10px 10px;text-align:right;font-size:25px">NIT MEGHALAYA</p>
+      </div>
+      <div id="parent">
+        <div id="left"> 
+            <ul class = "nav navbar-nav">
+                <li><a class="btn" id="11" href="#" onclick="toggleVisibility('right');">Past  Events</a></li>
+                <li><a class="btn" id="12" href="#" onclick="toggleVisibility('right1');">Present Events</a></li>
+                <li><a class="btn" id="13" href="#" onclick="toggleVisibility('right2');">Upcoming Events</a></li>
+               
+            </ul>
+        </div>
+       
+    <div id="right">
+        <div class="blog-card" id="div1">
+        <div class="meta">
+          <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+          <ul class="details">
+            <li class="author"><a href="#">John Doe</a></li>
+            <li class="date">Aug. 24, 2015</li>
+            <li class="tags">
+              <ul>
+                <li><a href="#">Learn</a></li>
+                <li><a href="#">Code</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="description">
+          <h1>Learning to Code</h1>
+          <h2>Opening a door to the future</h2>
+          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis!</p>
+          <p class="read-more">
+            <a href="#">Read More</a>
+          </p>
+        </div>
+      </div>
+      <div class="blog-card alt" id="div2">
+        <div class="meta">
+          <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg)"></div>
+          <ul class="details">
+            <li class="author"><a href="#">Jane Doe</a></li>
+            <li class="date">July. 15, 2015</li>
+            <li class="tags">
+              <ul>
+                <li><a href="#">Learn</a></li>
+                <li><a href="#">Code</a></li>
+                <li><a href="#">JavaScript</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="description">
+          <h1>Mastering the Language</h1>
+          <h2>Java is not the same as JavaScript</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! </p>
+          <p class="read-more">
+            <a href="#">Read More</a>
+          </p>
+        </div>
+      </div>
+      <div class="blog-card" id="div3">
+        <div class="meta">
+          <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+          <ul class="details">
+            <li class="author"><a href="#">John Doe</a></li>
+            <li class="date">Aug. 24, 2015</li>
+            <li class="tags">
+              <ul>
+                <li><a href="#">Learn</a></li>
+                <li><a href="#">Code</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="description">
+          <h1>Learning to Code</h1>
+          <h2>Opening a door to the future</h2>
+          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis!</p>
+          <p class="read-more">
+            <a href="#">Read More</a>
+          </p>
+        </div>
+      </div>
+      <div class="blog-card alt" id="div4">
+        <div class="meta">
+          <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg)"></div>
+          <ul class="details">
+            <li class="author"><a href="#">Jane Doe</a></li>
+            <li class="date">July. 15, 2015</li>
+            <li class="tags">
+              <ul>
+                <li><a href="#">Learn</a></li>
+                <li><a href="#">Code</a></li>
+                <li><a href="#">JavaScript</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="description">
+          <h1>Mastering the Language</h1>
+          <h2>Java is not the same as JavaScript</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! </p>
+          <p class="read-more">
+            <a href="#">Read More</a>
+          </p>
+        </div>
+      </div>
+      </div>
+
+      
+      <div id="right1" style="display: none;">
+      
+        <div class="blog-card" id="div5">
+            <div class="meta">
+              <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+              <ul class="details">
+                <li class="author"><a href="#">John Doe</a></li>
+                <li class="date">Aug. 24, 2015</li>
+                <li class="tags">
+                  <ul>
+                    <li><a href="#">Learn</a></li>
+                    <li><a href="#">Code</a></li>
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="description">
+              <h1>Learning to Code</h1>
+              <h2>Opening a door to the future</h2>
+              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis!</p>
+              <p class="read-more">
+                <a href="#">Read More</a>
+              </p>
+            </div>
+          </div>
+          <div class="blog-card alt" id="div6">
+            <div class="meta">
+              <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg)"></div>
+              <ul class="details">
+                <li class="author"><a href="#">Jane Doe</a></li>
+                <li class="date">July. 15, 2015</li>
+                <li class="tags">
+                  <ul>
+                    <li><a href="#">Learn</a></li>
+                    <li><a href="#">Code</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="description">
+              <h1>Mastering the Language</h1>
+              <h2>Java is not the same as JavaScript</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! </p>
+              <p class="read-more">
+                <a href="#">Read More</a>
+              </p>
+            </div>
+          </div>
+          </div>
+
+          
+    <div id="right2" style="display: none;">
+    
+      <div class="blog-card" id="div7">
+    <div class="meta">
+      <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+      <ul class="details">
+        <li class="author"><a href="#">John Doe</a></li>
+        <li class="date">Aug. 24, 2015</li>
+        <li class="tags">
+          <ul>
+            <li><a href="#">Learn</a></li>
+            <li><a href="#">Code</a></li>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="description">
+      <h1>Learning to Code</h1>
+      <h2>Opening a door to the future</h2>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis!</p>
+      <p class="read-more">
+        <a href="#">Read More</a>
+      </p>
+    </div>
+  </div>
+  <div class="blog-card alt" id="div8">
+    <div class="meta">
+      <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg)"></div>
+      <ul class="details">
+        <li class="author"><a href="#">Jane Doe</a></li>
+        <li class="date">July. 15, 2015</li>
+        <li class="tags">
+          <ul>
+            <li><a href="#">Learn</a></li>
+            <li><a href="#">Code</a></li>
+            <li><a href="#">JavaScript</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="description">
+      <h1>Mastering the Language</h1>
+      <h2>Java is not the same as JavaScript</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! </p>
+      <p class="read-more">
+        <a href="#">Read More</a>
+      </p>
+    </div>
+  </div>
+  <div class="blog-card" id="div9">
+    <div class="meta">
+      <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+      <ul class="details">
+        <li class="author"><a href="#">John Doe</a></li>
+        <li class="date">Aug. 24, 2015</li>
+        <li class="tags">
+          <ul>
+            <li><a href="#">Learn</a></li>
+            <li><a href="#">Code</a></li>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="description">
+      <h1>Learning to Code</h1>
+      <h2>Opening a door to the future</h2>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis!</p>
+      <p class="read-more">
+        <a href="#">Read More</a>
+      </p>
+    </div>
+  </div>
+  </div>
+    </div>
+    <!--  second     -->
+   
+     
+      
+  <!--third-->
+ 
+    
+    <script>
+        var header = document.getElementById("left");
+        var btns = header.getElementsByClassName("btn");
+        btns[0].className+=" active";
+        for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        if (current.length > 0) { 
+            current[0].className = current[0].className.replace(" active", "");
+        }
+        this.className += " active";
+        });
+      }
+var divs = ["right", "right1", "right2"];
+        var visibleDivId = null;
+        function toggleVisibility(divId) {
+          if(visibleDivId === divId) {
+            //visibleDivId = null;
+          } else {
+            visibleDivId = divId;
+          }
+          hideNonVisibleDivs();
+        }
+        function hideNonVisibleDivs() {
+          var i, divId, div;
+          for(i = 0; i < divs.length; i++) {
+            divId = divs[i];
+            div = document.getElementById(divId);
+            if(visibleDivId === divId) {
+              div.style.display = "block";
+            } else {
+              div.style.display = "none";
+            }
+          }
+        }
+    </script>				                            
+</body>
+</html>

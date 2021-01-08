@@ -2,9 +2,10 @@
     🤍 Club Website 🤍
 </h2>
 
-![Maintained](https://img.shields.io/maintenance/yes/2020)
-![License](https://img.shields.io/badge/license-MIT-brightgreen)
-[![Author](https://img.shields.io/badge/author-GovindCodes-green)](https://github.com/GovindCodes)
+![Maintained](https://img.shields.io/badge/Maintained-Yes-green?style=for-the-badge&logo=appveyor)
+![License](https://img.shields.io/badge/license-MIT-red?style=for-the-badge&logo=appveyor)
+![Stars](https://img.shields.io/github/stars/Coding-Club-NIT-Meghalaya/CodingClubWebsite?color=magenta&logo=CodindClub&style=for-the-badge&logo=appveyor)
+[![Author](https://img.shields.io/badge/author-GovindCodes-pink?style=for-the-badge&logo=appveyor)](https://github.com/GovindCodes)
 
 
 ## Instructions: 🙅🏼 🙅🏼‍♂️
