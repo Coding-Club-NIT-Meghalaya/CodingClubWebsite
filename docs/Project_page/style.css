@@ -289,11 +289,11 @@ html {
 
 
 nav {
-  padding-top: 10rem;
+  /* padding-top: 10rem;
   white-space: nowrap;
-  background: whitesmoke;
-  width: 20vw;
-  padding-left: 20%;
+  background: whitesmoke; */
+  /* width: 20vw; */
+  /* padding-left: 20%; */
   /* box-shadow: 2px 5px 5px rgba(1,0,0,0.5); */
 }
 nav ul {
@@ -314,8 +314,10 @@ nav ul li a {
   padding: 0.5rem 1rem;
   color:black;
   text-decoration: none;
+
 }
 nav ul li a.current {
+  text-decoration: none;
   background: whitesmoke;
   font-size: 1.7rem;
 }
@@ -323,7 +325,6 @@ main {
   padding-bottom: 40rem;
 }
 section {
-  padding: 2rem;
   margin: 0 0 2rem 0;
 }
 
@@ -343,22 +344,9 @@ section {
 
   
 
-.button:focus, .button:hover {
-  opacity: 1;
-}
-
-.button--primary {
-  background-color: #f11d1c;
-  color: #fff;
-  
-}
 
 
-
-a{
-  text-decoration: none;
-}
-@media screen and (min-width:400px)
+/* @media screen and (min-width:400px)
 {
   .nav{
     display: none;
@@ -378,11 +366,11 @@ a{
     overflow-x: hidden;
   
   }
-}
+} */
 
 @media all and (max-width: 768px) {
   
-  .abc {display:none;}
+  /* .abc {display:none;} */
   
   nav {
     /* padding-top: 10rem;
@@ -391,7 +379,7 @@ a{
     width: 0vw;
     padding-left: 2%;
     padding-right: 2%; */
-    display: none;
+    /* display: none; */
   }
   
   
