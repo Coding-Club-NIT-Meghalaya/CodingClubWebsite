@@ -8,7 +8,7 @@
 
 body{
     width: 100%;
-    background: #4f2c82;
+    background: url(https://wallpaperaccess.com/full/745450.jpg);
     background-size: cover;
     /* position: relative; */
 }
@@ -23,9 +23,9 @@ body{
     
 }
 .round-1{
-    position: absolute;
-    top: 5%;
-    left: 10%;
+    position: fixed;
+    bottom: 5%;
+    right: 10%;
     width: 14em;
     height: 14em;
     border-radius: 50%;
@@ -41,8 +41,8 @@ h1{
 }
 
 .box{
-    width: 320px;
-    height: 370px;
+    width: 300px;
+    height: 320px;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
@@ -58,7 +58,7 @@ h1{
     rgba(255, 255, 255, 0.479) 3.51%,
     rgba(255, 255, 255, 0) 111.71%
   );
-    padding: 1.5em;
+    padding: 1.2em;
     border-radius: 25px;
     border: 2px solid #0000002a;
     text-align: center;
@@ -79,8 +79,8 @@ h1{
 .profile-img::before {
     position: absolute;
     content: "";
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     z-index: -1;
     top: 20px;
     right: 98px;
@@ -101,8 +101,8 @@ h1{
 .box h2{
     color: #ffffff60;
     text-transform: uppercase;
-    margin: 15px 0;
-    font-size: 2.2rem;
+    margin: 10px 0;
+    font-size: 1.5rem;
     font-weight: bold;
     /* letter-spacing: 0.065em; */
     /* margin-bottom: 1rem */
@@ -112,7 +112,7 @@ h1{
     font-size: 15px;
 }
 .Socials{
-    margin-top: 30px;
+    margin-top: 15px;
 }
 .Socials i{
     margin: 0 10px;
