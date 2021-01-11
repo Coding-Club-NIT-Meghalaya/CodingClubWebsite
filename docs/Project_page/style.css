@@ -318,7 +318,7 @@ nav ul li a {
 }
 nav ul li a.current {
   text-decoration: none;
-  background: whitesmoke;
+  
   font-size: 1.7rem;
 }
 main {
@@ -349,4 +349,7 @@ section {
   }
   
   
+}
+a:hover{
+  text-decoration: none;
 }
