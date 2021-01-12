@@ -66,12 +66,7 @@ a {
 img {
   max-width: 100%;
 }
-/* ________________________global style______________________________
-
-
-
-
-______________________________________________________________________________*/
+/* ________________________global style____________________________________________________________________________________________________________*/
 
 .main-title {
   font-family: "Redressed", cursive;
@@ -88,7 +83,7 @@ ______________________________________________________________________________*/
 
 header {
   background-image: url(./images/backdrop.jpg);
-  background-size: contain;
+  background-size: cover;
   max-width: 100%;
   height: auto;
   padding: 60px 15px;
@@ -118,9 +113,6 @@ body {
   font-weight: 400;
 }
 
-.tab-content {
-  padding: 60px 15px;
-}
 
 .tablist {
   display: -webkit-box;
@@ -134,20 +126,20 @@ body {
 }
 
 .tablist__item {
-  width: 15em;
-  height: 12em;
+  width: 20vw;
+  height: 16vw;
   padding: 0 20px;
-  display: flex;
+  position: relative;
 }
 
 .tablist__link {
   display: inline-block;
   background: rgba(255, 255, 255, 0.4);
-  padding: 30px;
+  padding: 3vw;
   border-radius: 10px;
   border: 3px solid rgba(255, 255, 255, 0.2);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  /* -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); */
   width: 100%;
   height: 100%;
 }
@@ -165,32 +157,89 @@ body {
 }
 
 .tablist__image {
-  width: 120px;
-  height: 100px;
+  display: block;
+  margin: 0 auto;
+  /* width: 10vw; */
+  /* height: 100% */
   -o-object-fit: contain;
   object-fit: contain;
 }
 
+
 .tablist__figure-caption {
-  text-align: center;
   font-weight: 300;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: large;
   color: #000;
   letter-spacing: 1px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  text-align: center;
 }
 /*__________________________________media query for header_____________________________*/
-@media screen and (max-width: 740px){
-  .tablist{
-                    display: table-column;
-                    margin-top: 20px;
-               }
+
+/* SMARTPHONES LANDSCAPE */
+@media only screen and (min-width: 480px) {
   .tablist__item {
-                     margin-top: 7px;
-                 }
+    width: 30vw;
+    height: 24vw;
+    padding: 0 20px;
+    position: relative;
+  }
+  .tablist__link{
+    padding: 3vw;
+  }
+  .tablist__figure-caption {
+    font-size: medium;
+}
 
 }
+
+/* TABLETS PORTRAIT */
+@media only screen and (min-width: 768px) {
+
+  .tablist__item {
+    width: 20vw;
+    height: 16vw;
+    padding: 0 20px;
+    position: relative;
+  }
+  .tablist__link{
+    padding: 3vw;
+  }
+  .tablist__figure-caption {
+    font-size: larger;
+}
+}
+
+
+/* TABLET LANDSCAPE / DESKTOP */
+@media only screen and (min-width: 1024px) {
+
+  .tablist__figure-caption {
+    font-size: large;
+  }
+  .tablist__item {
+    width: 18vw;
+    height: 14vw;
+    padding: 0 20px;
+    position: relative;
+  }
+
+} 
+
+
+
+
+.tab-content {
+  padding: 60px 15px;
+}
+
 .container {
   max-width: 1130px;
   margin: 0 auto;
