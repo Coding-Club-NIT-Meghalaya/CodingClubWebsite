@@ -126,10 +126,14 @@ body {
 }
 
 .tablist__item {
-  width: 20vw;
+  /* width: 20vw;
   height: 16vw;
   padding: 0 20px;
-  position: relative;
+  position: relative; */
+    width: 30vw;
+    height: 24vw;
+    padding: 0 20px;
+    position: relative;
 }
 
 .tablist__link {
@@ -180,8 +184,25 @@ body {
   right: 0;
   bottom: 2px;
   text-align: center;
+  font-size: small;
 }
 /*__________________________________media query for header_____________________________*/
+
+@media only screen and (min-width: 300px) {
+  .tablist__item {
+    width: 30vw;
+    height: 24vw;
+    padding: 0 20px;
+    position: relative;
+  }
+  .tablist__link{
+    padding: 3vw;
+  }
+  .tablist__figure-caption {
+    font-size: medium;
+}
+
+}
 
 /* SMARTPHONES LANDSCAPE */
 @media only screen and (min-width: 480px) {
