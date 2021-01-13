@@ -174,7 +174,6 @@ body {
   font-weight: 300;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
-  font-size: large;
   color: #000;
   letter-spacing: 1px;
   position: absolute;
@@ -184,9 +183,14 @@ body {
   right: 0;
   bottom: 2px;
   text-align: center;
-  font-size: small;
+  font-size: large;
 }
 /*__________________________________media query for header_____________________________*/
+@media only screen and (min-width:200px){
+  .tablist__figure-caption {
+    font-size: small;
+}
+}
 
 @media only screen and (min-width: 300px) {
   .tablist__item {
