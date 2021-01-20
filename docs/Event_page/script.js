@@ -9,16 +9,9 @@ $(document).ready(function () {
       hamburger_cross();      
     });
     trig.click(function(){
-      ham_cross();
+      hamburger_cross(); 
     })
-    function ham_cross(){
-      overlay.hide();
-      var element = document.getElementById("wrapper");
-      trigger.removeClass('is-open');
-      trigger.addClass('is-closed');
-      element.classList.remove("toggled");
-      
-    }
+    
 
     function hamburger_cross() {
 
