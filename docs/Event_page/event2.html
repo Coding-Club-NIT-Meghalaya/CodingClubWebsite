@@ -13,7 +13,7 @@
 	 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/css/tether.min.css'>
 	 <link rel="stylesheet" href="./style.css">
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+	
    
 </head>
 <body>
@@ -22,16 +22,16 @@
 		<div class="overlay"></div>
 		 
 			 <!-- Sidebar -->
-		 <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+		 <nav class="navbar navbar-inverse fixed-top " id="sidebar-wrapper" role="navigation">
 		  <ul class="nav sidebar-nav">
 			<div class="sidebar-header">
 			<div class="sidebar-brand">
 			  <a href="#">Events</a></div></div>
-			  <li><a href="#hackathons">Hackathons</a></li>
-			<li><a href="#about">Programming</a></li>
-			<li><a href="#events">Webinars</a></li>
-			<li><a href="#awards">Achievements</a></li>
-			<li><a href="#pictures">Gallery</a></li>
+			  <li><a href="#hackathon" >Hackathons</a></li>
+			<li><a href="#programming" class="ham">Programming</a></li>
+			<li><a href="#webiner" class="ham"> Webinars</a></li>
+			<li><a href="#achivements" class="ham">Achievements</a></li>
+			<li><a href="#gallary" class="ham">Gallery</a></li>
 			
 		   </ul>
 	   </nav>
@@ -67,29 +67,54 @@
 
 	<main>
 		<div class="container-fluid p-0">
-			<div class="site-content">
-				<div class="d-flex justify-content-center">
-					<div class="d-flex flex-column"><!-- put all the content in new row -->
-						<h1 class="site-title">
-							HackaThon<>
-						</h1>
-						<p class="site-desc">
-						 Open innovation challenges for everyone.
-						</p>
-						
-					</div>
-
+			<div class="container-fluid item previous">
+				<div id="carouselExampleCaptions" class="carousel slide " data-ride="carousel">
+				<ol class="carousel-indicators">
+				  <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+				  <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+				  <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner">
+				  <div class="carousel-item active">
+					<img src="file/img3.png" class="d-block w-100 max" alt="...">
+					<!-- <div class="carousel-caption d-none d-md-block text-primary">
+					  <h5>First slide label</h5>
+					  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+					</div> -->
+				  </div>
+				  <div class="carousel-item">
+					<img src="file/img4.jpg" class="d-block w-100 max" alt="...">
+					<!-- <div class="carousel-caption d-none d-md-block">
+					  <h5>Second slide label</h5>
+					  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					</div> -->
+				  </div>
+				  <div class="carousel-item">
+					<img src="file/img3.png" class="d-block w-100 max" alt="...">
+					<!-- <div class="carousel-caption d-none d-md-block">
+					  <h5>Third slide label</h5>
+					  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+					</div> -->
+				  </div>
 				</div>
-			</div>
+				<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+				  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				  <span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+				  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				  <span class="sr-only">Next</span>
+				</a>
+			  </div></div>
 		</div>	
-		
+		<hr>
 
 
-<!-- Section 1 -->
+<!-- Section 1 hackathons -->
 		<div class="section-1" id="hackthons">
-			<div class="container ">
-				<h1 class="heading-1">Hackathon<></h1>
-				<h2 class="heading-2">Show your skills in open innovation challenges and case study & business plan competition open for students, professionals & stratups</h2>
+			<div class="container " id="hackathon">
+				<h1 class="heading-1">Hackathon</h1>
+				<small>Show your skills in open innovation challenges and case study & business plan competition open for students, professionals & stratups</small>
 				
 					<hr class="style13">
 
@@ -167,10 +192,10 @@
 				</div>
 <hr class="style13">
 <!-- <section 1>-->
-
+<!-- Programming -->
 	<div class="section-1">
-		<div class="container ">
-			<h1 class="heading-1">Hackathon<></h1>
+		<div class="container" id="programming">
+			<h1 class="heading-1">Programming</h1>
 			<h2 class="heading-2">Show your skills in open innovation challenges and case study & business plan competition open for students, professionals & stratups</h2>
 			
 				<hr class="style13">
@@ -246,8 +271,8 @@
 <hr class="style13">
 
 <div class="section-1">
-	<div class="container ">
-		<h1 class="heading-1">Hackathon<></h1>
+	<div class="container" id="webiner">
+		<h1 class="heading-1">Webinars</h1>
 		<h2 class="heading-2">Show your skills in open innovation challenges and case study & business plan competition open for students, professionals & stratups</h2>
 		
 			<hr class="style13">

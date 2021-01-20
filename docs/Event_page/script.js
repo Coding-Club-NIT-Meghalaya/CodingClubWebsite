@@ -1,11 +1,24 @@
 $(document).ready(function () {
   var trigger = $('.hamburger'),
       overlay = $('.overlay'),
+      trig= $('.ham'),
+
      isClosed = false;
 
     trigger.click(function () {
       hamburger_cross();      
     });
+    trig.click(function(){
+      ham_cross();
+    })
+    function ham_cross(){
+      overlay.hide();
+      var element = document.getElementById("wrapper");
+      trigger.removeClass('is-open');
+      trigger.addClass('is-closed');
+      element.classList.remove("toggled");
+      
+    }
 
     function hamburger_cross() {
 
