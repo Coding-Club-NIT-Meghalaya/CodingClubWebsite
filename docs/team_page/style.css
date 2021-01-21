@@ -11,6 +11,16 @@ body {
     background-image: linear-gradient(to bottom right, #855ccc, #120520);
     background-attachment: fixed;
 }
+#meet{
+
+    position: fixed;
+    margin: 0% !important; 
+    padding: 0% !important;
+    left: -150px;
+    top: 50vh;
+    align-self: center;
+    transform: rotateZ(-90deg);
+}
 
 .cubes {
     width: 100%;
@@ -33,7 +43,7 @@ body {
 .cubes .layer:nth-child(1) {
     -webkit-filter: blur(.5px);
     filter: blur(.5px);
-    top: -2vw !important;
+    top: -24px !important;
     left: 80vw !important;
 }
 
