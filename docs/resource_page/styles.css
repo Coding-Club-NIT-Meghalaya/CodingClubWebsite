@@ -29,17 +29,20 @@ html {
 
   	background-image: url("./images/bg18.jpg");
 	background-size: 105% 105%;
-	animation: gradient 10s ease infinite;
+	animation: gradient 9s ease infinite;
+}
+.sec{
+  margin-top: 60px;
 }
 @keyframes gradient {
 	0% {
-		background-position: 20%  110%;
+		background-position: 20%  100%;
 	}
 	50% {
 		background-position: 90% 20%;
 	}
 	100% {
-		background-position: 20% 105%;
+		background-position: 20% 100%;
 	}
 }
 
@@ -337,6 +340,10 @@ body {
   max-width: calc(100% - 30px);
   padding-right: 10px;
   padding-left: 10px;
+
+}
+.cardblog{
+  margin: auto;
 }
 
 .card__title {
@@ -489,6 +496,7 @@ body {
 
 .card-body  {
    padding: 2px 2px;
+   margin : auto;
 }
 
 .cardbox{
