@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,43 +6,93 @@
     font-family: "Montserrat", sans-serif;
 }
 
-body{
+body {
     width: 100%;
-    background: url(https://wallpaperaccess.com/full/745450.jpg);
-    background-size: cover;
-    /* position: relative; */
+    background-image: linear-gradient(to bottom right, #855ccc, #120520);
+    background-attachment: fixed;
 }
 
-.wrapper{
+.cubes {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+}
+
+.cubes img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.rotate {
+    transform: rotateZ(110deg);
+    width: 70%;
+}
+
+
+.cubes .layer:nth-child(1) {
+    -webkit-filter: blur(.5px);
+    filter: blur(.5px);
+    top: -2vw !important;
+    left: 80vw !important;
+}
+
+.cubes .layer:nth-child(2) {
+
+    top: 75vh !important;
+    left: 15vw !important;
+}
+
+.cubes .layer:nth-child(3) {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    top: 40vh !important;
+    left: 30vw !important;
+}
+
+.cubes .layer:nth-child(4) {
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+    top: 60vh !important;
+    left: 70vw !important;
+}
+
+.cubes .layer:nth-child(5) {
+    -webkit-filter: blur(.8px);
+    filter: blur(.8px);
+    top: -2vh !important;
+    left: -10px !important;
+}
+
+.cubes .layer:nth-child(6) {
+    -webkit-filter: blur(6px);
+    filter: blur(6px);
+    top: 10vh !important;
+    left: 70vw !important;
+}
+
+.wrapper {
     width: 1152px;
     display: flex;
-    justify-content: space-between; 
-     align-items: center;
+    justify-content: space-between;
+    align-items: center;
     min-height: 100vh;
-    margin : 0 auto;
-    
-}
-.round-1{
-    position: fixed;
-    bottom: 5%;
-    right: 10%;
-    width: 14em;
-    height: 14em;
-    border-radius: 50%;
-    box-shadow: 0 0 40px #d84869;
-    background: linear-gradient(-26deg,#d84869, #f46641 );
-}
-h1{
-    color: white;
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-    text-align: center;
-    margin: 20px;
+    margin: 0 auto;
+
 }
 
-.box{
+h1 {
+    color: white;
+    font-size: 3rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin: 25px auto 40px auto;
+}
+
+.box {
     width: 300px;
-    height: 320px;
+    height: 420px;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
@@ -53,27 +103,25 @@ h1{
     justify-content: center;
     align-items: center;
     /* background: #ffffff1a; */
-    background: linear-gradient(
-    112.91deg,
-    rgba(255, 255, 255, 0.479) 3.51%,
-    rgba(255, 255, 255, 0) 111.71%
-  );
-    padding: 1.2em;
+    background: linear-gradient(112.91deg,
+            rgba(255, 255, 255, 0.479) 3.51%,
+            rgba(255, 255, 255, 0) 111.71%);
+    padding: 0.2em;
     border-radius: 25px;
     border: 2px solid #0000002a;
     text-align: center;
     /* backdrop-filter: blur(70px); */
     margin: 20px 0px;
-    
+
 }
 
-.profile-img{
-    width: 100px;
-    height: 100px;
+.profile-img {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     overflow: hidden;
     object-fit: cover;
-    
+
 }
 
 .profile-img::before {
@@ -85,41 +133,40 @@ h1{
     top: 20px;
     right: 98px;
     border-radius: 50%;
-    background: linear-gradient(
-      112.91deg,
-      rgba(255, 255, 255, 0) 3.51%,
-      rgba(255, 255, 255, 0) 111.71%
-    );
+
     filter: blur(70px);
     filter: drop-shadow(50px 60px 100px rgba(0, 0, 0, 0.05));
-  }
+}
 
-.profile-img img{
+.profile-img img {
     width: 100%;
 }
 
-.box h2{
+.box h2 {
     color: #ffffff60;
     text-transform: uppercase;
-    margin: 10px 0;
-    font-size: 1.5rem;
+    margin: 20px 0 5px 0;
+    font-size: 1.2rem;
     font-weight: bold;
     /* letter-spacing: 0.065em; */
     /* margin-bottom: 1rem */
 }
-.box p{
+
+.box p {
     color: #ffffff90;
-    font-size: 15px;
+    font-size: 0.8rem;
 }
-.Socials{
+
+.Socials {
     margin-top: 15px;
+    margin-bottom: 0;
 }
-.Socials i{
+
+.Socials i {
     margin: 0 10px;
     font-size: 25px;
 }
 
-.Socials i:hover{
+.Socials i:hover {
     color: white;
 }
-
