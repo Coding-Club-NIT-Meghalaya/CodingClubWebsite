@@ -152,8 +152,8 @@ body {
 .blog-slider__img {
   opacity: 1;
   
-  transform-origin: 100% 100%;
-  transition-duration: 0.5s;
+  /* transform-origin: 100% 100%;
+  transition-duration: 0.5s; */
   /* box-repeat: no-repeat; */
   /* height: 300px; */
   /* background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%); */
@@ -408,8 +408,6 @@ section {
   nav {
     display: none;
   }
-
-
 }
 
 a:hover {
