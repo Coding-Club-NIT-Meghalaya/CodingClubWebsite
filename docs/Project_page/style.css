@@ -1,14 +1,15 @@
 * {
   box-sizing: border-box;
 
+
 }
 
 body { 
  
-background-image: url("hi.png");
+    background: #6441A5;  /*Twitch */
+	background: -webkit-linear-gradient(to right, #2a0845, #6441A5);  
+	background: linear-gradient(to right, #2a0845, #6441A5); 
 
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   background-width:100% ;
   min-height: 100vh;
   font-family: 'Montserrat', sans-serif;
@@ -26,7 +27,7 @@ background-image: url("hi.png");
 
 .blog-slider {
 
-background-image: url("hi4.png");
+    background-image: linear-gradient(to top right, deeppink, violet);
 background-size: cover;
   width: 95%;
   position: relative;
@@ -35,7 +36,7 @@ background-size: cover;
   /* background: #fff; */
   /* box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2); */
   padding: 25px;
-  border-radius: 25px;
+  border-radius: 50px;
   height: 450px;
   transition: all .3s;
 }
@@ -429,9 +430,11 @@ html {
 nav {
   /* padding-top: 10rem;
   white-space: nowrap;
-  background: whitesmoke; */
+  background: black;
   /* width: 20vw; */
-  /* padding-left: 20%; */
+ padding: 0;
+  
+   padding-right: 0%; 
    box-shadow: 0px 0px 0px rgba(0,0,0,0); 
 }
 
@@ -459,21 +462,24 @@ nav ul li a {
   padding: 0.7rem 1rem;
   color: white;
   text-decoration: none;
+  font-size: 1.5rem;
 
 }
 
 nav ul li a.current {
   text-decoration: none;
-
+   color: aqua;
   font-size: 2.0rem;
 }
 
 main {
   padding-bottom: 0rem;
+  padding-left: 0vw;
+
 }
 
 section {
-  margin: 0 0 2rem 0;
+  margin: 0 0 0rem 0;
 }
 
 .ab {
