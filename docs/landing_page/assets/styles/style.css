@@ -387,7 +387,7 @@ footer{
         display: block;
         cursor: pointer;
     }
-}
+
 
 .nav-active {
         transform: translateX(0%);
@@ -417,6 +417,7 @@ footer{
 }
     .cards{
         display:grid;
+        
         grid-template-columns: 1fr;
         grid-template:  "card1"
                         "card2"
@@ -432,7 +433,35 @@ footer{
     #card3{
         grid-area:card3 ;
     }
+    .whiteBox{
+        width:100%;
+    }
+    .colorBox{
+        width:100%;
+    }
+    #cc{
+        z-index: 2;
+        margin-left: 15vw;
+        margin-right:auto;
+
+    }
+    #nm{
+        margin-left: 25vw;
+        margin-right:auto;
+    }
+    .button{
+        position: absolute;;
+        margin-left: 35vw;
+        margin-right:auto;
+    }
+    .whiteBox img{
+        width: 100%;
+        /* height: 30%; */
+        padding-top: 5vw;
+        
+    }
 
 
 }
+
 
