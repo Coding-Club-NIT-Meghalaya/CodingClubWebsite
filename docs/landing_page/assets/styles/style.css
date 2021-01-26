@@ -323,7 +323,7 @@ footer{
     font-size: 1.5vw;
 }
 
-/* *****animation styling******** */
+/* *****animation styling********
 .button_scroll{
     fill: unset;
     border: none;
@@ -344,10 +344,10 @@ footer{
 }
 .button_scroll img{
     /* align-self: center; */
-}  
+}   */
 
 
-@media only screen and (max-width: 768px){
+/* @media only screen and (max-width: 768px){
     body {
         overflow-x: hidden;
     }
@@ -391,9 +391,9 @@ footer{
 
 .nav-active {
         transform: translateX(0%);
-}
+} */
 
-@keyframes navLinkFade {
+/* @keyframes navLinkFade {
     from {
         opacity: 0;
         transform: translateX(50px);
@@ -464,4 +464,4 @@ footer{
 
 }
 
-
+ */
