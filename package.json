@@ -1,0 +1,27 @@
+{
+  "name": "codingclubwebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coding-Club-NIT-Meghalaya/CodingClubWebsite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coding-Club-NIT-Meghalaya/CodingClubWebsite/issues"
+  },
+  "homepage": "https://github.com/Coding-Club-NIT-Meghalaya/CodingClubWebsite#readme",
+  "dependencies": {
+    "consolidate": "^0.16.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}
