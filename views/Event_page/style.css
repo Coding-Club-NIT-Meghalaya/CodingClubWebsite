@@ -407,9 +407,10 @@ display: block;
 }
 .cardbox {
   margin-right: 2vw;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 1rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   display: flex;
 }
 
@@ -475,7 +476,7 @@ i.sicon2:hover {
 	width: 18rem;
 }
 
-.card:hover {
+.cardbox:hover {
    box-shadow: 0 8px 16px 0 rgba(0,0,0,2);
 }
 
