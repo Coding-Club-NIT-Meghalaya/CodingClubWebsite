@@ -8,6 +8,22 @@ app.get("/",function(req,res)
 {
 res.render("index.html")
 });
+app.get("/events",function(req,res)
+{
+res.render("Event_2.0/event.html")
+});
+app.get("/resources",function(req,res)
+{
+res.render("resource_page/index.html")
+});
+app.get("/projects",function(req,res)
+{
+res.render("Project_page/index.html")
+});
+app.get("/team",function(req,res)
+{
+res.render("team_page/index.html")
+});
 
 
 const port= 8000;
