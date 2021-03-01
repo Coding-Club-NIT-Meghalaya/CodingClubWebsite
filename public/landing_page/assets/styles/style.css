@@ -5,6 +5,105 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+
+/* popup */
+
+
+#contactForm { 
+    display: none;
+    padding: 2em;
+    width: 500px;
+    text-align: center;
+    background: whitesmoke;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    z-index: 1000000;
+    
+  }
+
+
+  
+form input, textarea
+{
+    background: transparent;
+    /* width: 200px; */
+    padding: 1em;
+    margin-bottom: 2em;
+    border: blueviolet solid 5px;
+    border-left: 1px solid rgba(255,255,255, 0.3);
+    border-top: 1px solid rgba(255,255,255, 0.3);
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border-radius: 5000px;
+    box-shadow: 4px 4px 60px 8px rgba(0,0,0, 0.1);
+
+}
+
+form input:hover, textarea:hover
+{
+    background: rgba(255,255,255, 0.1);
+    box-shadow: 4px 4px 60px 8px rgba(0,0,0, 0.2);
+}
+form input[type="email"]:focus,
+form input[type="text"]:focus
+{
+    background: rgba(255,255,255, 0.1);
+    box-shadow: 4px 4px 60px 8px rgba(0,0,0, 0.2);   
+}
+form input[type="submit"]
+{
+    margin-top: 10px;
+    width: 150px;
+    font-size: 1rem;
+    color: #000000;
+}
+form input[type="submit"]:hover
+{
+    cursor: pointer;
+}
+
+
+::placeholder
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: black;
+}
+::-webkit-input-placeholder
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: black;
+}
+a,
+input:focus,
+button:focus,
+select:focus
+{
+    outline: none;
+}
+  
+  input, textarea { 
+    margin: .8em auto;
+    font-family: inherit; 
+    text-transform: inherit; 
+    font-size: inherit;
+    
+    display: block; 
+    width: 280px; 
+    padding: .4em;
+  }
+  textarea { height: 80px; resize: none; }
+  
+
+/* ********************************************** */
+
 /* ******header section****** */
 header{
     height: 100 vh;
