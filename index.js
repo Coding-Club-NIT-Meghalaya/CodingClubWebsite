@@ -1,9 +1,7 @@
 var express = require("express");
 var app = express();
 const path = require('path');
-// app.set('view engine', 'html');
 
-// app.engine('html', require('ejs').renderFile);
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -11,17 +9,19 @@ app.set("views", __dirname + "/views"); // set express to look in this folder to
 app.get("/", function (req, res) {
   res.render("index");
 });
+
+
 app.get("/events", function (req, res) {
-  res.render("Event_2.0/event.html");
+  res.render("event");
 });
 app.get("/resources", function (req, res) {
-  res.render("resource_page/index.html");
+  res.render("resource");
 });
 app.get("/projects", function (req, res) {
-  res.render("Project_page/index.html");
+  res.render("project");
 });
-app.get("/team", function (req, res) {
-  res.render("team_page/index.html");
+app.get("/teams", function (req, res) {
+  res.render("team");
 });
 
 const port = 8000;

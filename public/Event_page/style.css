@@ -13,9 +13,171 @@ html
 .nav .open > a:focus {background-color: transparent;}
 
 /*-------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&family=Pacifico&family=Righteous&family=Roboto+Condensed:wght@400;700&family=Ubuntu:wght@700&display=swap');
+
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	padding: 0;
+	margin: 0;
+	font-family: 'Lato:ital';
+	
+}
+
+.navbar-brand{
+	font-family: 'Pacifico';
+	font-family: 40px;
+	color: #2c6399 !important;
+}
+
+.nav-link{
+	font-size: 16px;
+	margin:15px;
+	color: black !important;
+	font-family: 'Roboto Condensed';
+}
+
+.nav-link:hover{
+	color: #2c6399 !important;
+}
+
+.active .nav-link{
+	color: #2c6399 !important;
+}
+
+hr.style13 {
+	height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+hr.style3 {
+	border-top: 1px dashed #8c8b8b;
+}
+
+.site-content{
+	background-image :url("https://images.pexels.com/photos/2653362/pexels-photo-2653362.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.site-title, .site-desc{
+	color: white;
+	font-family:"Righteous";
+}
+
+.site-title{
+	margin-top: 30%;
+	margin-bottom: 6%;
+	font-size: 50px;
+}
+
+.site-desc{
+	font-size: 14px;
+	padding-left: 15%;
+	margin-bottom: 40%
+}
+
+.section-1 .heading-1{
+	margin-top: 8%;
+}
+
+.section-1 .heading-2{
+	margin-bottom: 5%;
+	font-size: 15px;
+}
+
+.section-1 .para-1{
+	width: 60%;
+	margin-left: 20%;
+	margin-bottom: 5%;
+}
+
+.section-1 .card-text, .para-1{
+	color: rgba(0, 0, 0, 0.59);
+}
+.section-1{
+	margin-bottom: 8%;
+}
+
+/*Section 2*/
+
+.section-2 .container-fluid{
+	background-image: url("https://images.pexels.com/photos/2653362/pexels-photo-2653362.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.section-2 .heading-1{
+	margin-top: 10%;
+	margin-bottom: 4%;
+	font-family: "Righteous";
+	width: 80%;
+	color: whitesmoke;
+}
+
+.section-2 .para{
+	width: 80%;
+	font-family: "Ubuntu";
+	color: whitesmoke;
+	margin-bottom: 7%
+
+}
+
+.section-2 .btn{
+	margin-bottom: 15%;
+	width: 30%;
+	padding-left: 2%;
+}
+
+
+.card img {
+  border-radius: 5px 5px 0 0;
+  border-bottom: 2px solid black;
+}
+
+.card-text{
+  border-bottom: 2px dashed #ccc;
+  margin-top:0rem;
+  margin-bottom:0.3rem;
+}
+.bottom{
+  padding:4px;
+  margin-top:1px;
+  margin-left:0px;
+  margin-right: 8px;
+
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  
+}
+div.card-body{
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+}
+
+h4.card-title{
+  margin:0.3rem;
+}
+.col-md-3{
+  padding-bottom: 1.5rem;
+}
+i.fa fa-clock-o fa-lg{
+  margin-top:13px;
+}
+
+
+
+
 /*           Wrappers            */
 /*-------------------------------*/
 /* shubham */
+
+
+
 
 #wrapper {
   padding-left: 0;
