@@ -24,9 +24,17 @@ app.get("/teams", function (req, res) {
   res.render("team");
 });
 
-const port = 8000;
-app.set("port", process.env.port || port); // set express to use this port
+// const port = 8000;
+// app.set("port", process.env.port || port); // set express to use this port
 
-app.listen(port, () => {
-  console.log(`Server running on port: ${port}`);
+// var port_number = server.listen(process.env.PORT || 3000);
+// app.listen(port_number);
+
+// app.listen(port, () => {
+//   console.log(`Server running on port: ${port}`);
+// });
+
+
+app.listen(process.env.PORT || 3000, function() {
+  console.log("listening on http://localhost:3000/");
 });
