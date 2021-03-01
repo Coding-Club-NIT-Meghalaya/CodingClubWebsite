@@ -20,7 +20,7 @@
     left:50%;
     transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
-    z-index: 1000000;
+    z-index: 1000;
     
   }
 
@@ -35,7 +35,6 @@ form input, textarea
     border: blueviolet solid 5px;
     border-left: 1px solid rgba(255,255,255, 0.3);
     border-top: 1px solid rgba(255,255,255, 0.3);
-    color: #fff;
     font-weight: 500;
     font-family: 'Montserrat', sans-serif;
     -webkit-transition: all 0.2s ease-in-out;
@@ -71,6 +70,7 @@ form input[type="submit"]:hover
 
 ::placeholder
 {
+    margin-left: 10px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     color: black;
