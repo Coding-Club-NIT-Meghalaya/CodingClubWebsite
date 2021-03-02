@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog App</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+</head>
+<body>        
+
+
+<div class="ui main text container segment">
+    <div class="ui huge header"><%= blog.title %> </div>
+    <div class="ui top attached">
+        <div class="item">
+            <img class="ui centered rounded image" src="<%= blog.image %> " alt="">
+        </div>
+     
+        <div class="content">
+            <span><%= blog.created%> </span>
+        </div>
+        <div class="description">
+            <span><%- blog.body %> </span>
+        </div>
+        <div class="content">
+            <span><%= blog.writtenBy %> </span>
+        </div>
+    </div>
+    
+        <div class="description">
+            <span><%- blog.body %> </span>
+        </div>
+
+        </form>
+    </div>
+    
+   
+    
+    
+</div>
+
+
+</body>
+</html>

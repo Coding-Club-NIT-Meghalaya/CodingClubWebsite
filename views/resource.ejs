@@ -11,7 +11,12 @@
     />
     <link rel="stylesheet" href="resource_page\styles.css" />
   </head>
-
+<style>
+  a{
+    all: unset;
+    color: black;
+  }
+</style>
   <body>
     <header>
       <h1 class="main-title">Resources</h1>
@@ -104,56 +109,14 @@
                   <h2 class="card__title">Blogs</h2>
                 </div>
                 <div class="cardbox">
-                  <div class="d-flex flex-column">
-                    <div className="user_name align-self-end">
-                      <div class="card1">
-                        <img
-                          class="card-img-top imgStyle"
-                          src="./resource_page/images/dummy.jpg"
-                          alt="Card image cap"
-                        />
-                        <div class="card-body">
-                          <h3 class="card-title">Blog Title</h3>
-                          <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat.
-                          </p>
-                          <p class="card-text">
-                            <small class="text-muted">May, 2019</small>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div class="d-flex flex-column">
-                    <div className="user_name align-self-end">
-                      <div class="card1">
-                        <img
-                          class="card-img-top imgStyle"
-                          src="./resource_page/images/dummy.jpg"
-                          alt="Card image cap"
-                        />
-                        <div class="card-body">
-                          <h3 class="card-title">Blog Title</h3>
-                          <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat.
-                          </p>
-                          <p class="card-text">
-                            <small class="text-muted">May, 2019</small>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <% let temp = blog.length %> 
+                  <% if(blog.length> 5){ %>
+                  <% temp = 5; %>
+                  <% } %> 
 
+                <% for(let i=0; i<temp; i++) {%> 
+                <a href="/resources/blog/<%= blog[i].id %> ">
                   <div class="d-flex flex-column">
                     <div className="user_name align-self-end">
                       <div class="card1">
@@ -163,46 +126,21 @@
                           alt="Card image cap"
                         />
                         <div class="card-body">
-                          <h3 class="card-title">Blog Title</h3>
+                          <h3 class="card-title"><%= blog[i].title %> </h3>
                           <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat.
+                            <%= blog[i].body %> 
                           </p>
                           <p class="card-text">
-                            <small class="text-muted">May, 2019</small>
+                            <small class="text-muted"><%= blog[i].created %> </small>
                           </p>
                         </div>
                       </div>
                     </div>
                   </div>
+                </a>
+                <% } %> 
 
-                  <div class="d-flex flex-column">
-                    <div className="user_name align-self-end">
-                      <div class="card1">
-                        <img
-                          class="card-img-top imgStyle"
-                          src="./resource_page/images/dummy.jpg"
-                          alt="Card image cap"
-                        />
-                        <div class="card-body">
-                          <h3 class="card-title">Blog Title</h3>
-                          <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat.
-                          </p>
-                          <p class="card-text">
-                            <small class="text-muted">May, 2019</small>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
                 </div>
               </div>
             </article>
