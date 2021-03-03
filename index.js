@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({
 app.set("views", __dirname + "/views"); // set express to look in this folder to render our view
 
 //MONGO setup
-mongoose.connect('mongodb+srv://Blogs:H0a4qJJJjrakvT07@codingclub.p5vjk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://Blogs:jrim6CerRL1qlDNd@codingclub.p5vjk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });

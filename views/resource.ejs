@@ -1,133 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resources</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,800;1,400&family=Roboto:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="resource_page\styles.css" />
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,800;1,400&family=Roboto:ital@0;1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="resource_page\styles.css" />
+</head>
 <style>
-  a{
+  a {
     color: black;
   }
 </style>
-  <body>
-    <header>
-      <h1 class="main-title">Resources</h1>
-      <ul role="tablist" class="tablist">
-        <li role="presentation" class="tablist__item">
-          <a
-            href="#content"
-            role="tab"
-            aria-selected="false"
-            class="tablist__link"
-          >
-            <img
-              src="resource_page/images/m.png"
-              alt="content image"
-              class="tablist__image"
-            />
-            <figcaption class="tablist__figure-caption">Materials</figcaption>
-          </a>
-        </li>
-        <li role="presentation" class="tablist__item">
-          <a
-            href="#blogs"
-            role="tab"
-            aria-selected="false"
-            class="tablist__link"
-          >
-            <img src="resource_page/images/b.png" alt="blog image" class="tablist__image" />
-            <figcaption class="tablist__figure-caption">Blogs</figcaption>
-          </a>
-        </li>
-        <li role="presentation" class="tablist__item">
-          <a
-            href="#lectures"
-            role="tab"
-            aria-selected="false"
-            class="tablist__link"
-          >
-            <img src="resource_page/images/v.png" alt="video image" class="tablist__image" />
-            <figcaption class="tablist__figure-caption">Videos</figcaption>
-          </a>
-        </li>
-      </ul>
-    </header>
 
-    <main class="main-body">
-      <div class="container">
-        <div class="tab-content">
-          <section id="content" role="tabpanel" aria-hidden="false">
-            <article class="card">
-              <div class="card__body">
-                <div class="card__header">
-                  <h2 class="card__title">Materials</h2>
-                </div>
-                <br />
-                <button class="accordion">Section 1</button>
-                <div class="panel">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
+<body>
+  <header>
+    <h1 class="main-title">Resources</h1>
+    <ul role="tablist" class="tablist">
+      <li role="presentation" class="tablist__item">
+        <a href="#content" role="tab" aria-selected="false" class="tablist__link">
+          <img src="resource_page/images/m.png" alt="content image" class="tablist__image" />
+          <figcaption class="tablist__figure-caption">Materials</figcaption>
+        </a>
+      </li>
+      <li role="presentation" class="tablist__item">
+        <a href="#blogs" role="tab" aria-selected="false" class="tablist__link">
+          <img src="resource_page/images/b.png" alt="blog image" class="tablist__image" />
+          <figcaption class="tablist__figure-caption">Blogs</figcaption>
+        </a>
+      </li>
+      <li role="presentation" class="tablist__item">
+        <a href="#lectures" role="tab" aria-selected="false" class="tablist__link">
+          <img src="resource_page/images/v.png" alt="video image" class="tablist__image" />
+          <figcaption class="tablist__figure-caption">Videos</figcaption>
+        </a>
+      </li>
+    </ul>
+  </header>
 
-                <button class="accordion">Section 2</button>
-                <div class="panel">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-                <button class="accordion">Section 3</button>
-                <div class="panel">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
+  <main class="main-body">
+    <div class="container">
+      <div class="tab-content">
+        <section id="content" role="tabpanel" aria-hidden="false">
+          <article class="card">
+            <div class="card__body">
+              <div class="card__header">
+                <h2 class="card__title">Materials</h2>
               </div>
-            </article>
-          </section>
-          <section class="sec" id="blogs" role="tabpanel" aria-hidden="false">
-            <article class="card overflow-auto" style="display: flex">
-              <div class="card__body cardblog">
-                <div class="card__header">
-                  <h2 class="card__title">Blogs</h2>
-                </div>
-                <div class="cardbox">
+              <br />
+              <button class="accordion">Section 1</button>
+              <div class="panel">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                  ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
 
-                  <% let temp = blog.length %> 
-                  <% if(blog.length> 5){ %>
-                  <% temp = 5; %>
-                  <% } %> 
+              <button class="accordion">Section 2</button>
+              <div class="panel">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                  ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
+              <button class="accordion">Section 3</button>
+              <div class="panel">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                  ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section class="sec" id="blogs" role="tabpanel" aria-hidden="false">
+          <article class="card overflow-auto" style="display: flex">
+            <div class="card__body cardblog">
+              <div class="card__header">
+                <h2 class="card__title">Blogs</h2>
+              </div>
+              <div class="cardbox">
 
-                <% for(let i=0; i<temp; i++) {%> 
+                <% let temp = blog.length %>
+                <% if(blog.length> 5){ %>
+                <% temp = 5; %>
+                <% } %>
+
+                <% for(let i=0; i<temp; i++) {%>
                 <a href="/resources/blog/<%= blog[i].id %> ">
                   <div class="d-flex flex-column">
                     <div className="user_name align-self-end">
                       <div class="card1">
-                        <img
-                          class="card-img-top imgStyle"
-                          src="./resource_page/images/dummy.jpg"
-                          alt="Card image cap"
-                        />
+                        <img class="card-img-top imgStyle" src="./resource_page/images/dummy.jpg"
+                          alt="Card image cap" />
                         <div class="card-body">
                           <h3 class="card-title"><%= blog[i].title %> </h3>
                           <p class="card-text">
-                            <%= blog[i].body %> 
+                            <%= blog[i].body %>
                           </p>
                           <p class="card-text">
                             <small class="text-muted"><%= blog[i].created %> </small>
@@ -137,54 +116,38 @@
                     </div>
                   </div>
                 </a>
-                <% } %> 
+                <% } %>
 
 
-                </div>
               </div>
-            </article>
-          </section>
+            </div>
+          </article>
+        </section>
 
-          <section
-            class="sec"
-            id="lectures"
-            role="tabpanel"
-            aria-hidden="false"
-          >
-            <article class="card">
-              <div class="card__body">
-                <div class="card__header">
-                  <h2 class="card__title">Videos</h2>
-                </div>
-                <div class="scrollmenu">
-                  <iframe
-                    class="iframe_video"
-                    src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"
-                  >
-                  </iframe>
-                  <iframe
-                    class="iframe_video"
-                    src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"
-                  >
-                  </iframe>
-                  <iframe
-                    class="iframe_video"
-                    src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"
-                  >
-                  </iframe>
-                  <iframe
-                    class="iframe_video"
-                    src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"
-                  >
-                  </iframe>
-                </div>
+        <section class="sec" id="lectures" role="tabpanel" aria-hidden="false">
+          <article class="card">
+            <div class="card__body">
+              <div class="card__header">
+                <h2 class="card__title">Videos</h2>
               </div>
-            </article>
-          </section>
-        </div>
+              <div class="scrollmenu">
+                <iframe class="iframe_video" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
+                </iframe>
+                <iframe class="iframe_video" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
+                </iframe>
+                <iframe class="iframe_video" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
+                </iframe>
+                <iframe class="iframe_video" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
+                </iframe>
+              </div>
+            </div>
+          </article>
+        </section>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <script src="resource_page/script.js"></script>
-  </body>
+  <script src="resource_page/script.js"></script>
+</body>
+
 </html>
