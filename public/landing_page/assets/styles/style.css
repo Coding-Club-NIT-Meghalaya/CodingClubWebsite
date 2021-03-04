@@ -5,7 +5,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-
 /* popup */
 
 
@@ -106,11 +105,7 @@ select:focus
 
 /* ******header section****** */
 header{
-    height: 100 vh;
-    /* background-position: 70% 40%; */
-    background-image: url(../images/backdrop.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
+    /* height: max-content; */
 }
 nav{
     display: flex;
@@ -442,8 +437,8 @@ footer{
   display: none;
 }
 .button_scroll img{
-    /* align-self: center; */
-}   */
+     align-self: center; 
+}   
 
 
 /* @media only screen and (max-width: 768px){
@@ -555,12 +550,70 @@ footer{
     }
     .whiteBox img{
         width: 100%;
-        /* height: 30%; */
+        height: 30%; 
         padding-top: 5vw;
         
     }
 
 
-}
+} 
 
  */
+
+@media screen and (min-width: 100px) and (max-width: 450px){
+    header{
+        height:100vh;
+       background-image: url(../images/background_mobile.svg);
+       background-size: cover;
+       background-repeat: no-repeat;
+    }
+    #cc{
+        top: 15%;
+        left: 10%;
+        font-size: 8.5vw;
+    }
+    #nm{
+        top:16%;
+        left:10%;
+        font-size: 5vw;
+    }
+    .button{
+        border-radius: 20px;
+        top:18%;
+        left:10%;
+    }
+    #contact{
+        font-size: 2vw;
+    }
+    #sideglass{
+        width:85vw;
+        margin: 45vw 0 auto auto;
+        overflow-x: hidden;
+    }
+    #cube1 img{
+        width:15vw;
+    }
+    #cube2 img{
+        width: 20vw; 
+    }
+    #cube2{
+        top: 30vw;
+    }
+    #cube3{
+        visibility: hidden;
+    }
+    #cube4{
+        top:90vw;
+    }
+    #cube4 img{
+        width:15vw;
+    }
+}
+@media screen and (min-width: 450px) and (max-width: 1600px){
+    header{
+        height:max-content;
+        background-image: url(../images/backdrop.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
