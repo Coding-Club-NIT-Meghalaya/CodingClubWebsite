@@ -13,13 +13,13 @@ const port = process.env.PORT || 8000;
 const {
   connected
 } = require("process");
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(express.urlencoded());
 app.use(methodOverride('_method'));
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
 
 app.set("views", __dirname + "/views"); // set express to look in this folder to render our view
 
@@ -88,10 +88,8 @@ app.get("/", function (req, res) {
 app.get("/events", function (req, res) {
   res.render("event");
 });
-app.get("/addUser", function (req, res) {
-  res.render("addUser");
-});
 
+//////////////////////////////////// Resources ///////////////////////////////////////////////////////////
 app.get("/resources", function (req, res) {
   const f = Blog.find((err, obj) => {
     if (err) {
@@ -102,21 +100,52 @@ app.get("/resources", function (req, res) {
       });
   })
 });
+
+//new Blog
+app.get("/blogs/new", (req, res) => {
+  res.render("newBlog");
+})
+
+//create Blog
+app.post("/blogs", function (req, res) {
+  // console.log(req.body.blog);
+  Blog.create(req.body.blog, (err, newBlog) => {
+    if (err) {
+      // alert("Please fill the details correctly");
+      res.render("newBlog");
+    } else {
+      res.redirect("resources");
+    }
+  })
+})
+ //Show Blog
+app.get("/resources/blog/:id", (req, res) => {
+  let Foundid = req.params.id;
+  // console.log(Foundid);
+  Blog.findOne({
+    _id: Foundid
+  }, (err, foundBlog) => {
+    if (err) {
+      res.redirect("resources");
+    } else {
+      console.log(foundBlog);
+      res.render("showBlog", {
+        blog: foundBlog
+      });
+    }
+  })
+})
+
+///////////////////////////////////Resources End///////////////////////////////////////////////////////////////////////////////
+
+
 app.get("/projects", function (req, res) {
   res.render("project");
 });
-app.get("/teamMembers", function (req, res) {
-  TeamMember.find((err, obj) => {
-    if (err)
-      res.send("Err occured");
-    else
-      res.render("/teams", {
-        arr: obj
-      }).sort({
-        Designation: 1
-      });
-  })
-});
+
+
+
+
 app.get("/teams", function (req, res) {
   TeamMember.find(function (err, obj) {
     if (err)
@@ -131,9 +160,8 @@ app.get("/teams", function (req, res) {
   });
 });
 
-app.get("/blogs/new", (req, res) => {
-  res.render("newBlog");
-})
+
+
 //@get for image with its filename
 app.get('/profileImage/:filename', (req, res) => {
   gfs.files.findOne({
@@ -158,19 +186,12 @@ app.get('/profileImage/:filename', (req, res) => {
   })
 });
 
-//create
-app.post("/blogs", function (req, res) {
-  // console.log(req.body.blog);
-  Blog.create(req.body.blog, (err, newBlog) => {
-    if (err) {
-      // alert("Please fill the details correctly");
-      res.render("newBlog");
-    } else {
-      res.redirect("resources");
-    }
-  })
-})
-//@post for adding a team member
+//new User
+app.get("/addUser", function (req, res) {
+  res.render("addUser");
+});
+
+//@post for adding a team member(Create user)
 app.post("/adduser", upload.single('profileImage'), function (req, res) {
   let data = req.body;
   console.log(data);
@@ -182,23 +203,8 @@ app.post("/adduser", upload.single('profileImage'), function (req, res) {
       res.redirect("adduser");
   });
 });
-app.get("/resources/blog/:id", (req, res) => {
 
-  let Foundid = req.params.id;
-  // console.log(Foundid);
-  Blog.findOne({
-    _id: Foundid
-  }, (err, foundBlog) => {
-    if (err) {
-      res.redirect("resources");
-    } else {
-      console.log(foundBlog);
-      res.render("showBlog", {
-        blog: foundBlog
-      });
-    }
-  })
-})
+
 
 
 app.listen(port, () => {

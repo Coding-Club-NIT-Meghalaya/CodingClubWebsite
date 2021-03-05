@@ -39,9 +39,10 @@
   </div>
   <!-- <h1 id="meet">MEET THE TEAM</h1> -->
   <h1>Head Faculty</h1>
+  <div class="container-fluid ">
+    <div class="row">
   <% for(let i=0;i<arr.length;i++){%>
   <% if(arr[i].Designation==1){%>
-  <div class="container-fluid ">
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center">
       <div class="box ">
         <div class="profile-img"><img src="/profileImage/<%=arr[i].filename%>" alt="" srcset=""></div>
@@ -54,12 +55,14 @@
         </p>
       </div>
     </div>
-  </div>
   <%}}%>
+</div>
+</div>
   <h1>Club Aumuni</h1>
+  <div class="container-fluid ">
+    <div class="row">
   <% for(let i=0;i<arr.length;i++){%>
   <% if(arr[i].Designation==2){%>
-  <div class="container-fluid ">
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center">
       <div class="box ">
         <div class="profile-img"><img src="/profileImage/<%=arr[i].filename%>" alt="" srcset=""></div>
@@ -72,12 +75,14 @@
         </p>
       </div>
     </div>
-  </div>
   <%}}%>
+</div>
+</div>
+<div class="container-fluid ">
+  <div class="row">
   <h1>Heads</h1>
   <% for(let i=0;i<arr.length;i++){%>
   <% if(arr[i].Designation==3){%>
-  <div class="container-fluid ">
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center">
       <div class="box ">
         <div class="profile-img"><img src="/profileImage/<%=arr[i].filename%>" alt="" srcset=""></div>
@@ -90,12 +95,14 @@
         </p>
       </div>
     </div>
-  </div>
   <%}}%>
+</div>
+</div>
   <h1>Core Team Members</h1>
+  <div class="container-fluid ">
+    <div class="row">
   <% for(let i=0;i<arr.length;i++){%>
   <% if(arr[i].Designation==4){%>
-  <div class="container-fluid ">
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center">
       <div class="box ">
         <div class="profile-img"><img src="/profileImage/<%=arr[i].filename%>" alt="" srcset=""></div>
@@ -108,13 +115,14 @@
         </p>
       </div>
     </div>
-  </div>
   <%}}%>
-
+</div>
+</div>
   <h1>Coordinator</h1>
+  <div class="container-fluid ">
+    <div class="row">
   <% for(let i=0;i<arr.length;i++){%>
   <% if(arr[i].Designation==4){%>
-  <div class="container-fluid ">
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center">
       <div class="box ">
         <div class="profile-img"><img src="/profileImage/<%=arr[i].filename%>" alt="" srcset=""></div>
@@ -127,12 +135,14 @@
         </p>
       </div>
     </div>
-  </div>
   <%}}%>
+</div>
+</div>
   <h1>Team Members</h1>
+  <div class="container-fluid ">
+    <div class="row">
   <% for(let i=0;i<arr.length;i++){%>
   <% if(arr[i].Designation==4){%>
-  <div class="container-fluid ">
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center">
       <div class="box ">
         <div class="profile-img"><img src="/profileImage/<%=arr[i].filename%>" alt="" srcset=""></div>
@@ -145,8 +155,30 @@
         </p>
       </div>
     </div>
-  </div>
   <%}}%>
+</div>
+</div>
+
+<h1>CC</h1>
+<div class="container-fluid ">
+  <div class="row">
+<% for(let i=0;i<arr.length;i++){%>
+<% if(arr[i].Designation==5){%>
+  <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center">
+    <div class="box ">
+      <div class="profile-img"><img src="/profileImage/<%=arr[i].filename%>" alt="" srcset=""></div>
+      <h2><%=arr[i].FirstName%> <%=arr[i].LastName%></h2>
+      <p><%=arr[i].DesignationName%></p>
+      <p class="Socials">
+        <a href="<%=arr[i].LinkedIn%>"><i class="fa fa-linkedin"></i></a>
+        <a href="<%=arr[i].Github%>"><i class="fa fa-github"></i></a>
+        <a href="<%=arr[i].Instagram%>"><i class="fa fa-instagram"></i></a>
+      </p>
+    </div>
+  </div>
+<%}}%>
+</div>
+</div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
