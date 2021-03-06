@@ -4,38 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="landing_page/assets/styles/style.css" />
+    
+
+    <!-- required bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,900&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="landing_page/assets/styles/style.css" />
   </head>
   <body>
     <header>
-      <div id="backdrop"></div>
-      <nav>
-        <div id="logo">
-          <img src="landing_page/assets/images/NITM.png" alt="" />
-        </div>
-        <ul class="nav-links">
-          <!-- <li><a href="index.html"> HOME</a></li> -->
-          <li><a href="/events">EVENTS</a></li>
-          <li><a href="/resources">RESOURCES</a></li>
-          <li><a href="/projects">PROJECTS</a></li>
-          <li><a href="/teams">TEAM</a></li>
-        </ul>
-        <div class="burger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </div>
-      </nav>
+     
+       
+       <nav id="navbar" class="navbar navbar-dark navbar-expand-md" >
+           <a href="#" class="navbar-brand "><img src="landing_page/assets/images/NITM.png"  alt="logo NITM" /></a>
+          <button  class="navbar-toggler" data-toggle="collapse" data-target="#content" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+         <div class="collapse navbar-collapse justify-content-end" id="content">
+           <div class="navbar-nav">
+           <a href="/events" class=" nav-link">EVENTS</a>
+           <a href="/resources" class=" nav-link">RESOURCES</a>
+           <a href="/projects" class=" nav-link">PROJECTS</a>
+           <a href="/teams" class=" nav-link">TEAM</a>
+          </div>
+         </div>
+       </nav>
+      
+
+
       <p id="cc">CODING CLUB</p>
       <p id="nm">NIT MEGHALAYA</p>
       <button class="button">
         <img src="landing_page/assets/images/mail.svg" alt="" id="mail" />
         <span id="contact">CONTACT US</span>
       </button>
+    
 
 
 
@@ -171,6 +180,13 @@
         </div>
       </div>
     </footer>
+
+
+    <!-- required bootstrap javascript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
     <script src="landing_page/assets/scripts/animate.js"></script>
