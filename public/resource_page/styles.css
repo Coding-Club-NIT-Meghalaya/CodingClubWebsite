@@ -92,12 +92,40 @@ img {
   -ms-flex-align: center;
   align-items: center;
 }
+#navbar img{
+  width:8vw;
+  
+}
+#navbar{
+  margin-left: 5vw;
+  margin-right:5vw;
+}
+#navbar a{
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size:1.5vw;
+  margin: 0vw 2vw; 
+}
 
 header {
   background-image: url(./images/backdrop.jpg);
   background-size: cover;
   max-width: 100%;
   height: auto;
+  /* padding: 60px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative; */
+}
+#header{
   padding: 60px 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -111,6 +139,8 @@ header {
   align-items: center;
   position: relative;
 }
+
+
 
 body {
   font-family: "Roboto", sans-serif;

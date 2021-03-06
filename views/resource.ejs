@@ -5,6 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resources</title>
+   <!-- required bootstrap CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,800;1,400&family=Roboto:ital@0;1&display=swap"
@@ -19,6 +22,23 @@
 
 <body>
   <header>
+
+    <nav id="navbar" class="navbar navbar-dark navbar-expand-md" >
+      <a href="#" class="navbar-brand "><img src="landing_page/assets/images/NITM.png"  alt="logo NITM" /></a>
+     <button  class="navbar-toggler" data-toggle="collapse" data-target="#content" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+    <div class="collapse navbar-collapse justify-content-end" id="content">
+      <div class="navbar-nav">
+      <a href="/events" class=" nav-link">EVENTS</a>
+      <a href="/resources" class=" nav-link">RESOURCES</a>
+      <a href="/projects" class=" nav-link">PROJECTS</a>
+      <a href="/teams" class=" nav-link">TEAM</a>
+     </div>
+    </div>
+  </nav>
+
+  <div id="header">
     <h1 class="main-title">Resources</h1>
     <ul role="tablist" class="tablist">
       <li role="presentation" class="tablist__item">
@@ -40,6 +60,7 @@
         </a>
       </li>
     </ul>
+  </div>
   </header>
 
   <main class="main-body">
@@ -146,6 +167,10 @@
       </div>
     </div>
   </main>
+
+   <!-- required bootstrap javascript -->
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
   <script src="resource_page/script.js"></script>
 </body>
