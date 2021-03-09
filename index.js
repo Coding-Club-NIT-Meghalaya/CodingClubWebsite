@@ -118,7 +118,7 @@ app.post("/blogs", function (req, res) {
     }
   })
 })
- //Show Blog
+//Show Blog
 app.get("/resources/blog/:id", (req, res) => {
   let Foundid = req.params.id;
   // console.log(Foundid);
@@ -185,7 +185,6 @@ app.get('/profileImage/:filename', (req, res) => {
     }
   })
 });
-
 //new User
 app.get("/addUser", function (req, res) {
   res.render("addUser");
