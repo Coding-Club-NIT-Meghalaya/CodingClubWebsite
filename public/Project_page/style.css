@@ -433,7 +433,7 @@ html {
     scroll-behavior: smooth;
 }
 
-nav {
+nav1 {
     /* padding-top: 10rem;
   white-space: nowrap;
   background: black;
@@ -443,7 +443,7 @@ nav {
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
 }
 
-nav ul {
+nav1 ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -454,14 +454,14 @@ nav ul {
 /* Only stick if you can fit */
 
 @media (min-height: 300px) {
-    nav ul {
+    nav1 ul {
         position: sticky;
         top: 40%;
         box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
     }
 }
 
-nav ul li a {
+nav1 ul li a {
     display: block;
     padding: 0.7rem 1rem;
     color: black;
@@ -469,7 +469,7 @@ nav ul li a {
     font-size: 1.5rem;
 }
 
-nav ul li a.current {
+nav1 ul li a.current {
     text-decoration: none;
     color: black;
     font-size: 2.0rem;
@@ -499,7 +499,7 @@ section {
 }
 
 @media all and (max-width: 992px) {
-    nav {
+    nav1 {
         display: none;
     }
 }
