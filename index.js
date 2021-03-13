@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set("views", __dirname + "/views"); // set express to look in this folder to render our view
 
 //MONGO setup
-mongoose.connect('mongodb+srv://Blogs:jrim6CerRL1qlDNd@codingclub.p5vjk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://Blogs:VEaR2WXkcJobp00v@codingclub.p5vjk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -37,7 +37,7 @@ db.once('open', () => {
   gfs.collection('uploads');
 });
 const storage = new GridFsStorage({
-  url: 'mongodb+srv://Blogs:jrim6CerRL1qlDNd@codingclub.p5vjk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+  url: 'mongodb+srv://Blogs:VEaR2WXkcJobp00v@codingclub.p5vjk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
   file: (req, file) => {
     return new Promise((resolve, reject) => {
       crypto.randomBytes(16, (err, buf) => {
@@ -75,7 +75,7 @@ var memberSchema = new mongoose.Schema({
   DesignationName: String,
   Github: String,
   LinkedIn: String,
-  Instagram: String,
+  Facebook: String,
   filename: String,
 });
 var Blog = mongoose.model("Blog", blogSchema)
