@@ -30,21 +30,23 @@ html {
   background-image: linear-gradient(to bottom right, #855ccc, #120520);
 
 }
-#navbar img{
+
+/* ******************************navbar******** */
+/* #navbar img{
   width:8vw;
   
 }
-/* #navbar{
-  padding-top:25px;
+#navbar{
+  padding-top:25px; 
   margin-left: 5vw;
   margin-right:5vw;
-} */
+}
 #navbar a{
   text-decoration: none;
   color: #FFFFFF;
   font-size:1.5vw;
   margin: 0vw 2vw; 
-}
+} */
 
 .container{
   background: linear-gradient(112.91deg,
