@@ -1,11 +1,11 @@
 <nav>
-    <div id="logo"><img src="landing_page/assets/images/NITM.png" alt="" ></div>
+    <div id="logo"><a href="/"><img src="landing_page/assets/images/NITM.png" alt="" ></a></div>
     <ul class="nav-links">
         <!-- <li><a href="index.html"> HOME</a></li> -->
-        <li> <a href="Event_page/event.html">EVENTS</a> </li>
-        <li> <a href="resource_page/index.html">RESOURCES</a> </li>
-        <li> <a href="./Project_page/index.html">PROJECTS</a> </li>
-        <li> <a href="team_page/index.html">TEAM</a> </li>
+        <li> <a href="/resources">RESOURCES</a> </li>
+        <li> <a  href="/events">EVENTS</a> </li>
+        <li> <a  href="/projects">PROJECTS</a> </li>
+        <li> <a  href="/teams">TEAM</a> </li>
     </ul>
     <div class="burger">
         <div class="line1"></div>
@@ -15,14 +15,19 @@
 </nav>
 
 <style>
-    
-nav{
+  
+ nav{
   display: flex;
+  
   justify-content: space-around;
   align-items: center;
-  margin-top:20px;
+ 
+  /* margin-top:0;
   /* background-color: white; */
+
+
 }
+
 ul{
   list-style: none;
 }
@@ -31,7 +36,6 @@ ul{
    display: flex;
   justify-content: space-around; 
    width: 40%; 
-  
 
 }
 
@@ -42,10 +46,8 @@ ul{
 
 .nav-links li a{
   text-decoration: none;
-  color: #FFFFFF;
-  font-size: 1.2vw;
- 
-  
+  /* color: #FFFFFF; */
+  font-size: 1.3vw;
 }
 .burger {
   display: none;
@@ -61,8 +63,18 @@ ul{
 }
 #logo img{
   width:8vw;
+  margin: 10px 0;
 }
 
+/* *************background-color_class***************** */
+.bgColor{
+  background-color:rgba(75, 41, 124,0.5);
+  width:100%;
+  position:sticky;
+  -webkit-position:sticky;
+  top:0;
+  z-index: 1;
+}
 
 /* *****animation styling******** */
  .button_scroll{
@@ -200,6 +212,22 @@ display: none;
     });
     
 }
+  
+        navSlide();
+        
 
-navSlide();
+        const navBar = document.querySelector('nav');
+            window.addEventListener("scroll", () => {
+              let value = window.scrollY;
+              if(value !== 0){
+                navBar.classList.add('bgColor');
+              }
+              else  {
+                navBar.classList.remove('bgColor');
+              }
+              });
+
+            
+             
+
 </script>
