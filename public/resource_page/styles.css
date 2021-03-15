@@ -570,37 +570,43 @@ body {
 }
 
 .card1:hover {
-   box-shadow: 0 8px 16px 0 rgba(0,0,0,2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,2);
 }
 
 .card-body  {
-   padding: 2px 2px;
-   margin : auto;
+    padding: 2px 2px;
+    margin : auto;
 }
 
 .cardbox{
+<<<<<<< HEAD
      display: flex;
     overflow-x:scroll;
     overflow-y:auto;
    margin: 2% 1% 1% 2%;
+=======
+    display: flex;
+    overflow-x: scroll;
+    margin: 2% 1% 1% 2%;
+>>>>>>> 7204c3e392dc9bcf204504391aee32ed3f049e46
 }
 .imgStyle{
     border-radius: 10px;
 }
 @media screen and (max-width: 500px) {
     .cardbox {
-                 flex-direction: column;
-             }
+        flex-direction: column;
+    }
     .card1{
-                 width: 14rem;
+        width: 14rem;
 
-        }
+    }
     .card-text{
-                     font-size: 12px;
-               }
-
-
+        font-size: 12px;
+    }
 }
+
+
 /*______________________________________________Accordion of content______________________________________________*/
 .accordion {
   background-color: transparent;
@@ -626,14 +632,15 @@ body {
 
 
 .panel {
-  padding: 0 18px;
+  padding: 15px 15px 15px;
   display: none;
   border: 2px inset black;
-  border-radius: 25px;
+  border-radius: 13px;
   text-align: left;
   margin-bottom: 17px;
+  margin-left: 15px;
   overflow: hidden;
-  width:115%;
+  width:125%;
 }
 @media screen and (max-width: 700px) {
   .accordion { padding: 10px;
@@ -653,10 +660,12 @@ body {
 /*______________________________________________Scroll bar of video ______________________________________________*/
 
 div.scrollmenu {
-  background-color: transparent;
-  /*overflow: auto;*/
-  overflow-x: auto;
-  white-space: nowrap;
+    background-color: transparent;
+    /*overflow: auto;*/
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 2% 1% 1% 2%;
+    display: flex;
 }
 /* Add the ability to scroll */
 
@@ -693,23 +702,22 @@ div.scrollmenu a:hover {
 
 .iframe_video {
   width: 400px;
-  height: 350px;
+  height: 200px;
 
-  border: none;
-  border-radius: 20px;
+  border: 4px solid #ffffff;
+  border-radius: 14px;
+
 }
 @media screen and (max-width: 800px) {
   .iframe_video{
-                    width: 250px;
-                    height: 150px;
-
-                }
+      width: 250px;
+      height: 150px;
+  }
 }
 @media screen and (max-width: 600px) {
   .iframe_video {
-    width: 250px;
-    height: 150px;
-
+      width: 250px;
+      height: 150px;
   }
 }
 

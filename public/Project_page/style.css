@@ -3,7 +3,7 @@
 }
 
 body {
-    background: whitesmoke;
+    background-image: linear-gradient(to right, #8a67c5, #4a1b7c);
     background-width: 100%;
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
@@ -18,29 +18,17 @@ body {
 }
 
 
-/* *************header************************** */
-/* 
-#navbar img {
-    width: 8vw;
-}
+/* *****************************navbar section********** */
 
-#navbar {
-    margin-left: 5vw;
-    margin-right: 5vw;
-}
-
-#navbar a {
-    text-decoration: none;
+.nav-links li a {
     color: black;
-    font-size: 1.5vw;
-    margin: 0vw 2vw;
-} */
-
-
-/* ********************** */
+}
 
 .blog-slider {
-    background: rgb(155, 90, 168);
+    background: linear-gradient(112.91deg, rgba(212, 207, 207, 0.479) 3.51%, rgba(247, 244, 244, 0.178) 111.71%);
+    border-top: 1px solid rgb(255, 255, 255, 0.5);
+    border-right: 1px solid rgb(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
     background-size: cover;
     width: 95%;
     position: relative;
@@ -187,7 +175,7 @@ body {
 }
 
 .blog-slider__content p {
-    color: black;
+    color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     position: absolute;
@@ -250,7 +238,7 @@ body {
     }
     .mobile-visible img {
         /* display: block; */
-        transform: translate(18%, -15px);
+        transform: translate(6%, -15px);
         width: 255px;
     }
     .blog-slider__button {
@@ -316,7 +304,7 @@ body {
 .blog-slider__title {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #0d0925;
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
@@ -324,6 +312,7 @@ body {
     color: black;
     margin-bottom: 30px;
     line-height: 1.5em;
+    font-family: 400;
 }
 
 .blog-slider__button {
@@ -396,14 +385,14 @@ body {
     height: 11px;
     display: block;
     border-radius: 10px;
-    background: whitesmoke;
+    background: white;
     opacity: 0.2;
     transition: all .3s;
 }
 
 .blog-slider__pagination .swiper-pagination-bullet-active {
     opacity: 1;
-    background: whitesmoke;
+    background: white;
     height: 30px;
     box-shadow: 0px 0px 20px rgba(252, 56, 56, 0.3);
 }
@@ -447,7 +436,8 @@ nav1 ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
 
@@ -465,14 +455,13 @@ nav1 ul li a {
     display: block;
     padding: 0.7rem 1rem;
     color: black;
-    text-decoration: none;
-    font-size: 1.5rem;
+    text-decoration: underline;
 }
 
 nav1 ul li a.current {
     text-decoration: none;
-    color: black;
-    font-size: 2.0rem;
+    color: white;
+    font-size: 1.5rem;
 }
 
 main {
@@ -505,9 +494,8 @@ section {
 }
 
 li>a:hover {
-    text-decoration: none;
-    color: rgb(2, 2, 2);
-    font-weight: 200;
-    font-size: 2.5rem;
+    color: white;
+    font-weight: 500;
+    font-size: 1.8rem;
     text-decoration-line: underline;
 }
