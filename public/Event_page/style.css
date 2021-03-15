@@ -28,6 +28,16 @@ body{
 	
 }
 
+#topImage{
+  padding-top: 9.7vw;
+}
+
+@media only Screen and (max-width:430px){
+  #topImage{
+    padding-top:13vw;
+  }
+}
+
 .navbar-brand{
 	font-family: 'Pacifico';
 	font-family: 40px;
@@ -58,6 +68,8 @@ body{
 hr.style3 {
 	border-top: 1px dashed #8c8b8b;*/
 }
+
+
 
 .site-content{
 	background-image :url("https://images.pexels.com/photos/2653362/pexels-photo-2653362.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");

@@ -7,7 +7,9 @@
 
 /* popup */
  
-
+#logo img{
+    padding-top:10px;
+}
 #contactForm { 
     display: none;
     padding: 2em;
@@ -103,26 +105,7 @@ select:focus
 
 /* ********************************************** */
 
-/* ******header section****** */
 
- 
-
-/* #navbar img{
-    width:8vw;
-    
-}
-#navbar{
-    margin-left: 10vw;
-    margin-right:10vw;
-}
-#navbar a{
-    text-decoration: none;
-    color: #FFFFFF;
-    font-size:1.5vw;
-    margin: 0vw 2vw;
-
-    
-} */
 
 /* ****************************************** */
 #cc{
