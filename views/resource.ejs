@@ -105,13 +105,12 @@
           </article>
         </section>
         <section class="sec" id="blogs" role="tabpanel" aria-hidden="false">
-          <article class="card overflow-auto" style="display: flex">
+          <article class="card overflow-hidden " style="display:flex" >
             <div class="card__body cardblog">
               <div class="card__header">
                 <h2 class="card__title">Blogs</h2>
-              </div>
-              <div class="cardbox">
-
+              </div><br>
+              <div class="cardbox d-flex flex-row flex-nowrap">
                 <% let temp = blog.length %>
                 <% if(blog.length> 5){ %>
                 <% temp = 5; %>
@@ -119,7 +118,7 @@
 
                 <% for(let i=0; i<temp; i++) {%>
                 <a href="/resources/blog/<%= blog[i].id %> ">
-                  <div class="d-flex flex-column">
+                  <div class="d-flex flex-row flex-nowrap">
                     <div className="user_name align-self-end">
                       <div class="card1">
                         <img class="card-img-top imgStyle" src="./resource_page/images/dummy.jpg"
@@ -138,14 +137,12 @@
                   </div>
                 </a>
                 <% } %>
-
-
+                </div>
               </div>
             </div>
           </article>
         </section>
-
-        <section class="sec" id="lectures" role="tabpanel" aria-hidden="false">
+        <section class="pos" id="lectures" role="tabpanel" aria-hidden="false">
           <article class="card">
             <div class="card__body">
               <div class="card__header">
@@ -164,6 +161,7 @@
             </div>
           </article>
         </section>
+    
       </div>
     </div>
   </main>

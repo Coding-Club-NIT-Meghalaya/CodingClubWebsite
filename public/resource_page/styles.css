@@ -71,6 +71,11 @@ body {
 		background-position: 20% 100%;
 	}
 }
+.pos{
+  position:relative;
+  margin-top:5px;
+  margin-bottom: 20px;
+}
 
 ul {
   list-style: none;
@@ -575,7 +580,8 @@ body {
 
 .cardbox{
      display: flex;
-    overflow-x: scroll;
+    overflow-x:scroll;
+    overflow-y:auto;
    margin: 2% 1% 1% 2%;
 }
 .imgStyle{
