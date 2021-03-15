@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.set("views", __dirname + "/views"); // set express to look in this folder to render our view
 
-//MONGO setup
+///////////////MONGO setup///////////////////////////////////
 mongoose.connect('mongodb+srv://Blogs:VEaR2WXkcJobp00v@codingclub.p5vjk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -78,13 +78,27 @@ var memberSchema = new mongoose.Schema({
   Facebook: String,
   filename: String,
 });
+var ProjectSchema = new mongoose.Schema({
+  Name: String,
+  Field: String, //like web,app etc
+  Status: String, //ongoing/completed etc.
+  StartDate: String,
+  EndDate: String,
+  ShortDescription: String,
+  Description: String,
+  Github: String,
+  Link: String
+});
 var Blog = mongoose.model("Blog", blogSchema)
 var TeamMember = mongoose.model("TeamMember", memberSchema);
+var Project = mongoose.model("Project", ProjectSchema);
 
+
+/////////////Landing/////////////////////////////////////////////////////////////
 app.get("/", function (req, res) {
   res.render("index");
 });
-
+///////////////////Events/////////////////////////////////////////////////////
 app.get("/events", function (req, res) {
   res.render("event");
 });
@@ -101,7 +115,7 @@ app.get("/resources", function (req, res) {
   })
 });
 
-//new Blog
+///new Blog
 app.get("/blogs/new", (req, res) => {
   res.render("newBlog");
 })
@@ -138,13 +152,7 @@ app.get("/resources/blog/:id", (req, res) => {
 
 ///////////////////////////////////Resources End///////////////////////////////////////////////////////////////////////////////
 
-
-app.get("/projects", function (req, res) {
-  res.render("project");
-});
-
-
-
+////////////////////////teams ///////////////////////////////////////////////////////
 
 app.get("/teams", function (req, res) {
   TeamMember.find(function (err, obj) {
@@ -203,7 +211,26 @@ app.post("/adduser", upload.single('profileImage'), function (req, res) {
   });
 });
 
+// ////////// Project//////////////////////////////////////////////////////////////
+app.get("/projects", function (req, res) {
+  res.render("project");
+});
 
+
+app.get("/addProject", function (req, res) {
+  res.render("addProject");
+})
+app.post("/addProject", function (req, res) {
+  // console.log(req.body.blog);
+  let data = req.body;
+  console.log(data);
+  Project.create(data, (err, newProject) => {
+    if (err)
+      res.send("Data Not uploaded");
+    else
+      res.redirect("addProject");
+  });
+})
 
 
 app.listen(port, () => {
