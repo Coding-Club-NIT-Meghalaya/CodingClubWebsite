@@ -18,26 +18,13 @@ body {
 }
 
 
-/* *************header************************** */
 
-#navbar img {
-    width: 8vw;
-}
-
-#navbar {
-    margin-left: 5vw;
-    margin-right: 5vw;
-}
-
-#navbar a {
-    text-decoration: none;
-    color: black;
-    font-size: 1.5vw;
-    margin: 0vw 2vw;
-}
+/* *****************************navbar section********** */
+.nav-links li a{
+    color:black;
+    }
 
 
-/* ********************** */
 
 .blog-slider {
     background: rgb(155, 90, 168);

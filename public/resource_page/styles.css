@@ -25,26 +25,28 @@
 /*    background-position: 60% 40%;*/
 /*  }*/
 /*}*/
-html {
+body {
   scroll-behavior: smooth;
   background-image: linear-gradient(to bottom right, #855ccc, #120520);
 
 }
-#navbar img{
+
+/* ******************************navbar******** */
+/* #navbar img{
   width:8vw;
   
 }
-/* #navbar{
-  padding-top:25px;
+#navbar{
+  padding-top:25px; 
   margin-left: 5vw;
   margin-right:5vw;
-} */
+}
 #navbar a{
   text-decoration: none;
   color: #FFFFFF;
   font-size:1.5vw;
   margin: 0vw 2vw; 
-}
+} */
 
 .container{
   background: linear-gradient(112.91deg,
@@ -128,7 +130,7 @@ header {
   background-size: cover;
   max-width: 100%;
   height: auto;
-  /* padding: 60px 15px;
+   padding: 60px 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,7 +141,7 @@ header {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  position: relative; */
+  position: relative; 
 }
 #header{
   padding: 60px 15px;
@@ -343,6 +345,10 @@ body {
   border-radius: 10px;
   position: relative;
 }
+#material{
+  margin-left:50%;
+
+}
 /*____________________media query for cards_______________________________________*/
 @media screen and (max-width: 500px){
   .card{
@@ -351,6 +357,8 @@ body {
   .card__body{
       padding-right: 7px;
       padding-left:  7px;
+      margin-top: 10px;
+      margin-bottom:10px;
   }
 }
 
@@ -375,6 +383,10 @@ body {
   position: absolute;
   z-index: -1;
 }
+#material{
+  margin-left:40%;
+
+}
 
 .card:not(:last-child) {
   margin-bottom: 30px;
@@ -387,7 +399,10 @@ body {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
+  }
+
+  
+  
 
 .card__body {
   -webkit-box-flex: 0;
@@ -406,6 +421,8 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 5.6vw;
   color: rgb(15, 11, 11);
+  margin:auto;
+  text-align: center;
   /* padding-right: 20px; */
   /* position: relative; */
 
@@ -541,7 +558,11 @@ body {
 	transition: 0.3s;
 	display: grid;
 	margin: 8px;
+<<<<<<< HEAD
 	padding: 3% 3% 3% 3%;
+=======
+	padding: 2% 1% 1% 2%;
+>>>>>>> 698816a8a0a8c776f9153a32f8d0f10504416884
 	border-radius: 20px;
 	background: #f0f0f0;
 	width: 18rem;
@@ -559,7 +580,7 @@ body {
 .cardbox{
      display: flex;
     overflow-x: scroll;
-   margin: 2% 2% 2% 2%;
+   margin: 2% 1% 1% 2%;
 }
 .imgStyle{
     border-radius: 10px;
@@ -606,13 +627,19 @@ body {
   padding: 15px 18px 15px;
   display: none;
   border: 2px inset black;
+<<<<<<< HEAD
   border-radius: 15px;
   text-align: justify;
   margin-bottom: 5px;
+=======
+  border-radius: 25px;
+  text-align: left;
+  margin-bottom: 17px;
+>>>>>>> 698816a8a0a8c776f9153a32f8d0f10504416884
   overflow: hidden;
-  width:100%
+  width:115%;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
   .accordion { padding: 10px;
                font-size : 16px;
             }
@@ -620,8 +647,9 @@ body {
                                  font-size : 18px;
                             }
   .panel {
-               padding: 0 1px;
-               width:100%;
+               padding: 10px;
+               width:250%;
+               margin-right:10%;
          }
 }
 /*______________________________________________Accordion of content______________________________________________*/

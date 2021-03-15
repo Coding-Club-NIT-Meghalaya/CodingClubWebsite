@@ -23,7 +23,7 @@
 <body>
   <header>
 
-    <nav id="navbar" class="navbar navbar-dark navbar-expand-md" >
+    <!-- <nav id="navbar" class="navbar navbar-dark navbar-expand-md" >
       <a href="#" class="navbar-brand "><img src="landing_page/assets/images/NITM.png"  alt="logo NITM" /></a>
      <button  class="navbar-toggler" data-toggle="collapse" data-target="#content" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
       <a href="/teams" class=" nav-link">TEAM</a>
      </div>
     </div>
-  </nav>
+  </nav> -->
 
   <div id="header">
     <h1 class="main-title">Resources</h1>
@@ -49,7 +49,7 @@
       </li>
       <li role="presentation" class="tablist__item">
         <a href="#blogs" role="tab" aria-selected="false" class="tablist__link">
-          <img src="resource_page/images/b.png" alt="blog image" class="tablist__image" />
+          <img src="resource_page/images/b.png" alt="blog image" class="tablist__image"height="90%" />
           <figcaption class="tablist__figure-caption">Blogs</figcaption>
         </a>
       </li>
@@ -70,7 +70,7 @@
           <article class="card">
             <div class="card__body">
               <div class="card__header">
-                <h2 class="card__title">Materials</h2>
+                <h2 class="card__title" id="material">Materials</h2>
               </div>
               <br />
               <button class="accordion">Section 1</button>
@@ -125,7 +125,7 @@
                         <img class="card-img-top imgStyle" src="./resource_page/images/dummy.jpg"
                           alt="Card image cap" />
                         <div class="card-body">
-                          <h3 class="card-title"><%= blog[i].title %> </h3>
+                          <h3 class="card-title"><%= blog[i].title %></h3>
                           <p class="card-text">
                             <%= blog[i].body %>
                           </p>
@@ -150,7 +150,7 @@
             <div class="card__body">
               <div class="card__header">
                 <h2 class="card__title">Videos</h2>
-              </div>
+              </div><br>
               <div class="scrollmenu">
                 <iframe class="iframe_video" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
                 </iframe>

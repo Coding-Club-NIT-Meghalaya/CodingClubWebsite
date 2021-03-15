@@ -1,7 +1,7 @@
 body {
   position: relative;
   overflow-x: hidden;
-  background-color: #CFD8DC;
+  background: linear-gradient(to right, #bdafe4, #e4c7d3);
 }
 body,
 html 
@@ -22,7 +22,9 @@ html{
 body{
 	padding: 0;
 	margin: 0;
-	font-family: 'Lato:ital';
+	font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  
 	
 }
 
@@ -47,14 +49,14 @@ body{
 	color: #2c6399 !important;
 }
 
-hr.style13 {
+ /*hr.style13 {
 	height: 10px;
 	border: 0;
 	box-shadow: 0 10px 10px -10px #8c8b8b inset;
 }
 
 hr.style3 {
-	border-top: 1px dashed #8c8b8b;
+	border-top: 1px dashed #8c8b8b;*/
 }
 
 .site-content{
@@ -82,6 +84,10 @@ hr.style3 {
 
 .section-1 .heading-1{
 	margin-top: 8%;
+ font-family: 'Roboto', sans-serif;
+ font-weight: 700;
+ font-style: italic;
+ align-items: center;
 }
 
 .section-1 .heading-2{

@@ -11,9 +11,9 @@ body {
     background-image: linear-gradient(to bottom right, #855ccc, #120520);
     background-attachment: fixed;
 }
+/***********************navbar*****************/
 
-
-#navbar img {
+/* #navbar img {
     width: 8vw;
 
 }
@@ -28,7 +28,7 @@ body {
     color: #FFFFFF;
     font-size: 1.5vw;
     margin: 0vw 2vw;
-}
+} */
 
 #meet {
 
