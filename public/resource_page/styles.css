@@ -541,7 +541,7 @@ body {
 	transition: 0.3s;
 	display: grid;
 	margin: 8px;
-	padding: 2% 2% 2% 2%;
+	padding: 3% 3% 3% 3%;
 	border-radius: 20px;
 	background: #f0f0f0;
 	width: 18rem;
@@ -603,10 +603,10 @@ body {
 
 
 .panel {
-  padding: 0 18px;
+  padding: 15px 18px 15px;
   display: none;
   border: 2px inset black;
-  border-radius: 25px;
+  border-radius: 15px;
   text-align: justify;
   margin-bottom: 5px;
   overflow: hidden;
