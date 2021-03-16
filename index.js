@@ -79,15 +79,22 @@ var memberSchema = new mongoose.Schema({
   filename: String,
 });
 var ProjectSchema = new mongoose.Schema({
-  Name: String,
+  Title: String,
   Field: String, //like web,app etc
   Status: String, //ongoing/completed etc.
-  StartDate: String,
-  EndDate: String,
+  StartDate: {
+    type: Date,
+    default: Date.now
+  },
+  EndDate: {
+    type: Date,
+    default: Date.now
+  },
   ShortDescription: String,
   Description: String,
   Github: String,
-  Link: String
+  Link: String,
+  filename: String,
 });
 var Blog = mongoose.model("Blog", blogSchema)
 var TeamMember = mongoose.model("TeamMember", memberSchema);
@@ -171,7 +178,7 @@ app.get("/teams", function (req, res) {
 
 
 //@get for image with its filename
-app.get('/profileImage/:filename', (req, res) => {
+app.get('/Image/:filename', (req, res) => {
   gfs.files.findOne({
     filename: req.params.filename
   }, (err, file) => {
@@ -213,17 +220,28 @@ app.post("/adduser", upload.single('profileImage'), function (req, res) {
 
 // ////////// Project//////////////////////////////////////////////////////////////
 app.get("/projects", function (req, res) {
-  res.render("project");
+  Project.find(function (err, obj) {
+    if (err)
+      res.send("Error occured");
+    else
+      res.render("project", {
+        arr: obj
+      });
+  }).sort({
+    StartDate: -1
+  });
 });
 
 
 app.get("/addProject", function (req, res) {
   res.render("addProject");
 })
-app.post("/addProject", function (req, res) {
+app.post("/addProject", upload.single('projectImage'), function (req, res) {
   // console.log(req.body.blog);
   let data = req.body;
-  console.log(data);
+  // console.log(data);
+  // console.log(req.file);
+  data["filename"] = req.file.filename;
   Project.create(data, (err, newProject) => {
     if (err)
       res.send("Data Not uploaded");

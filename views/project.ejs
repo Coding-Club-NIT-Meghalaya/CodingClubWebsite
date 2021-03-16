@@ -20,15 +20,29 @@
   <%- include("partials/navbar") %>
   <div class="container-fluid">
     <div class="row">
+
       <nav1 class="col-xl-2 col-lg-2" style="box-shadow: 0px 0px 0px lightgray">
         <ul>
-          <li><a class="abc" href="#project-1">Project 1</a></li>
-          <li><a class="abc" href="#project-2">Project 2</a></li>
-          <li><a class="abc" href="#project-3">Project 3</a></li>
-          <li><a class="abc" href="#project-4">Project 4</a></li>
+          <%for(let i=0;i<arr.length;i++){%>
+          <li><a class="abc" href="#project-1">Project-<%=i+1%></a></li>
+          <%}%>
         </ul>
       </nav1>
 
+<<<<<<< HEAD
+  <!---------------------------------------- Right Part ----------------------------------------------------------- -->
+
+      <main class="col-xl-10 col-lg-10 col-md-12 col-sm-12">
+        <%for(let i=0;i<arr.length;i++){%>
+          <section id="project-<%=i+1%>" style="padding-top: 4rem; padding-bottom: 2rem">
+            <div class="blog-slider">
+              <div class="blog-slider__wrp swiper-wrapper">
+                <div class="blog-slider__item swiper-slide">
+                  <div class="blog-slider__content">
+                    <p>(<%=arr[i].Status%>)</p>
+                    <div class="blog-slider__title"><%=arr[i].Title%></div>
+                    <div class="blog-slider__code" style="
+=======
       
 
                 <!---------------------------------------- Right Part ----------------------------------------------------------- -->
@@ -42,198 +56,47 @@
                                         <p>(Ongoing)</p>
                                         <div class="blog-slider__title">Project Title</div>
                                         <div class="blog-slider__code" 
+>>>>>>> 605fb132d90aab126a81183031b379d2b7664aa5
                         color: black;
                         font-size: 1rem;
                         font-family: 'Roboto', sans-serif;
                         width: max-content;
                       ">
-                    Web Development
+                      <%=arr[i].Field%>
+                    </div>
+                    <div class="blog-slider__img mobile-visible">
+                      <img src="/Image/<%=arr[i].filename%>" alt="" />
+                    </div>
+                    <div class="blog-slider__text text_size">
+
+                      <%=arr[i].ShortDescription%>
+                    </div>
+                    <a href="<%=arr.Github%>" class="blog-slider__button"
+                      style="background-color: whitesmoke; border-radius: 50px">VIEW
+                      PROJECT</a>
                   </div>
-                  <div class="blog-slider__img mobile-visible">
-                    <img src="Project_page/mac.svg" alt="" />
+                  <div class="blog-slider__img web-visible">
+                    <img src="/Image/<%=arr[i].filename%>" alt="" />
                   </div>
-                  <div class="blog-slider__text text_size">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing
-                  </div>
-                  <a href="#" class="blog-slider__button" style="background-color: whitesmoke; border-radius: 50px">VIEW
-                    PROJECT</a>
                 </div>
-                <div class="blog-slider__img web-visible">
-                  <img src="Project_page/mac.svg" alt="" />
-                </div>
-              </div>
-              <div class="blog-slider__item swiper-slide">
-                <!-- <div class="blog-slider__img">
+                <div class="blog-slider__item swiper-slide">
+                  <!-- <div class="blog-slider__img">
         <img src="./project_image.png" alt="">
       </div> -->
-                <div class="blog-slider__content">
-                  <!-- <span class="blog-slider__code">26 December 2019</span> -->
-                  <!-- <div class="blog-slider__title">Lorem Ipsum Dolor2</div> -->
-                  <div class="blog-slider__text text_size">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Temporibus molestiae culpa nam distinctio provident
-                    eveniet ipsum asperiores architecto? Ea nulla culpa nisi
-                    quam nostrum laudantium at enim, itaque fuga veniam! Vitae
-                    aut delectus minus eligendi labore aspernatur quibusdam
-                    dolore ut fugit quis
+                  <div class="blog-slider__content">
+                    <!-- <span class="blog-slider__code">26 December 2019</span> -->
+                    <!-- <div class="blog-slider__title">Lorem Ipsum Dolor2</div> -->
+                    <div class="blog-slider__text text_size">
+                      <%=arr[i].Description%>
+                    </div>
+                    <!-- <a href="#" class="blog-slider__button">READ MORE</a> -->
                   </div>
-                  <!-- <a href="#" class="blog-slider__button">READ MORE</a> -->
                 </div>
               </div>
+              <div class="blog-slider__pagination"></div>
             </div>
-            <div class="blog-slider__pagination"></div>
-          </div>
-        </section>
-        <section id="project-2" style="padding-top: 4rem; padding-bottom: 2rem">
-          <div class="blog-slider">
-            <div class="blog-slider__wrp swiper-wrapper">
-              <div class="blog-slider__item swiper-slide">
-                <div class="blog-slider__content">
-                  <p>(Ongoing)</p>
-                  <div class="blog-slider__title">Project Title</div>
-                  <div class="blog-slider__code" style="
-                      color: black;
-                      font-size: 1rem;
-                      font-family: 'Roboto', sans-serif;
-                      width: max-content;
-                    ">
-                    Web Development
-                  </div>
-                  <div class="blog-slider__img mobile-visible">
-                    <img src="Project_page/mac.svg" alt="" />
-                  </div>
-                  <div class="blog-slider__text text_size">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing
-                  </div>
-                  <a href="#" class="blog-slider__button" style="background-color: whitesmoke; border-radius: 50px">VIEW
-                    PROJECT</a>
-                </div>
-                <div class="blog-slider__img web-visible">
-                  <img src="Project_page/mac.svg" alt="" />
-                </div>
-              </div>
-              <div class="blog-slider__item swiper-slide">
-                <!-- <div class="blog-slider__img">
-  <img src="./project_image.png" alt="">
-</div> -->
-                <div class="blog-slider__content">
-                  <!-- <span class="blog-slider__code">26 December 2019</span> -->
-                  <!-- <div class="blog-slider__title">Lorem Ipsum Dolor2</div> -->
-                  <div class="blog-slider__text text_size">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Temporibus molestiae culpa nam distinctio provident
-                    eveniet ipsum asperiores architecto? Ea nulla culpa nisi
-                    quam nostrum laudantium at enim, itaque fuga veniam! Vitae
-                    aut delectus minus eligendi labore aspernatur quibusdam
-                    dolore ut fugit quis
-                  </div>
-                  <!-- <a href="#" class="blog-slider__button">READ MORE</a> -->
-                </div>
-              </div>
-            </div>
-            <div class="blog-slider__pagination"></div>
-          </div>
-        </section>
-        <section id="project-3" style="padding-top: 4rem; padding-bottom: 2rem">
-          <div class="blog-slider">
-            <div class="blog-slider__wrp swiper-wrapper">
-              <div class="blog-slider__item swiper-slide">
-                <div class="blog-slider__content">
-                  <p>(Ongoing)</p>
-                  <div class="blog-slider__title">Project Title</div>
-                  <div class="blog-slider__code" style="
-                      color: black;
-                      font-size: 1rem;
-                      font-family: 'Roboto', sans-serif;
-                      width: max-content;
-                    ">
-                    Web Development
-                  </div>
-                  <div class="blog-slider__img mobile-visible">
-                    <img src="Project_page/mac.svg" alt="" />
-                  </div>
-                  <div class="blog-slider__text text_size">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing
-                  </div>
-                  <a href="#" class="blog-slider__button" style="background-color: whitesmoke; border-radius: 50px">VIEW
-                    PROJECT</a>
-                </div>
-                <div class="blog-slider__img web-visible">
-                  <img src="Project_page/mac.svg" alt="" />
-                </div>
-              </div>
-              <div class="blog-slider__item swiper-slide">
-                <!-- <div class="blog-slider__img">
-    <img src="./project_image.png" alt="">
-    </div> -->
-                <div class="blog-slider__content">
-                  <!-- <span class="blog-slider__code">26 December 2019</span> -->
-                  <!-- <div class="blog-slider__title">Lorem Ipsum Dolor2</div> -->
-                  <div class="blog-slider__text text_size">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Temporibus molestiae culpa nam distinctio provident
-                    eveniet ipsum asperiores architecto? Ea nulla culpa nisi
-                    quam nostrum laudantium at enim, itaque fuga veniam! Vitae
-                    aut delectus minus eligendi labore aspernatur quibusdam
-                    dolore ut fugit quis
-                  </div>
-                  <!-- <a href="#" class="blog-slider__button">READ MORE</a> -->
-                </div>
-              </div>
-            </div>
-            <div class="blog-slider__pagination"></div>
-          </div>
-        </section>
-        <section id="project-4" style="padding-top: 4rem; padding-bottom: 2rem">
-          <div class="blog-slider">
-            <div class="blog-slider__wrp swiper-wrapper">
-              <div class="blog-slider__item swiper-slide">
-                <div class="blog-slider__content">
-                  <p>(Ongoing)</p>
-                  <div class="blog-slider__title">Project Title</div>
-                  <div class="blog-slider__code" style="
-                      color: black;
-                      font-size: 1rem;
-                      font-family: 'Roboto', sans-serif;
-                      width: max-content;
-                    ">
-                    Web Development
-                  </div>
-                  <div class="blog-slider__img mobile-visible">
-                    <img src="Project_page/mac.svg" alt="" />
-                  </div>
-                  <div class="blog-slider__text text_size">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing
-                  </div>
-                  <a href="#" class="blog-slider__button" style="background-color: whitesmoke; border-radius: 50px">VIEW
-                    PROJECT</a>
-                </div>
-                <div class="blog-slider__img web-visible">
-                  <img src="Project_page/mac.svg" alt="" />
-                </div>
-              </div>
-              <div class="blog-slider__item swiper-slide">
-                <!-- <div class="blog-slider__img">
-    <img src="./project_image.png" alt="">
-    </div> -->
-                <div class="blog-slider__content">
-                  <!-- <span class="blog-slider__code">26 December 2019</span> -->
-                  <!-- <div class="blog-slider__title">Lorem Ipsum Dolor2</div> -->
-                  <div class="blog-slider__text text_size">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Temporibus molestiae culpa nam distinctio provident
-                    eveniet ipsum asperiores architecto? Ea nulla culpa nisi
-                    quam nostrum laudantium at enim, itaque fuga veniam! Vitae
-                    aut delectus minus eligendi labore aspernatur quibusdam
-                    dolore ut fugit quis
-                  </div>
-                  <!-- <a href="#" class="blog-slider__button">READ MORE</a> -->
-                </div>
-              </div>
-            </div>
-            <div class="blog-slider__pagination"></div>
-          </div>
-        </section>
+          </section>
+          <%}%>
       </main>
     </div>
   </div>
