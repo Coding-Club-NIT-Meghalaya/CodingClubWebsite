@@ -16,7 +16,7 @@ body {
   grid-template-columns: min-content 1fr;
   overflow-x: hidden; */
 }
-
+ 
 
 
 
@@ -36,8 +36,17 @@ body {
     border-radius: 50px;
     height: 450px;
     transition: all .3s;
+} 
+#project-1{
+    padding-top:9.5vw;
+    padding-bottom: 2rem;
 }
 
+@media screen and (max-width:750px){
+    #project-1{
+        padding-top:15vw;
+    }
+}
 
 /* @media screen and (max-width: 992px) {
   .blog-slider {
