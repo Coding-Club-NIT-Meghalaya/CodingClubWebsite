@@ -18,10 +18,10 @@
         <div class="row">
             <div class="col-md-6 m-auto">
                 <h1 class="text-center display-4 my-4">Add Project to The database</h1>
-                <form action="/addProject" method="POST" enctype="multipart/form-data">
+                <form action="/addProject" method="POST">
                     <div class="row">
                         <div class="col my-2">
-                            <input type="text" name="Title" class="form-control" placeholder="Project name"
+                            <input type="text" name="Name" class="form-control" placeholder="Project name"
                                 aria-label="Name">
                         </div>
                         <div class="col my-2">
@@ -34,11 +34,11 @@
                     </div>
                     <div class="row">
                         <div class="col my-2">
-                            <input type="date" name="StartDate" class="form-control" placeholder="StartDate"
+                            <input type="text" name="StartDate" class="form-control" placeholder="StartDate"
                                 aria-label="Start Date">
                         </div>
                         <div class="col my-2">
-                            <input type="date" name="EndDate" class="form-control" placeholder="EndDate"
+                            <input type="text" name="EndDate" class="form-control" placeholder="EndDate"
                                 aria-label="End Date">
                         </div>
                     </div>
@@ -62,14 +62,6 @@
                         <span class="input-group-text" id="basic-addon3">Live Project Link (if any):</span>
                         <input type="text" name="Link" class="form-control" id="basic-url"
                             aria-describedby="basic-addon3">
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="col">
-                            <label for="file" class="custom-file-label">Choose Project Image</label>
-                        </div>
-                        <div class="col">
-                            <input type="file" name="projectImage" class="form-control" id="inputGroupFile02">
-                        </div>
                     </div>
                     <input type="submit" value="Submit" class="btn btn-primary btn-block">
                 </form>
