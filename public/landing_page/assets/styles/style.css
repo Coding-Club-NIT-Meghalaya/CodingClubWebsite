@@ -593,7 +593,7 @@ footer{
         background-size: cover;
         background-position:bottom;
         background-repeat: no-repeat;
-        height:450px;
+        height:500px;
       }
         /* .button{
             padding : 0vw 1vw;
@@ -607,16 +607,21 @@ footer{
         }
         #cc{
             margin:0 0  0 0;
-            
+            font-size: 2.8rem;
         }
         #nm{
             margin:0 0  0 0;
-           
+           font-size: 1.4rem;
         }
         .button{
-            margin-top: 3px 0 0 0;
-            padding:.3rem 1rem;
+            margin: 3px 0 0 0;
+            padding: 5px 20px;
+            /* font-size: 1.5em; */
         } 
+        #contact{
+            font-size: .6em;
+            
+        }
         #sideglass{
             display: none;
         }
@@ -635,7 +640,7 @@ footer{
         #textPart{
            
             text-align: center;
-            margin-top:12vh;
+            margin-top:10vh;
             /* background-color:black; */
             
         }
