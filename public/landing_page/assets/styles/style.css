@@ -108,29 +108,38 @@ select:focus
 
 
 /* ****************************************** */
+
+#textPart{
+    padding-top:17vw ;
+    position:absolute;
+}
 #cc{
-    color: #EBEBEB;
-    position: absolute;
-    margin: 16vw 13vw ;
+     color: #EBEBEB;
+    /* position: absolute; */
+     margin: 0 0 0 12vw ;
     font-size: 6.5vw;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
 }
 #nm{
     color: #FFFFFF;
-    position: absolute;
-    margin: 24vw 14vw;
+    /* position: absolute; */
+    /* margin: 24vw 14vw; */
+     margin: 0 0 0 12vw ;
+
     font-size: 3vw;
     letter-spacing: 0.11em;
     text-shadow: -14px 16px 27px rgba(0, 0, 0, 0.8);
 }
 .button{
     border: none;
-    position: absolute;
+    /* position: absolute; */
     background: #B5076B;
     box-shadow: -14px 16px 27px rgba(0, 0, 0, 0.25), inset 5px -6px 10px rgba(0, 0, 0, 0.25), inset -5px 5px 8px rgba(176, 71, 131, 0.82);
     border-radius: 25px;
-    margin: 28vw 14vw;
-    padding: 1vw 2vw;
+    /* margin: 28vw 14vw; */
+    margin: 0 0 0 12vw ;
+
+    padding: .5rem 1rem;
 }
 .button img{
     display: none;
@@ -520,9 +529,9 @@ footer{
 
  */
 
-@media screen and (min-width: 100px) and (max-width: 450px){
+/* @media screen and (min-width: 100px) and (max-width: 450px){
     header{
-        height:100vh;
+        height:40vh; 
        background-image: url(../images/background_mobile.svg);
        background-size: cover;
        background-repeat: no-repeat;
@@ -568,12 +577,71 @@ footer{
     #cube4 img{
         width:15vw;
     }
-}
-@media screen and (min-width: 450px) {
+}  */
+ @media screen and (min-width: 450px) {
     header{
         height:max-content;
         background-image: url(../images/backdrop.svg);
         background-size: cover;
         background-repeat: no-repeat;
-    }
-}
+        
+    } 
+} 
+  @media screen and (max-width:450px){
+      header{
+        background-image: url(../images/background_mobile1.svg);
+        background-size: cover;
+        background-position:bottom;
+        background-repeat: no-repeat;
+        height:450px;
+      }
+        /* .button{
+            padding : 0vw 1vw;
+            
+        } */
+        .about-us{
+            padding:0vh 5vw 10vh 5vw;
+        }
+        #deslong{
+            padding-top:5vh;
+        }
+        #cc{
+            margin:0 0  0 0;
+            
+        }
+        #nm{
+            margin:0 0  0 0;
+           
+        }
+        .button{
+            margin-top: 3px 0 0 0;
+            padding:.3rem 1rem;
+        } 
+        #sideglass{
+            display: none;
+        }
+        #cube1{
+            display:none;
+        }
+        #cube2{
+            display:none;
+        }
+        #cube3{
+            display:none;
+        }
+        #cube4{
+            display:none;
+        }
+        #textPart{
+           
+            text-align: center;
+            margin-top:12vh;
+            /* background-color:black; */
+            
+        }
+        #flex{
+            display: flex;
+            justify-content: center;
+            
+        }
+  }
