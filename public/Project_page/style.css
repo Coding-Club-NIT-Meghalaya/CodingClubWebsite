@@ -18,11 +18,7 @@ body {
 }
 
 
-/* *****************************navbar section********** */
 
-.nav-links li a {
-    color: black;
-}
 
 .blog-slider {
     background: linear-gradient(112.91deg, rgba(212, 207, 207, 0.479) 3.51%, rgba(247, 244, 244, 0.178) 111.71%);
