@@ -1,7 +1,8 @@
 body {
   position: relative;
   overflow-x: hidden;
-  background: linear-gradient(to right, #bdafe4, #e4c7d3);
+  background: linear-gradient(to right, #654ea3, #eaafc8); 
+
 }
 body,
 html 
@@ -24,6 +25,7 @@ body{
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  text-align: center;
   
 	
 }
@@ -81,13 +83,26 @@ hr.style3 {
 	padding-left: 15%;
 	margin-bottom: 40%
 }
+.container{
+  margin-top: 100px;
+  padding-right: 30px;
+  padding-left: 30px;
+  background: linear-gradient(112.91deg,
+  rgba(255, 255, 255, 0.45) 3.51%,
+  rgba(255, 255, 255, 0) 111.71%);
+  width:100vw;
+  border-radius: 25px;
+border: 2px solid #0000002a;
+
+
+}
 
 .section-1 .heading-1{
 	margin-top: 8%;
  font-family: 'Roboto', sans-serif;
  font-weight: 700;
  font-style: italic;
- align-items: center;
+ text-align: center;
 }
 
 .section-1 .heading-2{
@@ -95,13 +110,30 @@ hr.style3 {
 	font-size: 15px;
 }
 
+
 .section-1 .para-1{
 	width: 60%;
 	margin-left: 20%;
 	margin-bottom: 5%;
 }
+.section-1 .card{
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 10px 10px 12px rgba(0,0,0,0.2);
 
+
+}
+.section-1 .title{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+.date{
+  font-size: 1rem;
+  text-align: center;
+}
 .section-1 .card-text, .para-1{
+  text-align: left;
+  padding: 0 2px 0 2px;
 	color: rgba(0, 0, 0, 0.59);
 }
 .section-1{
@@ -135,17 +167,35 @@ hr.style3 {
 .section-2 .btn{
 	margin-bottom: 15%;
 	width: 30%;
-	padding-left: 2%;
+}
+.button{
+
+margin: 4px 0 4px 0;
+  border-radius: 50px; 
+  background: linear-gradient(90deg,#755bea,#ff72c0);
+  border: none;
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+}
+.button:hover {
+  box-shadow: 0 8px 16px 0 #755bea;
+
 }
 
 
 .card img {
-  border-radius: 5px 5px 0 0;
-  border-bottom: 2px solid black;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+border-radius: 20px;
+
+  
+
 }
 
 .card-text{
-  border-bottom: 2px dashed #ccc;
+
   margin-top:0rem;
   margin-bottom:0.3rem;
 }
