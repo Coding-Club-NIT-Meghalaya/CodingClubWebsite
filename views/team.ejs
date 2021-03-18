@@ -18,7 +18,7 @@
 
   <%- include("partials/navbar") %>
 
- 
+
   <div class="cubes">
     <ul id="scene">
       <li class="layer" data-depth="-.3">
@@ -43,33 +43,13 @@
   </div>
   <!-- <h1 id="meet">MEET THE TEAM</h1> -->
   <div class="container-fluid" style="padding-top: 9.7vw;">
-  <h1>Head Faculty</h1>
+    <h1>Head Faculty</h1>
 
     <div class="row">
       <% for(let i=0;i<arr.length;i++){%>
       <% if(arr[i].Designation==1){%>
       <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center">
         <div class="box">
-          <div class="profile-img"><img src="/profileImage/<%=arr[i].filename%>" alt="" srcset=""></div>
-          <h2><%=arr[i].FirstName%> <%=arr[i].LastName%></h2>
-          <p><%=arr[i].DesignationName%></p>
-          <p class="Socials">
-            <a href="<%=arr[i].LinkedIn%>"><i class="fa fa-linkedin"></i></a>
-            <a href="<%=arr[i].Github%>"><i class="fa fa-github"></i></a>
-            <a href="<%=arr[i].Facebook%>"><i class="fa fa-facebook"></i></a>
-          </p>
-        </div>
-      </div>
-      <%}}%>
-    </div>
-  </div>
-  <h1>Club Aumuni</h1>
-  <div class="container-fluid ">
-    <div class="row">
-      <% for(let i=0;i<arr.length;i++){%>
-      <% if(arr[i].Designation==2){%>
-      <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center">
-        <div class="box ">
           <div class="profile-img"><img src="/profileImage/<%=arr[i].filename%>" alt="" srcset=""></div>
           <h2><%=arr[i].FirstName%> <%=arr[i].LastName%></h2>
           <p><%=arr[i].DesignationName%></p>
@@ -90,7 +70,7 @@
       <% if(arr[i].Designation>2){%>
       <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center">
         <div class="box ">
-          <div class="profile-img"><img src="/profileImage/<%=arr[i].filename%>" alt="" srcset=""></div>
+          <div class="profile-img"><img src="/Image/<%=arr[i].filename%>" alt="" srcset=""></div>
           <h2><%=arr[i].FirstName%> <%=arr[i].LastName%></h2>
           <p><%=arr[i].DesignationName%></p>
           <p class="Socials">
