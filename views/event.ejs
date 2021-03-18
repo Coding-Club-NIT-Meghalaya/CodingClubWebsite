@@ -21,23 +21,11 @@
    
 </head>
 <body>
+
+	<%-include('partials/navbar')%>
 	<header>
       
-		<!-- <nav id="navbar" style="padding-top: 2vw;" class="navbar navbar-dark navbar-expand-md " >
-		  <a href="#" class="navbar-brand "><img src="landing_page/assets/images/NITM.png"  style="width:8vw;margin-left:12vw;" alt="logo NITM" /></a>
-		 <button style="margin-right:12vw;" class="navbar-toggler" data-toggle="collapse" data-target="#content" aria-label="Toggle navigation">
-		   <span class="navbar-toggler-icon"></span>
-		 </button>
-		<div class="collapse navbar-collapse justify-content-end" id="content">
-		  <div class="navbar-nav">
-		  <a href="/events" class=" nav-link">EVENTS</a>
-		  <a href="/resources" class=" nav-link">RESOURCES</a>
-		  <a href="/projects" class=" nav-link">PROJECTS</a>
-		  <a href="/teams" style="margin-right:12vw;" class=" nav-link">TEAM</a>
-		 </div>
-		</div>
-	  </nav>
-	  </header> -->
+		
 
 	<div id="wrapper">
 		<div class="overlay"></div>
@@ -87,7 +75,7 @@
 	
 
 	<main>
-		<div class="container-fluid p-0">
+		<div id = "topImage" class="container-fluid " >
 			<div class="container-fluid item previous">
 				<div id="carouselExampleCaptions" class="carousel slide " data-ride="carousel">
 				<ol class="carousel-indicators">
@@ -130,6 +118,7 @@
 		</div>	
 		
 
+<<<<<<< HEAD
 
 <!-- Section 1 hackathons -->
 		<!--<div class="section-1" id="hackthons">
@@ -212,6 +201,9 @@
 
 				</div>-->
 <!--<hr class="style13">-->
+=======
+<hr class="style13">
+>>>>>>> 71d9da8927f45881f382fe4c737228e4b0d0b20e
 <!-- <section 1>-->
 <!-- Programming -->
 
@@ -378,153 +370,14 @@
 	</main>
 
 
+	<%- include("achievement") %>
 
 
-	  <section id="stories">
-		<div class="container-fluid card-body-style">
-		   <!-- <div class="row">  -->
-			<!-- <div class="col-lg-1 col-xl-1 col-sm-1 col-xs-1"> --> 
-			  
-			   
-			<!-- </div> -->
-			
-			<!-- <div class="col-lg-12 col-xl-12 col-sm-12 col-xs-12 "> -->
-			  <!--<div className=" items">-->
-				<div class="row d-flex flex-row flex-nowrap overflow-auto" style="display: flex;" id="culture_row">
-				<div class="cardbox">
-					
-					  <div class=" d-flex flex-column">
-					   
-						<div className="user_name align-self-end">
-							<div class="a-card" >
-								<img class="card-img-top imgStyle" src="Event_page/file/dummy.jpg" alt="card image cap">
-								<div class="card-body">
-									<h3 class="card-title">Event name</h3>
-									<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-									<p class="card-text"><small class="text-muted">May, 2019</small></p>
-								</div>
-							</div>
-						</div>
-					  </div>
-					
-				</div>
-				<div class="cardbox">
-					<div class=" d-flex flex-column">
-					  <div className="user_name align-self-end">
-						  <div class="a-card" >
-							  <img class="card-img-top imgStyle" src="Event_page/file/dummy.jpg" alt="Card image cap">
-							  <div class="card-body">
-								  <h3 class="card-title">Event name</h3>
-								  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-								  <p class="card-text"><small class="text-muted">June, 2019</small></p>
-							  </div>
-						  </div>
-					  </div>
-					</div>
-				  
-				</div>
-				<div class="cardbox">
-					<div class=" d-flex flex-column">
-					  <div className="user_name align-self-end">
-						  <div class="a-card" >
-							  <img class="card-img-top imgStyle" src="Event_page/file/dummy.jpg" alt="Card image cap">
-							  <div class="card-body">
-								  <h3 class="card-title">Event name</h3>
-								  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-								  <p class="card-text"><small class="text-muted">July, 2019</small></p>
-							  </div>
-						  </div>
-					  </div>
-					</div>
-				</div>
-				<div class="cardbox">
-					
-					<div class=" d-flex flex-column">
-					 
-					  <div className="user_name align-self-end">
-						  <div class="a-card">
-							  <img class="card-img-top imgStyle" src="Event_page/file/dummy.jpg" alt="Card image cap">
-							  <div class="card-body">
-								  <h3 class="card-title">Event name</h3>
-								  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-								  <p class="card-text"><small class="text-muted">August, 2019</small></p>
-							  </div>
-						  </div>
-					  </div>
-					</div>
-				  
-				</div>
-				<div class="cardbox" id="raw">
-					
-					<div class=" d-flex flex-column">
-					 
-					  <div className="user_name align-self-end">
-						  <div class="a-card" >
-							  <img class="card-img-top imgStyle" src="Event_page/file/dummy.jpg" alt="Card image cap">
-							  <div class="card-body">
-								  <h3 class="card-title">Event name</h3>
-								  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-								  <p class="card-text"><small class="text-muted">September, 2019</small></p>
-							  </div>
-						  </div>
-					  </div>
-					</div>
-				  
-				</div>
-				<div class="cardbox">
-					
-					<div class=" d-flex flex-column">
-					 
-					  <div className="user_name align-self-end">
-						  <div class="a-card" >
-							  <img class="card-img-top imgStyle" src="Event_page/file/dummy.jpg" alt="Card image cap">
-							  <div class="card-body">
-								  <h3 class="card-title">Event name</h3>
-								  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-								  <p class="card-text"><small class="text-muted">October, 2019</small></p>
-							  </div>
-						  </div>
-					  </div>
-					</div>
-				  
-				</div>
-				 <div class="cardbox">
-					
-					  <div class=" d-flex flex-column">
-					   
-						<div className="user_name align-self-end">
-							<div class="a-card" >
-								<img class="card-img-top imgStyle" src="Event_page/file/dummy.jpg" alt="Card image cap">
-								<div class="card-body">
-									<h3 class="card-title">Event name</h3>
-									<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-									<p class="card-text"><small class="text-muted">November, 2019</small></p>
-								</div>
-							</div>
-						</div>
-					  </div>
-					
-				  </div>
-				 
-				 
-	
-				<!-- </div>
-			  </div> -->
-			</div>
-	 
-			  
-				<div class=" slide_button">
-				  <div class="scrollbtn">
-					<span id="slideLeft" class="ab" type="button"><i class="fas fa-chevron-left fa-2x sicon1"></i></span>
-					<span id="slideRight"  type="button"><i class="fas fa-chevron-right fa-2x sicon2"></i></i></span>
-				  </div>
-				</div>
-			<!--</div>-->
-		  </div>
-	   
-	  </section>
+
+
+
 	  <!--gallery starts -->
-	<div class ="gallery">
+	<!-- <div class ="gallery">
 		<style>
 			/*body{
 			  text-align: center;
@@ -638,59 +491,9 @@
 		   
 		   
 			 </script>
-	</div>
+	</div> -->
 	<!--gallery ends-->
 	  
-	
-	  <script>
-		const buttonRight1 = document.getElementById('slideRight');
-		const buttonLeft1 = document.getElementById('slideLeft');
-		
-	
-		buttonRight1.onclick = function () {
-		  document.getElementById('culture_row').scrollLeft += 338;
-		  behavior: 'smooth';
-		};
-	
-		buttonLeft1.onclick = function () {
-		  document.getElementById('culture_row').scrollLeft -= 338;
-		  behavior: 'smooth';
-		};
-	
-	   
-		//////// Popular scroll ////////////
-		(function ($) {
-		  $(".left-arrow").hide();
-		  $("#startrow2").on('scroll', function () {
-			$val = $(this).scrollLeft();
-	
-			if ($(this).scrollLeft() + $(this).innerWidth() >= $(this)[0].scrollWidth) {
-			  $(".right-arrow").hide();
-			} else {
-			  $(".right-arrow").show();
-			}
-	
-			if ($val == 0) {
-			  $(".left-arrow").hide();
-			} else {
-			  $(".left-arrow").show();
-			}
-		  });
-		  console.log('init-scroll: ' + $(".right-arrow").scrollLeft());
-		  $(".right-arrow").on("click", function () {
-			$("#startrow2").animate({ scrollLeft: '+=460' }, 200);
-	
-		  });
-		  $(".left-arrow").on("click", function () {
-			$("#startrow2").animate({ scrollLeft: '-=460' }, 200);
-		  });
-		})(jQuery);
-		//////////////////////
-
-
-
-	   
-	  </script>
 	
 	
 	  <!-- The core Firebase JS SDK is always required and must be listed first -->

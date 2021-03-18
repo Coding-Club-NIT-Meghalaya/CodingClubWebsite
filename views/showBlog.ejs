@@ -3,19 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog App</title>
+    <title>Blog Post</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,800;1,400&family=Roboto:ital@0;1&display=swap"
+      rel="stylesheet" />
+    
+      <link rel="stylesheet" href="resource_page\styles.css" />
 </head>
+
+
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Sniglet|Raleway:900);
+
+body, html{
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Sniglet', cursive;
+}
+h1{
+  font-weight: normal;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 200px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+h2{
+  font-weight: normal;
+  font-size: 40px;
+  font-family: 'Raleway', sans-serif;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-top: 50px;
+  width: 300px;
+  color: rgb(90, 6, 129);
+  text-align: center;
+}
+
+header{
+  height: 160px;
+}
+
+#form{
+  height: 100%; 
+  background-color: #9c5ad1;
+  overflow: hidden;
+  position: relative;
+  
+}
+form{
+  margin: 0 auto;
+  width: 350px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  color: white;
+  position: relative;
+  
+  
+}
+label, input, textarea{
+  display: block; 
+}
+input, textarea{
+  width: 350px; 
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  padding: 10px;
+  font-family: 'Sniglet';
+  font-size: 1em;
+  color: #676767;
+  transition: border 0.5s;
+  -webkit-transition: border 0.5s;
+  -moz-transition: border 0.5s;
+  -o-transition: border 0.5s;
+  border: solid 3px #98d4f3;  
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  
+}
+input:focus, textarea:focus{
+  border: solid 3px #630b9e;  
+}
+
+textarea{
+  height: 100px;  
+  resize: none; 
+  overflow: auto;
+}
+input[type="submit"]{
+  background-color: rgb(116, 46, 148);
+  color: white;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 30px;
+  font-size: 1.29em;
+  font-family: 'Sniglet', cursive;
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+input[type="submit"]:hover{
+  background-color: #e58f0e;
+  
+}
+label{
+  font-size: 1em;
+  margin-top: 20px;
+  padding-left: 10px;
+}
+.formgroup{
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 10.5%;
+  transition: background-image 0.7s;
+  -webkit-transition: background-image 0.7s;
+  -moz-transition: background-image 0.7s;
+  -o-transition: background-imh1age 0.7s;
+  width: 600px;
+  padding-top: 2px;
+}
+
+.formgroup{
+  background-image: url('http://www.geertjanhendriks.nl/codepen/form/pixel.gif'); 
+}
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+</style>
+
+
+<script>
+    $('document').ready(function(){
+  $('input[type="text"], input[type="email"], textarea').focus(function(){
+    var background = $(this).attr('id');
+    $('#' + background + '-form').addClass('formgroup-active');
+    $('#' + background + '-form').removeClass('formgroup-error');
+  });
+  $('input[type="text"], input[type="email"], textarea').blur(function(){
+    var background = $(this).attr('id');
+    $('#' + background + '-form').removeClass('formgroup-active');
+  });
+
+function errorfield(field){
+  $(field).addClass('formgroup-error');
+  console.log(field); 
+}
+
+$("#waterform").submit(function() {
+  var stopsubmit = false;
+
+if($('#name').val() == "") {
+  errorfield('#name-form');
+  stopsubmit=true;
+}
+if($('#email').val() == "") {
+  errorfield('#email-form');
+  stopsubmit=true;
+}
+  if(stopsubmit) return false;
+});
+    
+});
+</script>
+
+
+
 <body>        
 
 
 <div class="ui main text container segment">
-    <div class="ui huge header"><%= blog.title %> </div>
-    <div class="ui top attached">
+    <!--<div class="ui huge header"><%= blog.title %> </div>
+     <div class="ui top attached">
         <div class="item">
             <img class="ui centered rounded image" src="<%= blog.image %> " alt="">
         </div>
-     
+
         <div class="content">
             <span><%= blog.created%> </span>
         </div>
@@ -25,20 +197,110 @@
         <div class="content">
             <span><%= blog.writtenBy %> </span>
         </div>
-    </div>
-    
-        <div class="description">
-            <span><%- blog.body %> </span>
+    </div> -->
+
+
+
+    <div class="ui top attached">
+
+        <!-- First Blog Post -->
+        <h2><%= blog.title %></h2>
+        <p class="author_name">
+            by <a href="#"><%= blog.writtenBy %></a>
+        </p>
+        <p class="formgroup" ><span class="glyphicon glyphicon-time"></span><%= blog.created%> </p>
+        
+        <hr>
+        <img class="img-responsive" src="http://placehold.it/1000x300/000000/?text=Blog+Post+Image" alt="Blog Post Image" width="" height="">
+        <hr>
+
+
+        <div class="media">            
+            <div class="media-body">
+                <p><%- blog.body %> 
+                    <br>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </p>
+            </div>
         </div>
 
-        </form>
-    </div>
+        <hr>
     
-   
-    
-    
-</div>
 
+        <!-- Blog Comments -->
+        <!-- Comments Form -->
+        <h1>Leave a Comment:</h1>
+          <div id="form">
+            
+          <form id="waterform" method="post">
+          
+          <div class="formgroup" id="name-form">
+              <label for="name">Your name*</label>
+              <input type="text" id="name" name="name" />
+          </div>
+          
+          <div class="formgroup" id="email-form">
+              <label for="comment_email">Your e-mail*</label>
+              <input type="email" id="comment_email" name="comment_email" />
+          </div>
+          
+          <div class="formgroup" id="message-form">
+              <label for="message">Comment</label>
+              <textarea id="message" name="message"></textarea>
+          </div>
+          
+            <input type="submit" value="Submit" />
+          </form>
+          </div>
+          
+        <hr>
+    
+        <!-- Posted Comments will be brought from the database-->
+        
+            <div class="media">
+                <a class="pull-left" href="#">
+                <img class="media-object" src="http://placehold.it/64x64" alt="">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">Comment Author
+                        <small>Comment Date</small>
+                    </h4>Comment Content
+                </div>
+            </div>
+    
+            <br>
+        <!-- Comment -->
+        <div class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object" src="http://placehold.it/64x64" alt="">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">Author
+                    <small>August 25, 2014 at 9:30 PM</small>
+                </h4>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+        </div>
+        <br>
+        <!-- Comment -->
+        <div class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object" src="http://placehold.it/64x64" alt="">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">Author
+                    <small>August 25, 2014 at 9:30 PM</small>
+                </h4>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+        </div>
+    
+        
+    </div>
+</div>
 
 </body>
 </html>

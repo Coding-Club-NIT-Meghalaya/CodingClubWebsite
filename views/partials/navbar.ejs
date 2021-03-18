@@ -18,13 +18,11 @@
   
  nav{
   display: flex;
-  
   justify-content: space-around;
   align-items: center;
- 
-  /* margin-top:0;
-  /* background-color: white; */
-
+ position:fixed;
+ width:100%;
+ z-index: 100;
 
 }
 
@@ -35,7 +33,7 @@ ul{
 .nav-links {
    display: flex;
   justify-content: space-around; 
-   width: 40%; 
+   width: 50%; 
 
 }
 
@@ -46,8 +44,11 @@ ul{
 
 .nav-links li a{
   text-decoration: none;
-  /* color: #FFFFFF; */
   font-size: 1.3vw;
+  color: rgb(255, 255, 255);
+      text-decoration: none;
+      letter-spacing: 2px;
+     
 }
 .burger {
   display: none;
@@ -70,10 +71,10 @@ ul{
 .bgColor{
   background-color:rgba(75, 41, 124,0.5);
   width:100%;
-  position:sticky;
-  -webkit-position:sticky;
-  top:0;
-  z-index: 1;
+  position:fixed;
+  /* -webkit-position:sticky; */
+  /* top:0; */
+  z-index: 100;
 }
 
 /* *****animation styling******** */
@@ -104,6 +105,9 @@ display: none;
 @media only screen and (max-width: 768px){
   body {
       overflow-x: hidden;
+  }
+  #logo img{
+    padding-top:0;
   }
   nav{
       position: fixed;
