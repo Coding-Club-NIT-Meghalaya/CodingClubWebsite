@@ -173,8 +173,6 @@ margin: 4px 0 4px 0;
   padding-right: 5px;
 border-radius: 20px;
 
-  
-
 }
 
 .card-text{
@@ -219,13 +217,18 @@ i.fa fa-clock-o fa-lg{
   float:right;
 }
 
-.imgStyle {
-	margin: auto;
+/*.imgStyle {
+  margin: auto;
 	max-width: 90%;
 	height: auto;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
-}
+  padding-top: 5px;
+  padding-left: -5px;
+  padding-right: -5px;
+  
+border-radius: 20px;
+}*/
 .card-body-style {
 	background: #654ea3; /*Ultra Violet*/
 	background: -webkit-linear-gradient(to right, #654ea3, #eaafc8);  
@@ -304,11 +307,22 @@ i.sicon2:hover {
 	transition: 0.3s;
 	display: grid;
 	margin: auto;
-	padding: 2% 2% 2% 2%;
+	padding: -1% -1% -1% -1%;
 	border-radius: 20px;
-	background: #f0f0f0;
+color: rgb(8, 8, 8);
+background-color: rgb(5, 91, 117);
 	width: 35rem;
+  grid-template-areas: "image" "text" ;
 }
+
+
+.imgStyle{
+    grid-area: image;
+    background: url("achievement_image.jpeg");
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+  }
 
 .a-card:hover {
    box-shadow: 0 8px 16px 0 rgba(0,0,0,2);
