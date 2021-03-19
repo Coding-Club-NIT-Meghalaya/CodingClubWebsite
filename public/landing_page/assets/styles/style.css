@@ -22,6 +22,7 @@
     position: fixed;
     top: 50%;
     left: 50%;
+    border-radius: 18px;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     z-index: 1000;
@@ -33,14 +34,14 @@ textarea {
     /* width: 200px; */
     padding: 1em;
     margin-bottom: 2em;
-    border: blueviolet solid 5px;
+    border: rgb(150, 72, 223) solid 5px;
     border-left: 1px solid rgba(255, 255, 255, 0.3);
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     font-weight: 500;
     font-family: 'Montserrat', sans-serif;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    border-radius: 5000px;
+    border-radius: 10px;
     box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -57,10 +58,11 @@ form input[type="text"]:focus {
 }
 
 form input[type="submit"] {
-    margin-top: 10px;
+    margin-top: 25px;
     width: 150px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #000000;
+    background: rgb(150, 72, 223);
 }
 
 form input[type="submit"]:hover {
@@ -94,7 +96,7 @@ textarea {
     text-transform: inherit;
     font-size: inherit;
     display: block;
-    width: 280px;
+    width: 300px;
     padding: .4em;
 }
 
