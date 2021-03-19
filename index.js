@@ -79,7 +79,7 @@ var memberSchema = new mongoose.Schema({
   filename: String,
 });
 var ProjectSchema = new mongoose.Schema({
-  Name: String,
+  Title: String,
   Field: String, //like web,app etc
   Status: String, //ongoing/completed etc.
   StartDate: {
@@ -96,9 +96,23 @@ var ProjectSchema = new mongoose.Schema({
   Link: String,
   FileName: String
 });
+var EventSchema = new mongoose.Schema({
+  EventName: String,
+  StartDate: {
+    type: Date,
+    default: Date.now
+  },
+  EndDate: {
+    type: Date,
+    default: Date.now
+  },
+  FileName: String,
+  Link: String,
+});
 var Blog = mongoose.model("Blog", blogSchema)
 var TeamMember = mongoose.model("TeamMember", memberSchema);
 var Project = mongoose.model("Project", ProjectSchema);
+var Event = mongoose.model("Event", EventSchema);
 
 
 /////////////Landing/////////////////////////////////////////////////////////////
@@ -107,9 +121,32 @@ app.get("/", function (req, res) {
 });
 ///////////////////Events/////////////////////////////////////////////////////
 app.get("/events", function (req, res) {
-  res.render("event");
+  Event.find(function (err, obj) {
+    if (err)
+      res.send("Error occured");
+    else
+      res.render("event", {
+        arr: obj
+      });
+  }).sort({
+    StartDate: 1
+  });
 });
-
+//add new event route
+app.get("/addEvent", function (req, res) {
+  res.render("addEvent");
+});
+app.post("/addEvent", upload.single('EventPoster'), function (req, res) {
+  let newEvent = req.body;
+  console.log(newEvent);
+  newEvent["FileName"] = req.file.filename;
+  Event.create(newEvent, (err, newUser) => {
+    if (err)
+      res.send("Data Not uploaded");
+    else
+      res.redirect("/addEvent");
+  });
+})
 //////////////////////////////////// Resources ///////////////////////////////////////////////////////////
 app.get("/resources", function (req, res) {
   const f = Blog.find((err, obj) => {
