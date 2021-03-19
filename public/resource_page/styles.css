@@ -613,7 +613,7 @@ body {
   background-color: transparent;
   color: #444;
   cursor: pointer;
-  padding: 22px;
+  padding: 20px 20px 7px 20px;
   width: 120%;
   border: none transparent;
   margin-bottom: 5px;
@@ -626,7 +626,7 @@ body {
   z-index: -2;
 }
 
-.active, .accordion:hover {
+.active, .accordion:hover,.sub-accordion:hover {
   font-size: 20px;
   font-weight: 300;
 }
@@ -638,10 +638,41 @@ body {
   border: 2px inset black;
   border-radius: 13px;
   text-align: left;
-  margin-bottom: 17px;
+  margin-bottom: 12px;
   margin-left: 15px;
   overflow: hidden;
-  width:125%;
+  width:100%;
+}
+.sub-panel{
+  padding: 15px 15px 15px;
+  display: none;
+  text-align: justify;
+  border:1px inset grey;
+  border-radius: 13px;
+  margin-bottom: 12px;
+  margin-left: 15px;
+  overflow: hidden;
+  width:70%;
+
+}
+.sub-accordion{
+  background-color: transparent;
+  color: #444;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none transparent;
+  margin-bottom: 2px;
+  font-size: 18px;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  filter: blur(0.05px);
+  z-index: -2;
+
+}
+a.links:hover{
+  text-decoration: none;
 }
 @media screen and (max-width: 700px) {
   .accordion { padding: 10px;
@@ -652,7 +683,7 @@ body {
                             }
   .panel {
                padding: 10px;
-               width:250%;
+               width:220%;
                margin-right:10%;
          }
 }
