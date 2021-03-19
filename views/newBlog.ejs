@@ -34,9 +34,9 @@ body, html{
   margin: 0 auto;
   margin-top: 70px;
   margin-bottom: 70px;
-  width: 450px;
+  width: 480px;
   color: rgb(135, 18, 231);
-  text-align: left;
+  text-align: center;
 } 
 h2{
   font-weight: normal;
@@ -67,7 +67,7 @@ h2{
 }
 form{
   margin: 0 auto;
-  width: 450px;
+  width: 600px;
   padding-top: 10px;
   padding-bottom: 20px;
   color: rgb(0, 0, 0);
@@ -78,17 +78,17 @@ label, input, textarea{
   display: block; 
 }
 input, textarea{
-  width: 450px; 
+  width: 600px; 
   border: none;
   border-radius: 8px;
   outline: none;
   padding: 10px;
-  font-family: 'Sniglet';
-  font-size: 1em;
-  color: #3a3838;
+  font-family: 'Sans-serif';
+  font-size: 1.3em;
+  color: #2e2c2c;
   transition: border 0.2s;
   border: solid 2px #706775;
-  box-sizing:border-box;
+  box-sizing: border-box;
   
 }
 input:focus, textarea:focus{
@@ -107,7 +107,7 @@ input[type="submit"]{
   cursor: pointer;
   margin-top: 40px;
   margin-top: 40px;
-  font-size: 1.29em;
+  font-size: 1.3em;
   font-family: 'Sniglet', cursive;
   transition: background-color 0.4s;
 }
@@ -116,7 +116,7 @@ input[type="submit"]:hover{
   
 }
 label{
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-top: 35px;
   margin-bottom: 5px;
   padding-left: 6px;
@@ -178,9 +178,10 @@ if($('#email').val() == "") {
 
   <body>
 
-    <div class="ui main text container segment">
-
-      <h1>Add New Blog</h1>
+    <!-- <div class="ui main text container segment"> -->
+      <div class="">
+      <br>
+      <h1>Add Blog Post</h1>
 
       <div id="form">
             
@@ -228,7 +229,7 @@ if($('#email').val() == "") {
             </select>
           </div> 
 
-          
+
           <!-- post status is draft unless approved by admin; hidden -->
           <div class="form-group" hidden>
             <label for="blog_status">Post Status</label>
@@ -271,7 +272,6 @@ if($('#email').val() == "") {
 
 
     </div>
-
 
   </body>
 </html>
