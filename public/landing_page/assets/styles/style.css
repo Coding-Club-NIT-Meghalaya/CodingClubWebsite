@@ -302,8 +302,10 @@ textarea {
 
 .cards {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .border {
@@ -377,6 +379,10 @@ textarea {
     background-color: rgba(225, 0, 255, 0.2);
     ;
 }
+
+
+
+/* What Do We Do Ka CSS (BHawna) */
 .tablist_c {
       
     width: 300px;
@@ -509,6 +515,9 @@ align-items: center;
 
 
 
+
+
+
 /******footer***** */
 
 footer {
@@ -578,152 +587,10 @@ footer {
 }
 
 
-/* *****animation styling********
-.button_scroll{
-    fill: unset;
-    border: none;
-    position: fixed;
-    background: #B5076B;
-    box-shadow:  inset 5px -6px 10px rgba(0, 0, 0, 0.25), inset -5px 5px 8px rgba(176, 71, 131, 0.82);
-    border-radius: 50%;
-    right: 3vw;
-    bottom: 3vw;
-    width: 4vw ;
-    height: 4vw;
-    z-index: 3;
-    padding: 0.5vw;
-
-}
-.button_scroll #contact{
-  display: none;
-}
-.button_scroll img{
-     align-self: center; 
-}   
 
 
-/* @media only screen and (max-width: 768px){
-    body {
-        overflow-x: hidden;
-    }
-    nav{
-        position: fixed;
-        top:0;
-        width:100%;
-        background-color: rgba(75, 41, 124,0.5) ;
-        height:8vh;
-        z-index: 2;
-    }
-    .nav-links {
-        position: fixed;
-        right: 0px;
-        height: 92vh;
-        top: 8vh;
-        background-color: rgba(75, 41, 124,0.5);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 50%;
-        transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-    }
-    .nav-links li a {
-        color: rgb(255, 255, 255);
-        text-decoration: none;
-        letter-spacing: 3px;
-        font-weight: bold;
-        font-size: 14px;
-    }
-    .nav-links li {
-        opacity: 0;
-    }
-    
-    .burger {
-        display: block;
-        cursor: pointer;
-    }
 
-
-.nav-active {
-        transform: translateX(0%);
-} */
-
-
-/* @keyframes navLinkFade {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.toggle .line2 {
-    opacity: 0;
-}
-
-.toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-    .cards{
-        display:grid;
-        
-        grid-template-columns: 1fr;
-        grid-template:  "card1"
-                        "card2"
-                        "card3";
-        grid-gap: 5vw;
-    }
-    #card1{
-        grid-area:card1 ;
-    }
-    #card2{
-        grid-area:card2 ;
-    }
-    #card3{
-        grid-area:card3 ;
-    }
-    .whiteBox{
-        width:100%;
-    }
-    .colorBox{
-        width:100%;
-    }
-    #cc{
-        z-index: 2;
-        margin-left: 15vw;
-        margin-right:auto;
-
-    }
-    #nm{
-        margin-left: 25vw;
-        margin-right:auto;
-    }
-    .button{
-        position: absolute;;
-        margin-left: 35vw;
-        margin-right:auto;
-    }
-    .whiteBox img{
-        width: 100%;
-        height: 30%; 
-        padding-top: 5vw;
-        
-    }
-
-
-} 
-
- */
-
-
-/* @media screen and (min-width: 100px) and (max-width: 450px){
+@media screen and (min-width: 100px) and (max-width: 450px){
     header{
         height:40vh; 
        background-image: url(../images/background_mobile.svg);
@@ -771,7 +638,7 @@ footer {
     #cube4 img{
         width:15vw;
     }
-}  */
+} 
 
 @media screen and (min-width: 450px) {
     header {
