@@ -1,5 +1,7 @@
 var acc = document.getElementsByClassName("accordion");
-var i;
+var sacc = document.getElementsByClassName("sub-accordion");
+
+var i,j;
 
 for (i = 0; i < acc.length; i++) {
    acc[i].addEventListener("click", function () {
@@ -12,6 +14,18 @@ for (i = 0; i < acc.length; i++) {
       }
    });
 }
+for (j= 0; j < sacc.length; j++) {
+	sacc[j].addEventListener("click", function () {
+	   this.classList.toggle("active");
+	   var panel = this.nextElementSibling;
+	   if (panel.style.display === "block") {
+		  panel.style.display = "none";
+	   } else {
+		  panel.style.display = "block";
+	   }
+	});
+ }
+
 /*
 const spans = document.querySelectorAll('.word span');
 
