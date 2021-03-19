@@ -286,7 +286,7 @@ body {
     padding: 3vw;
   }
   .tablist__figure-caption {
-    font-size: medium;
+    font-size: small;
 }
 
 }
@@ -313,7 +313,7 @@ body {
 @media only screen and (min-width: 1024px) {
 
   .tablist__figure-caption {
-    font-size: large;
+    font-size:90%;
   }
   .tablist__item {
     width: 18vw;
@@ -580,16 +580,10 @@ body {
 }
 
 .cardbox{
-<<<<<<< HEAD
      display: flex;
     overflow-x:scroll;
     overflow-y:auto;
    margin: 2% 1% 1% 2%;
-=======
-    display: flex;
-    overflow-x: scroll;
-    margin: 2% 1% 1% 2%;
->>>>>>> 7204c3e392dc9bcf204504391aee32ed3f049e46
 }
 .imgStyle{
     border-radius: 10px;
@@ -613,8 +607,8 @@ body {
   background-color: transparent;
   color: #444;
   cursor: pointer;
-  padding: 20px 20px 7px 20px;
-  width: 120%;
+  padding: 20px 12px 7px 12px;
+  width: 150%;
   border: none transparent;
   margin-bottom: 5px;
   font-size: 18px;
@@ -640,8 +634,8 @@ body {
   text-align: left;
   margin-bottom: 12px;
   margin-left: 15px;
-  overflow: hidden;
-  width:100%;
+  overflow:hidden;
+  width:110%;
 }
 .sub-panel{
   padding: 15px 15px 15px;
@@ -674,7 +668,7 @@ body {
 a.links:hover{
   text-decoration: none;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
   .accordion { padding: 10px;
                font-size : 16px;
             }
@@ -683,10 +677,11 @@ a.links:hover{
                             }
   .panel {
                padding: 10px;
-               width:220%;
-               margin-right:10%;
+               width:120%;
+               margin-right:5%;
          }
 }
+
 /*______________________________________________Accordion of content______________________________________________*/
 
 /*______________________________________________Scroll bar of video ______________________________________________*/
