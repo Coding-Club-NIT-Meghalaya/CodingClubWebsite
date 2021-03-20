@@ -1,42 +1,46 @@
 body {
   position: relative;
   overflow-x: hidden;
-  background: linear-gradient(to right, #654ea3, #eaafc8); 
+  background: linear-gradient(to right, #654ea3, #eaafc8);
 
 }
+
 body,
-html 
-{ height: 100%;
+html {
+  height: 100%;
   scroll-behavior: smooth;
 }
-.nav .open > a, 
-.nav .open > a:hover, 
-.nav .open > a:focus {background-color: transparent;}
+
+.nav .open>a,
+.nav .open>a:hover,
+.nav .open>a:focus {
+  background-color: transparent;
+}
 
 /*-------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&family=Pacifico&family=Righteous&family=Roboto+Condensed:wght@400;700&family=Ubuntu:wght@700&display=swap');
 
-html{
-	scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-	padding: 0;
-	margin: 0;
-	font-family: 'Roboto', sans-serif;
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   text-align: center;
-  
-	
+
+
 }
 
-#topImage{
+#topImage {
   padding-top: 9.7vw;
 }
 
-@media only Screen and (max-width:430px){
-  #topImage{
-    padding-top:13vw;
+@media only Screen and (max-width:430px) {
+  #topImage {
+    padding-top: 13vw;
   }
 }
 
@@ -44,123 +48,132 @@ body{
 
 
 
-.site-content{
-	background-image :url("https://images.pexels.com/photos/2653362/pexels-photo-2653362.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-	background-attachment: fixed;
-	background-size: cover;
+.site-content {
+  background-image: url("https://images.pexels.com/photos/2653362/pexels-photo-2653362.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-.site-title, .site-desc{
-	color: white;
-	font-family:"Righteous";
+.site-title,
+.site-desc {
+  color: white;
+  font-family: "Righteous";
 }
 
-.site-title{
-	margin-top: 30%;
-	margin-bottom: 6%;
-	font-size: 50px;
+.site-title {
+  margin-top: 30%;
+  margin-bottom: 6%;
+  font-size: 50px;
 }
 
-.site-desc{
-	font-size: 14px;
-	padding-left: 15%;
-	margin-bottom: 40%
+.site-desc {
+  font-size: 14px;
+  padding-left: 15%;
+  margin-bottom: 40%
 }
-.container{
+
+.container {
   margin-top: 100px;
   padding-right: 30px;
   padding-left: 30px;
   background: linear-gradient(112.91deg,
-  rgba(255, 255, 255, 0.45) 3.51%,
-  rgba(255, 255, 255, 0) 111.71%);
-  width:100vw;
+      rgba(255, 255, 255, 0.45) 3.51%,
+      rgba(255, 255, 255, 0) 111.71%);
+  width: 100vw;
   border-radius: 25px;
-border: 2px solid #0000002a;
+  border: 2px solid #0000002a;
 
 
 }
 
-.section-1 .heading-1{
-	margin-top: 8%;
- font-family: 'Roboto', sans-serif;
- font-weight: 700;
- font-style: italic;
- text-align: center;
+.section-1 .heading-1 {
+  margin-top: 8%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  text-align: center;
 }
 
-.section-1 .heading-2{
-	margin-bottom: 5%;
-	font-size: 15px;
+.section-1 .heading-2 {
+  margin-bottom: 5%;
+  font-size: 15px;
 }
 
 
-.section-1 .para-1{
-	width: 60%;
-	margin-left: 20%;
-	margin-bottom: 5%;
+.section-1 .para-1 {
+  width: 60%;
+  margin-left: 20%;
+  margin-bottom: 5%;
 }
-.section-1 .card{
+
+.section-1 .card {
   border-radius: 20px;
   background-color: rgb(255, 255, 255);
-  box-shadow: 10px 10px 12px rgba(0,0,0,0.2);
+  box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.2);
 
 
 }
-.section-1 .title{
+
+.section-1 .title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
 }
-.date{
+
+.date {
   font-size: 1rem;
   text-align: center;
 }
-.section-1 .card-text, .para-1{
+
+.section-1 .card-text,
+.para-1 {
   text-align: left;
   padding: 0 2px 0 2px;
-	color: rgba(0, 0, 0, 0.59);
+  color: rgba(0, 0, 0, 0.59);
 }
-.section-1{
-	margin-bottom: 8%;
+
+.section-1 {
+  margin-bottom: 8%;
 }
 
 /*Section 2*/
 
-.section-2 .container-fluid{
-	background-image: url("https://images.pexels.com/photos/2653362/pexels-photo-2653362.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-	background-size: cover;
-	background-attachment: fixed;
+.section-2 .container-fluid {
+  background-image: url("https://images.pexels.com/photos/2653362/pexels-photo-2653362.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.section-2 .heading-1{
-	margin-top: 10%;
-	margin-bottom: 4%;
-	font-family: "Righteous";
-	width: 80%;
-	color: whitesmoke;
+.section-2 .heading-1 {
+  margin-top: 10%;
+  margin-bottom: 4%;
+  font-family: "Righteous";
+  width: 80%;
+  color: whitesmoke;
 }
 
-.section-2 .para{
-	width: 80%;
-	font-family: "Ubuntu";
-	color: whitesmoke;
-	margin-bottom: 7%
-
+.section-2 .para {
+  width: 80%;
+  font-family: "Ubuntu";
+  color: whitesmoke;
+  margin-bottom: 7%
 }
 
-.section-2 .btn{
-	margin-bottom: 15%;
-	width: 30%;
+.section-2 .btn {
+  margin-bottom: 15%;
+  width: 30%;
 }
-.button{
 
-margin: 4px 0 4px 0;
-  border-radius: 50px; 
-  background: linear-gradient(90deg,#755bea,#ff72c0);
+.button {
+
+  margin: 4px 0 4px 0;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #755bea, #ff72c0);
   border: none;
   color: #fff;
   letter-spacing: 1px;
   padding: 5px 12px;
 }
+
 .button:hover {
   box-shadow: 0 8px 16px 0 #755bea;
 
@@ -171,50 +184,55 @@ margin: 4px 0 4px 0;
   padding-top: 5px;
   padding-left: 5px;
   padding-right: 5px;
-border-radius: 20px;
-
+  border-radius: 20px;
 }
 
-.card-text{
+.card-text {
 
-  margin-top:0rem;
-  margin-bottom:0.3rem;
+  margin-top: 0rem;
+  margin-bottom: 0.3rem;
 }
-.bottom{
-  padding:4px;
-  margin-top:1px;
-  margin-left:0px;
+
+.bottom {
+  padding: 4px;
+  margin-top: 1px;
+  margin-left: 0px;
   margin-right: 8px;
 
 }
+
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
 }
-div.card-body{
+
+div.card-body {
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 
 }
 
-h4.card-title{
-  margin:0.3rem;
+h4.card-title {
+  margin: 0.3rem;
 }
-.col-md-3{
+
+.col-md-3 {
   padding-bottom: 1.5rem;
 }
-i.fa fa-clock-o fa-lg{
-  margin-top:13px;
+
+i.fa fa-clock-o fa-lg {
+  margin-top: 13px;
 }
 
 
 
 /* Achievement */
 
-.ab{
+.ab {
   padding-right: 2vw;
 }
-.abc{
-  float:right;
+
+.abc {
+  float: right;
 }
 
 /*.imgStyle {
@@ -230,18 +248,20 @@ i.fa fa-clock-o fa-lg{
 border-radius: 20px;
 }*/
 .card-body-style {
-	background: #654ea3; /*Ultra Violet*/
-	background: -webkit-linear-gradient(to right, #654ea3, #eaafc8);  
-	background: linear-gradient(to right, #654ea3, #eaafc8); 
+  background: #654ea3;
+  /*Ultra Violet*/
+  background: -webkit-linear-gradient(to right, #654ea3, #eaafc8);
+  background: linear-gradient(to right, #654ea3, #eaafc8);
 
-	
-	position: relative;
-	/*background-color: #4f2c82;*/
-	padding: 10px 70px 0px 70px;
-	/*background: #DAE2F8;  /*Moonlight*/
-	/*background: -webkit-linear-gradient(to right, #D6A4A4, #DAE2F8);  
+
+  position: relative;
+  /*background-color: #4f2c82;*/
+  padding: 10px 70px 0px 70px;
+  /*background: #DAE2F8;  /*Moonlight*/
+  /*background: -webkit-linear-gradient(to right, #D6A4A4, #DAE2F8);  
 	background: linear-gradient(to right, #D6A4A4, #DAE2F8);*/
 }
+
 .cardbox {
   margin-right: 2vw;
   padding-left: 0rem;
@@ -256,6 +276,7 @@ border-radius: 20px;
   padding-top: 20px;
   padding-bottom: 10px;
 }
+
 #slideLeft {
   color: rgb(255, 255, 255);
   margin-right: 10px;
@@ -263,12 +284,14 @@ border-radius: 20px;
   top: 200px;
   left: 1px;
 }
+
 #slideRight {
   color: rgb(255, 255, 255);
   position: absolute;
   top: 200px;
   right: 1px;
 }
+
 i.sicon1 {
   display: inline-block;
   border-radius: 60px;
@@ -276,6 +299,7 @@ i.sicon1 {
   background-color: black;
   padding: 15px 20px;
 }
+
 i.sicon2 {
   display: inline-block;
   border-radius: 60px;
@@ -283,20 +307,25 @@ i.sicon2 {
   background-color: black;
   padding: 15px 20px;
 }
+
 #slideLeft:hover {
   color: black;
 }
+
 #slideRight:hover {
   color: black;
 }
+
 i.sicon1:hover {
   box-shadow: 0px 0px 2px silver;
   background-color: silver;
 }
+
 i.sicon2:hover {
   box-shadow: 0px 0px 2px silver;
   background-color: silver;
 }
+
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
@@ -320,16 +349,16 @@ background: linear-gradient(112.91deg,
 
 .imgStyle{
     grid-area: image;
-    background: url("achievement_image.jpeg");
+    background: url("Event_page/file/dummy.jpg");
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     background-size: cover;
   }
 
 .a-card:hover {
-   box-shadow: 0 8px 16px 0 rgba(0,0,0,2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 2);
 }
 
-.card-body  {
-   padding: 2px 16px;
+.card-body {
+  padding: 2px 16px;
 }

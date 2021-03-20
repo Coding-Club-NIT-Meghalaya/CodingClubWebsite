@@ -57,48 +57,12 @@ const storage = new GridFsStorage({
 const upload = multer({
   storage
 });
+
 //model config
-var blogSchema = new mongoose.Schema({
-  title: String,
-  image: String,
-  body: String,
-  writtenBy: String,
-  created: {
-    type: Date,
-    default: Date.now
-  }
-});
-var memberSchema = new mongoose.Schema({
-  FirstName: String,
-  LastName: String,
-  Designation: Number,
-  DesignationName: String,
-  Github: String,
-  LinkedIn: String,
-  Facebook: String,
-  filename: String,
-});
-var ProjectSchema = new mongoose.Schema({
-  Name: String,
-  Field: String, //like web,app etc
-  Status: String, //ongoing/completed etc.
-  StartDate: {
-    type: Date,
-    default: Date.now
-  },
-  EndDate: {
-    type: Date,
-    default: Date.now
-  },
-  ShortDescription: String,
-  Description: String,
-  Github: String,
-  Link: String,
-  FileName: String
-});
-var Blog = mongoose.model("Blog", blogSchema)
-var TeamMember = mongoose.model("TeamMember", memberSchema);
-var Project = mongoose.model("Project", ProjectSchema);
+var Blog = require("./models/blog");
+var TeamMember = require("./models/teamMember");
+var Project = require("./models/project");
+var Event = require("./models/event");
 
 
 /////////////Landing/////////////////////////////////////////////////////////////
@@ -107,9 +71,32 @@ app.get("/", function (req, res) {
 });
 ///////////////////Events/////////////////////////////////////////////////////
 app.get("/events", function (req, res) {
-  res.render("event");
+  Event.find(function (err, obj) {
+    if (err)
+      res.send("Error occured");
+    else
+      res.render("event", {
+        arr: obj
+      });
+  }).sort({
+    StartDate: 1
+  });
 });
-
+//add new event route
+app.get("/admin/addEvent", function (req, res) {
+  res.render("addEvent");
+});
+app.post("/admin/addEvent", upload.single('EventPoster'), function (req, res) {
+  let newEvent = req.body;
+  console.log(newEvent);
+  newEvent["FileName"] = req.file.filename;
+  Event.create(newEvent, (err, newUser) => {
+    if (err)
+      res.send("Data Not uploaded");
+    else
+      res.redirect("/admin/addEvent");
+  });
+})
 //////////////////////////////////// Resources ///////////////////////////////////////////////////////////
 app.get("/resources", function (req, res) {
   const f = Blog.find((err, obj) => {
@@ -123,24 +110,24 @@ app.get("/resources", function (req, res) {
 });
 
 ///new Blog
-app.get("/blogs/new", (req, res) => {
-  res.render("newBlog");
+app.get("/admin/addBlog", (req, res) => {
+  res.render("addBlog");
 })
 
 //create Blog
-app.post("/blogs", function (req, res) {
+app.post("/admin/blog", function (req, res) {
   // console.log(req.body.blog);
   Blog.create(req.body.blog, (err, newBlog) => {
     if (err) {
       // alert("Please fill the details correctly");
-      res.render("newBlog");
+      res.render("addBlog");
     } else {
-      res.redirect("resources");
+      res.redirect("/resources");
     }
   })
 })
 //Show Blog
-app.get("/resources/blog/:id", (req, res) => {
+app.get("/admin/resources/blog/:id", (req, res) => {
   let Foundid = req.params.id;
   // console.log(Foundid);
   Blog.findOne({
@@ -168,7 +155,6 @@ app.get("/teams", function (req, res) {
     else
       res.render("team", {
         arr: obj,
-        index: 0
       });
   }).sort({
     Designation: 1
@@ -178,7 +164,7 @@ app.get("/teams", function (req, res) {
 
 
 //@get for image with its filename
-app.get('/Image/:filename', (req, res) => {
+app.get('/admin/Image/:filename', (req, res) => {
   gfs.files.findOne({
     filename: req.params.filename
   }, (err, file) => {
@@ -201,12 +187,12 @@ app.get('/Image/:filename', (req, res) => {
   })
 });
 //new User
-app.get("/addUser", function (req, res) {
-  res.render("adduser");
+app.get("/admin/addUser", function (req, res) {
+  res.render("addUser");
 });
 
 //@post for adding a team member(Create user)
-app.post("/adduser", upload.single('profileImage'), function (req, res) {
+app.post("/admin/addUser", upload.single('profileImage'), function (req, res) {
   let data = req.body;
   console.log(data);
   data["filename"] = req.file.filename;
@@ -214,7 +200,7 @@ app.post("/adduser", upload.single('profileImage'), function (req, res) {
     if (err)
       res.send("Data Not uploaded");
     else
-      res.redirect("adduser");
+      res.redirect("/admin/addUser");
   });
 });
 
@@ -233,10 +219,10 @@ app.get("/projects", function (req, res) {
 });
 
 
-app.get("/addProject", function (req, res) {
+app.get("/admin/addProject", function (req, res) {
   res.render("addProject");
 })
-app.post("/addProject", upload.single('projectImage'), function (req, res) {
+app.post("/admin/addProject", upload.single('projectImage'), function (req, res) {
   // console.log(req.body.blog);
   let data = req.body;
   console.log(data);
@@ -245,7 +231,7 @@ app.post("/addProject", upload.single('projectImage'), function (req, res) {
     if (err)
       res.send("Data Not uploaded");
     else
-      res.redirect("addProject");
+      res.redirect("/admin/addProject");
   });
 })
 

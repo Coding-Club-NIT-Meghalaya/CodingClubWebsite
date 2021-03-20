@@ -143,7 +143,8 @@ label{
 
 
 <script>
-    $('document').ready(function(){
+
+$('document').ready(function(){
   $('input[type="text"], input[type="email"], textarea').focus(function(){
     var background = $(this).attr('id');
     $('#' + background + '-form').addClass('formgroup-active');
