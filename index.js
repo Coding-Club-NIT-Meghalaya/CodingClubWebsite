@@ -133,10 +133,10 @@ app.get("/events", function (req, res) {
   });
 });
 //add new event route
-app.get("/addEvent", function (req, res) {
+app.get("/admin/addEvent", function (req, res) {
   res.render("addEvent");
 });
-app.post("/addEvent", upload.single('EventPoster'), function (req, res) {
+app.post("/admin/addEvent", upload.single('EventPoster'), function (req, res) {
   let newEvent = req.body;
   console.log(newEvent);
   newEvent["FileName"] = req.file.filename;
@@ -144,7 +144,7 @@ app.post("/addEvent", upload.single('EventPoster'), function (req, res) {
     if (err)
       res.send("Data Not uploaded");
     else
-      res.redirect("/addEvent");
+      res.redirect("/admin/addEvent");
   });
 })
 //////////////////////////////////// Resources ///////////////////////////////////////////////////////////
@@ -160,24 +160,24 @@ app.get("/resources", function (req, res) {
 });
 
 ///new Blog
-app.get("/blogs/new", (req, res) => {
-  res.render("newBlog");
+app.get("/admin/addBlog", (req, res) => {
+  res.render("addBlog");
 })
 
 //create Blog
-app.post("/blogs", function (req, res) {
+app.post("/admin/blog", function (req, res) {
   // console.log(req.body.blog);
   Blog.create(req.body.blog, (err, newBlog) => {
     if (err) {
       // alert("Please fill the details correctly");
-      res.render("newBlog");
+      res.render("addBlog");
     } else {
       res.redirect("resources");
     }
   })
 })
 //Show Blog
-app.get("/resources/blog/:id", (req, res) => {
+app.get("/admin/resources/blog/:id", (req, res) => {
   let Foundid = req.params.id;
   // console.log(Foundid);
   Blog.findOne({
@@ -205,7 +205,6 @@ app.get("/teams", function (req, res) {
     else
       res.render("team", {
         arr: obj,
-        index: 0
       });
   }).sort({
     Designation: 1
@@ -215,7 +214,7 @@ app.get("/teams", function (req, res) {
 
 
 //@get for image with its filename
-app.get('/Image/:filename', (req, res) => {
+app.get('/admin/Image/:filename', (req, res) => {
   gfs.files.findOne({
     filename: req.params.filename
   }, (err, file) => {
@@ -238,12 +237,12 @@ app.get('/Image/:filename', (req, res) => {
   })
 });
 //new User
-app.get("/addUser", function (req, res) {
-  res.render("adduser");
+app.get("/admin/addUser", function (req, res) {
+  res.render("addUser");
 });
 
 //@post for adding a team member(Create user)
-app.post("/adduser", upload.single('profileImage'), function (req, res) {
+app.post("/admin/addUser", upload.single('profileImage'), function (req, res) {
   let data = req.body;
   console.log(data);
   data["filename"] = req.file.filename;
@@ -251,7 +250,7 @@ app.post("/adduser", upload.single('profileImage'), function (req, res) {
     if (err)
       res.send("Data Not uploaded");
     else
-      res.redirect("adduser");
+      res.redirect("/admin/addUser");
   });
 });
 
@@ -270,10 +269,10 @@ app.get("/projects", function (req, res) {
 });
 
 
-app.get("/addProject", function (req, res) {
+app.get("/admin/addProject", function (req, res) {
   res.render("addProject");
 })
-app.post("/addProject", upload.single('projectImage'), function (req, res) {
+app.post("/admin/addProject", upload.single('projectImage'), function (req, res) {
   // console.log(req.body.blog);
   let data = req.body;
   console.log(data);
@@ -282,7 +281,7 @@ app.post("/addProject", upload.single('projectImage'), function (req, res) {
     if (err)
       res.send("Data Not uploaded");
     else
-      res.redirect("addProject");
+      res.redirect("/admin/addProject");
   });
 })
 
