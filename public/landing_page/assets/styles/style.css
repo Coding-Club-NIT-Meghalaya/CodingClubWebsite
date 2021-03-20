@@ -385,7 +385,7 @@ textarea {
 
 
 
-/* What Do We Do Ka CSS (BHawna) */
+/* What Do We Do Ka CSS (BHawna) 
 .tablist_c {
       
     width: 300px;
@@ -399,13 +399,13 @@ textarea {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background: #ffffff1a; */
+    /* background: #ffffff1a; 
     
     padding: 0.2em;
     
     
     text-align: center;
-    /* backdrop-filter: blur(70px); */
+    /* backdrop-filter: blur(70px);
     margin: 30px 0px;
     margin-top: 50px;
 
@@ -414,7 +414,7 @@ textarea {
     /* width: 20vw;
     height: 16vw;
     padding: 0 20px;
-    position: relative; */
+    position: relative; 
       width: 30vw;
       height: 24vw;
       padding:0px 20px;
@@ -435,7 +435,7 @@ textarea {
     border-radius: 10px;
     border: 3px solid rgba(255, 255, 255, 0.2);
     /* -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px); */
+    backdrop-filter: blur(10px); 
     width: 55%;
     height: 60%;
     
@@ -459,7 +459,7 @@ textarea {
     margin-right: auto
     
     /* width: 10vw; */
-    /* height: 100% */
+    /* height: 100% 
     
   }
   #header{
@@ -499,7 +499,7 @@ textarea {
   
 .main-title {
 
-/* position: absolute; */
+/* position: absolute; 
  margin: 0 6vw 0 10vw ;
  
  
@@ -513,8 +513,49 @@ display: flex;
 -webkit-box-align: center;
 -ms-flex-align: center;
 align-items: center;
-}
-
+}*/
+           
+.main-title {
+    
+    /* position: absolute; */
+     margin: 0 6vw 0 10vw ;
+     
+     
+    font-size: 3.5vw;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+    
+    align-items:center;
+    text-align: justify;
+    }
+    .tablist__link {
+        display: inline-block;
+        background: linear-gradient(112.91deg, rgba(212, 207, 207, 0.479) 3.51%, rgba(247, 244, 244, 0.178) 111.71%);
+        border-top: 1px solid rgb(255, 255, 255, 0.5);
+        border-right: 1px solid rgb(255, 255, 255, 0.5);
+        border-radius: 4px;
+        border: 3px solid rgba(255, 255, 255, 0.2);
+        /* -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px); */
+        width: 55%;
+        height: 94%;
+        
+      }
+      
+      .tablist__link[aria-selected="true"],
+      .tablist__link:hover,
+      .tablist__link:focus {
+        background: rgba(0, 0, 0, 0.7);
+      }
+      
+      .tablist__link[aria-selected="true"] .tablist__figure-caption,
+      .tablist__link:hover .tablist__figure-caption,
+      .tablist__link:focus .tablist__figure-caption {
+        color: rgb(49, 17, 233);
+      }
+     
+     
+    
 
 
 
