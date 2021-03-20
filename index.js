@@ -57,62 +57,12 @@ const storage = new GridFsStorage({
 const upload = multer({
   storage
 });
+
 //model config
-var blogSchema = new mongoose.Schema({
-  title: String,
-  image: String,
-  body: String,
-  writtenBy: String,
-  created: {
-    type: Date,
-    default: Date.now
-  }
-});
-var memberSchema = new mongoose.Schema({
-  FirstName: String,
-  LastName: String,
-  Designation: Number,
-  DesignationName: String,
-  Github: String,
-  LinkedIn: String,
-  Facebook: String,
-  filename: String,
-});
-var ProjectSchema = new mongoose.Schema({
-  Title: String,
-  Field: String, //like web,app etc
-  Status: String, //ongoing/completed etc.
-  StartDate: {
-    type: Date,
-    default: Date.now
-  },
-  EndDate: {
-    type: Date,
-    default: Date.now
-  },
-  ShortDescription: String,
-  Description: String,
-  Github: String,
-  Link: String,
-  FileName: String
-});
-var EventSchema = new mongoose.Schema({
-  EventName: String,
-  StartDate: {
-    type: Date,
-    default: Date.now
-  },
-  EndDate: {
-    type: Date,
-    default: Date.now
-  },
-  FileName: String,
-  Link: String,
-});
-var Blog = mongoose.model("Blog", blogSchema)
-var TeamMember = mongoose.model("TeamMember", memberSchema);
-var Project = mongoose.model("Project", ProjectSchema);
-var Event = mongoose.model("Event", EventSchema);
+var Blog = require("./models/blog");
+var TeamMember = require("./models/teamMember");
+var Project = require("./models/project");
+var Event = require("./models/event");
 
 
 /////////////Landing/////////////////////////////////////////////////////////////
@@ -172,7 +122,7 @@ app.post("/admin/blog", function (req, res) {
       // alert("Please fill the details correctly");
       res.render("addBlog");
     } else {
-      res.redirect("resources");
+      res.redirect("/resources");
     }
   })
 })
