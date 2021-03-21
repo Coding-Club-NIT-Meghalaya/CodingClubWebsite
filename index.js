@@ -63,6 +63,7 @@ var Blog = require("./models/blog");
 var TeamMember = require("./models/teamMember");
 var Project = require("./models/project");
 var Event = require("./models/event");
+var Achievement = require("./models/achievement");
 
 
 /////////////Landing/////////////////////////////////////////////////////////////
@@ -71,13 +72,22 @@ app.get("/", function (req, res) {
 });
 ///////////////////Events/////////////////////////////////////////////////////
 app.get("/events", function (req, res) {
+
   Event.find(function (err, obj) {
     if (err)
       res.send("Error occured");
-    else
-      res.render("event", {
-        arr: obj
-      });
+    else {
+      Achievement.find(function (err, obj1) {
+        if (err)
+          res.send("Error Occured");
+        else
+          res.render("event", {
+            arr: obj,
+            achievement: obj1,
+          });
+      })
+
+    }
   }).sort({
     StartDate: 1
   });
@@ -96,7 +106,21 @@ app.post("/admin/addEvent", upload.single('EventPoster'), function (req, res) {
     else
       res.redirect("/admin/addEvent");
   });
-})
+});
+app.get("/admin/addAchievement", function (req, res) {
+  res.render("addAchievement");
+});
+app.post("/admin/addAchievement", upload.single('achievementImage'), function (req, res) {
+  let newAchievement = req.body;
+  console.log(newAchievement);
+  newAchievement["FileName"] = req.file.filename;
+  Achievement.create(newAchievement, (err, newAchievement) => {
+    if (err)
+      res.send("Data Not uploaded");
+    else
+      res.redirect("/admin/addAchievement");
+  });
+});
 //////////////////////////////////// Resources ///////////////////////////////////////////////////////////
 app.get("/resources", function (req, res) {
   const f = Blog.find((err, obj) => {
