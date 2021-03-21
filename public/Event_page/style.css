@@ -407,4 +407,9 @@ background-color: transparent;
   }
 }
 
+@media screen and (max-width: 800px) {
+.a-card.card-body{
+font-size: 15px;
+  }
+}
 
