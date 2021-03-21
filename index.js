@@ -64,6 +64,7 @@ var TeamMember = require("./models/teamMember");
 var Project = require("./models/project");
 var Event = require("./models/event");
 var Achievement = require("./models/achievement");
+var Materials = require("./models/material");
 
 
 /////////////Landing/////////////////////////////////////////////////////////////
@@ -126,10 +127,18 @@ app.get("/resources", function (req, res) {
   const f = Blog.find((err, obj) => {
     if (err) {
       res.send("error occured");
-    } else
-      res.render("resource", {
-        blog: obj
-      });
+    } else {
+      Materials.find((err, obj1) => {
+        if (err)
+          res.send("error Occurred");
+        else {
+          res.render("resource", {
+            blog: obj,
+            Material: obj1,
+          });
+        }
+      })
+    }
   })
 });
 
@@ -151,8 +160,8 @@ app.post("/admin/addBlog", upload.single('blogImage'), function (req, res) {
     } else {
       res.redirect("/resources");
     }
-  })
-})
+  });
+});
 //Show Blog
 app.get("/admin/resources/blog/:id", (req, res) => {
   let Foundid = req.params.id;
@@ -170,6 +179,68 @@ app.get("/admin/resources/blog/:id", (req, res) => {
     }
   })
 })
+app.get("/admin/addMaterial", function (req, res) {
+  res.render("addMaterial");
+});
+app.post("/admin/addMaterial", function (req, res) {
+  let newData = req.body;
+  console.log(newData);
+  let getYear = newData.AcademicYear;
+  Materials.findOne({
+    Year: getYear
+  }, function (err, foundData) {
+    if (err) {
+      res.send("Error Occurred");
+    } else {
+      if (foundData === null) {
+        let newobj = {
+          Year: getYear,
+          Field: {
+            Orientation: {
+              Event: [],
+            },
+            Assignment: {
+              Event: [],
+            },
+            Presentation: {
+              Event: [],
+            }
+          }
+        }
+        Materials.create(newobj, function (err, newBlog) {
+          if (err) {
+            // alert("Please fill the details correctly");
+            res.send("Error Occured");
+          } else {
+            console.log("Object Added Successfully");
+          }
+        });
+
+      }
+      var str = "Field." + newData.Field + ".Event";
+      console.log(str);
+      Materials.findOneAndUpdate({
+        Year: getYear
+      }, {
+        $push: {
+          [str]: {
+            Link: newData.Link,
+            Name: newData.Name
+          }
+        }
+      }, null, function (err, docs) {
+        if (err) {
+          console.log(err);
+          res.send("Error Occurred");
+        } else {
+          console.log("Original Doc : ", docs);
+          res.send("Successfull");
+        }
+      });
+    }
+  });
+
+});
 
 ///////////////////////////////////Resources End///////////////////////////////////////////////////////////////////////////////
 

@@ -62,92 +62,51 @@
                 <h2 class="card__title" id="material">Materials</h2>
               </div>
               <br />
-              <button class="accordion"><i class="fa fa-paper-plane" aria-hidden="false"></i> 2019-20</button>
+              <%for(let i=0;i<Material.length;i++){%>
+              <button class="accordion"><i class="fa fa-paper-plane" aria-hidden="false"></i>
+                <%=Material[i].Year%></button>
               <div class="panel">
                 <button class="sub-accordion"><img src="resource_page/images/folder_icon.png" height="22px"
                     width="22px" /> Orientation</button>
                 <div class="sub-panel">
                   <ul>
+                    <%for(let j=0;j<Material[i].Field.Orientation.Event.length;j++){%>
                     <li>
-                      <a href="#" class="links"><i class="fa fa-link" aria-hidden="false"></i> Link 1</a>
+                      <a href="<%=Material[i].Field.Orientation.Event[j].Link%>" class="links"><i class="fa fa-link"
+                          aria-hidden="false"></i><%=Material[i].Field.Orientation.Event[j].Name%></a>
                     </li>
-                    <li>
-                      <a href="#" class="links"><i class="fa fa-link" aria-hidden="false"></i> Link 2</a>
-                    </li>
+                    <%}%>
                   </ul>
                 </div>
 
-                <button class="sub-accordion"><img src="resource_page/images/folder_icon.png" height="22px"
-                    width="22px" /> Assignment</button>
-                <div class="sub-panel">
-                  <ul>
+                <button class=" sub-accordion"><img src="resource_page/images/folder_icon.png" height="22px"
+                          width="22px" /> Assignment</button>
+                        <div class="sub-panel">
+                          <ul>
+                            <%for(let j=0;j<Material[i].Field.Assignment.Event.length;j++){%>
                     <li>
-                      <a href="#" class="links"><i class="fa fa-link" aria-hidden="false"></i> Link 1</a>
+                      <a href="<%=Material[i].Field.Assignment.Event[j].Link%>" class="links"><i class="fa fa-link"
+                          aria-hidden="false"></i><%=Material[i].Field.Assignment.Event[j].Name%></a>
                     </li>
+                    <%}%>
+                          </ul>
+                        </div>
+                        <button class="sub-accordion"><img src="resource_page/images/folder_icon.png" height="22px"
+                            width="22px" /> Presentation</button>
+                        <div class="sub-panel">
+                          <ul>
+                            <%for(let j=0;j<Material[i].Field.Presentation.Event.length;j++){%>
                     <li>
-                      <a href="#" class="links"><i class="fa fa-link" aria-hidden="false"></i> Link 2</a>
+                      <a href="<%=Material[i].Field.Presentation.Event[j].Link%>" class="links"><i class="fa fa-link"
+                          aria-hidden="false"></i><%=Material[i].Field.Presentation.Event[j].Name%></a>
                     </li>
-                  </ul>
+                    <%}%>
+                          </ul>
+                        </div>
                 </div>
-                <button class="sub-accordion"><img src="resource_page/images/folder_icon.png" height="22px"
-                    width="22px" /> Presentation</button>
-                <div class="sub-panel">
-                  <ul>
-                    <li>
-                      <a href="#" class="links"><i class="fa fa-link" aria-hidden="false"></i> Link 1</a>
-                    </li>
-                    <li>
-                      <a href="#" class="links"><i class="fa fa-link" aria-hidden="false"></i> Link 2</a>
-                    </li>
-                  </ul>
+                <%}%>
                 </div>
               </div>
-
-              <button class="accordion"><i class="fa fa-paper-plane" aria-hidden="false"></i> 2020-21</button>
-              <div class="panel">
-                <button class="sub-accordion"><img src="resource_page/images/folder_icon.png" height="22px"
-                    width="22px" /> Orientation</button>
-                <div class="sub-panel">
-                  <ul>
-                    <li>
-                      <a href="#" class="links"><i class="fa fa-link" aria-hidden="false"></i> Link 1</a>
-                    </li>
-                    <li>
-                      <a href="#" class="links"><i class="fa fa-link" aria-hidden="false"></i> Link 2</a>
-                    </li>
-                  </ul>
-
-                </div>
-
-                <button class="sub-accordion"><img src="resource_page/images/folder_icon.png" height="22px"
-                    width="22px" /> Assignment</button>
-                <div class="sub-panel">
-                  <ul>
-                    <li>
-                      <a href="#" class="links"><i class="fa fa-link" aria-hidden="false"></i> Link 1</a>
-                    </li>
-                    <li>
-                      <a href="#" class="links"><i class="fa fa-link" aria-hidden="false"></i> Link 2</a>
-                    </li>
-                  </ul>
-                </div>
-                <button class="sub-accordion"><img src="resource_page/images/folder_icon.png" height="22px"
-                    width="22px" /> Presentation</button>
-                <div class="sub-panel">
-                  <ul>
-                    <li>
-
-
-                      <a href="#" class="links"><i class="fa fa-link" aria-hidden="false"></i> Link1</a>
-                    </li>
-                    <li>
-                      <a href="#" class="links"><i class="fa fa-link" aria-hidden="false"></i> Link 2</a>
-                    </li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
           </article>
         </section>
         <section class="sec" id="blogs" role="tabpanel" aria-hidden="false">
