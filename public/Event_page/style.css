@@ -362,3 +362,49 @@ background: linear-gradient(112.91deg,
 .card-body {
   padding: 2px 16px;
 }
+
+/* Add the ability to scroll */
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+height: 8px;
+width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+box-shadow: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #FAD3EC;
+border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #3C1A63;
+}
+
+div.scrollmenu a:hover {
+background-color: transparent;
+}
+
+@media screen and (max-width: 800px) {
+.cardbox .a-card{
+    width: 16.2rem;
+    height: auto;
+}
+}
+
+@media screen and (max-width: 800px) {
+  .scrollbtn{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width:100%;
+    position:relative;
+  }
+}
+
+
