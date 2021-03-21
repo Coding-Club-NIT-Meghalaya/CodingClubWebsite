@@ -158,24 +158,20 @@
               </div><br>
               <div class="cardbox d-flex flex-row flex-nowrap">
                 <% let temp = blog.length %>
-                <% if(blog.length> 5){ %>
-                <% temp = 5; %>
-                <% } %>
-
                 <% for(let i=0; i<temp; i++) {%>
                 <a href="/admin/resources/blog/<%= blog[i].id %> ">
                   <div class="d-flex flex-row flex-nowrap">
                     <div className="user_name align-self-end">
                       <div class="card1">
-                        <img class="card-img-top imgStyle" src="./resource_page/images/dummy.jpg"
+                        <img class="card-img-top imgStyle" src="/admin/Image/<%=blog[i].FileName%>"
                           alt="Card image cap" />
                         <div class="card-body">
-                          <h3 class="card-title"><%= blog[i].title %></h3>
+                          <h3 class="card-title"><%= blog[i].Title %></h3>
                           <p class="card-text">
-                            <%= blog[i].body %>
+                            <%= blog[i].Content %>
                           </p>
                           <p class="card-text">
-                            <small class="text-muted"><%= blog[i].created %> </small>
+                            <small class="text-muted"><%= blog[i].CreatedDate %> </small>
                           </p>
                         </div>
                       </div>

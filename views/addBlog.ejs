@@ -2,286 +2,78 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Add Blog Post</title>
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
-  <link rel="stylesheet" type="text/css" href="/stylesheets/app.css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+  </script>
+  <title>AddBlog</title>
 </head>
 
-
-<style>
-  @import url(https://fonts.googleapis.com/css?family=Sniglet|Raleway:900);
-
-  body,
-  html {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: 'Sniglet', cursive;
-    background-image: url("https://htmlcolors.com/gradients-images/53-light-purple-gradient.jpg");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-attachment: fixed;
-  }
-
-  h1 {
-    font-weight: normal;
-    font-size: 50px;
-    font-family: 'Raleway', sans-serif;
-    margin: 0 auto;
-    margin-top: 70px;
-    margin-bottom: 70px;
-    width: 480px;
-    color: rgb(135, 18, 231);
-    text-align: center;
-  }
-
-  h2 {
-    font-weight: normal;
-    font-size: 40px;
-    font-family: 'Raleway', sans-serif;
-    margin: 0 auto;
-    margin-top: 50px;
-    margin-top: 50px;
-    width: 300px;
-    color: rgb(90, 6, 129);
-    text-align: center;
-  }
-
-  #form {
-    height: 100%;
-    /* background-color: #9c5ad1; */
-    overflow: hidden;
-    position: relative;
-
-    /* glassmosphism css */
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(2.5px);
-    -webkit-backdrop-filter: blur(2.5px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-
-  }
-
-  form {
-    margin: 0 auto;
-    width: 600px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    color: rgb(0, 0, 0);
-    position: relative;
-  }
-
-  label,
-  input,
-  textarea {
-    display: block;
-  }
-
-  input,
-  textarea {
-    width: 600px;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    padding: 10px;
-    font-family: 'Sans-serif';
-    font-size: 1.3em;
-    color: #2e2c2c;
-    transition: border 0.2s;
-    border: solid 2px #706775;
-    box-sizing: border-box;
-
-  }
-
-  input:focus,
-  textarea:focus {
-    border: solid 2px #630b9e;
-  }
-
-  textarea {
-    height: 150px;
-    resize: none;
-    overflow: auto;
-  }
-
-  input[type="submit"] {
-    background-color: rgb(135, 18, 231);
-    color: white;
-    height: 50px;
-    cursor: pointer;
-    margin-top: 40px;
-    margin-top: 40px;
-    font-size: 1.3em;
-    font-family: 'Sniglet', cursive;
-    transition: background-color 0.4s;
-  }
-
-  input[type="submit"]:hover {
-    background-color: #3e67d6;
-
-  }
-
-  label {
-    font-size: 1.4em;
-    margin-top: 35px;
-    margin-bottom: 5px;
-    padding-left: 6px;
-  }
-
-  .formgroup {
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    background-size: 10.5%;
-    width: 700px;
-    padding-top: 2px;
-  }
-
-  .img-responsive {
-    max-width: 100%;
-    height: auto;
-  }
-</style>
-
-
-
-<script>
-  $('document').ready(function () {
-    $('input[type="text"], input[type="email"], textarea').focus(function () {
-      var background = $(this).attr('id');
-      $('#' + background + '-form').addClass('formgroup-active');
-      $('#' + background + '-form').removeClass('formgroup-error');
-    });
-    $('input[type="text"], input[type="email"], textarea').blur(function () {
-      var background = $(this).attr('id');
-      $('#' + background + '-form').removeClass('formgroup-active');
-    });
-
-    function errorfield(field) {
-      $(field).addClass('formgroup-error');
-      console.log(field);
-    }
-
-    $("#waterform").submit(function () {
-      var stopsubmit = false;
-
-      if ($('#name').val() == "") {
-        errorfield('#name-form');
-        stopsubmit = true;
-      }
-      if ($('#email').val() == "") {
-        errorfield('#email-form');
-        stopsubmit = true;
-      }
-      if (stopsubmit) return false;
-    });
-
-  });
-</script>
-
-
-
-
 <body>
-
-  <!-- <div class="ui main text container segment"> -->
-  <div class="">
-    <br>
-    <h1>Add Blog Post</h1>
-
-    <div id="form">
-
-      <form id="waterform" action="/admin/blog" method="POST">
-
-        <!-- <div class="formgroup" id="name-form">
-            <label for="name">Your name*</label>
-            <input type="text" id="name" name="name" />
-        </div>
-        
-        <div class="formgroup" id="email-form">
-            <label for="comment_email">Your e-mail*</label>
-            <input type="email" id="comment_email" name="comment_email" />
-        </div>
-        
-        <div class="formgroup" id="message-form">
-            <label for="message">Comment</label>
-            <textarea id="message" name="message"></textarea>
-        </div>
-        
-          <input type="submit" value="Submit" />  -->
-
-
-        <div class="form-group">
-          <label for="author">Author Name</label>
-          <input type="text" class="form-control" name="author">
-        </div>
-
-
-        <div class="form-group">
-          <label for="author_email">Author Email</label>
-          <input type="email" class="form-control" name="author_email">
-        </div>
-
-
-        <div class="form-group">
-          <label for="blog_category">Post Category</label>
-          <select name="blog_category" id="blog_category">
-            <option value="Unclassified">Select options</option>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 m-auto">
+        <h1 class="text-center display-4 my-4">Add Blog Post to The database</h1>
+        <form action="/admin/addBlog" method="POST" enctype="multipart/form-data">
+          <div class="row">
+            <div class="col">
+              <input type="text" name="Title" class="form-control" placeholder="Title" aria-label="Title">
+            </div>
+          </div>
+          <div class="row my-4">
+            <div class="col">
+              <input type="text" name="AuthorName" class="form-control" placeholder="Author Name"
+                aria-label="Author name">
+            </div>
+            <div class="col">
+              <input type="email" name="AuthorEmail" class="form-control" placeholder="Author Email"
+                aria-label="Author Email">
+            </div>
+          </div>
+          <select class="form-select my-4" name="Category" aria-label="Default select example">
+            <option selected>Choose Category</option>
             <option value="Competitive Programming">Competitive Programming</option>
             <option value="Web Development">Web Development</option>
-            <option value="App Development">App Development</option>
             <option value="Machine Learning">Machine Learning</option>
             <option value="Network Security">Network Security</option>
+            <option value="App Development">App Development</option>
           </select>
-        </div>
-
-
-        <!-- post status is draft unless approved by admin; hidden -->
-        <div class="form-group" hidden>
-          <label for="blog_status">Post Status</label>
-          <input type="text" class="form-control" name="blog_status" value="Draft">
-        </div>
-
-        <div class="form-group">
-          <label for="blog_image">Post Image</label>
-          <input type="file" name="image">
-        </div>
-
-
-        <div class="form-group">
-          <label for="blog_content">Post Content</label>
-          <textarea class="form-control" name="blog_content" id="body" cols="40" rows="20"></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="blog_tags">Post Tags</label>
-          <input type="text" class="form-control" name="blog_tags">
-        </div>
-
-
-
-        <!-- <div class="">
-            <input type="checkbox" id="tag_value1" name="tag_value1" value="CP">
-            <label for="tag_value1"> Competitive Programming</label>
-            <input type="checkbox" id="tag_value2" name="tag_value2" value="WebDev">
-            <label for="tag_value2"> Web Development</label>
-            <input type="checkbox" id="tag_value3" name="tag_value3" value="AppDev">
-            <label for="tag_value3"> App Development</label>
-            <input type="checkbox" id="tag_other" name="tag_other" value="Other">
-            <label for="tag_value3">Other Tag </label>
-          </div> -->
-
-        <input class="btn btn-primary" type="submit" name="create_post" value="Publish Post">
-
-      </form>
+          <div class="form-floating my-4">
+            <textarea class="form-control" name="Content" placeholder="Write Full Description" id="floatingTextarea2"
+              style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Content Of the Blog</label>
+          </div>
+          <div class="form-floating my-4">
+            <textarea class="form-control" name="Tags" placeholder="Write a Short Description"
+              id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Related Tags</label>
+          </div>
+          <div class="col my-2">
+            <p>Created Date:</p>
+            <input type="date" name="CreatedDate" class="form-control" placeholder="Date" aria-label="Date">
+          </div>
+          <label for="basic-url" class="form-label">Any Link</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">Link(if any)</span>
+            <input type="text" name="Link" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+          </div>
+          <div class="input-group mb-3">
+            <div class="col">
+              <label for="file" class="custom-file-label">Choose Blog Image</label>
+            </div>
+            <div class="col">
+              <input type="file" name="blogImage" class="form-control" id="inputGroupFile02">
+            </div>
+          </div>
+          <input type="submit" value="Submit" class="btn btn-primary btn-block">
+        </form>
+      </div>
     </div>
-
-
   </div>
-
 </body>
 
 </html>

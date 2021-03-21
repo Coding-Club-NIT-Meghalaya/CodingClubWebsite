@@ -115,9 +115,12 @@ app.get("/admin/addBlog", (req, res) => {
 })
 
 //create Blog
-app.post("/admin/blog", function (req, res) {
-  // console.log(req.body.blog);
-  Blog.create(req.body.blog, (err, newBlog) => {
+app.post("/admin/addBlog", upload.single('blogImage'), function (req, res) {
+
+  let newData = req.body;
+  console.log(newData);
+  newData["FileName"] = req.file.filename;
+  Blog.create(newData, (err, newBlog) => {
     if (err) {
       // alert("Please fill the details correctly");
       res.render("addBlog");
