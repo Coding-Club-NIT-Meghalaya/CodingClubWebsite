@@ -1,202 +1,100 @@
+<div class="container-fluid card-body-style">
+	<!-- <div class="row">  -->
+	<!-- <div class="col-lg-1 col-xl-1 col-sm-1 col-xs-1"> -->
 
-		<div class="container-fluid card-body-style">
-		   <!-- <div class="row">  -->
-			<!-- <div class="col-lg-1 col-xl-1 col-sm-1 col-xs-1"> --> 
-			  
-			   
-			<!-- </div> -->
-			
-			<!-- <div class="col-lg-12 col-xl-12 col-sm-12 col-xs-12 "> -->
-			  <!--<div className=" items">-->
-				<h1 class="heading-1">Achievements</h1>
-				<small>Show your skills in open innovation challenges and case study & business plan competition open for students, professionals & stratups
-					<!-- <span style="float:right;"><button type="button" class="btn btn-outline-dark btn-sm">Explore all</button></span> --> </small>
 
-					<hr class="style13">
-				<div class="row d-flex flex-row flex-nowrap overflow-auto" style="display: flex;" id="culture_row">
-				<div class="cardbox">
-					
-					  <div class=" d-flex flex-column">
-						<div className="user_name align-self-end">
-							<div class="a-card" >
-								<img class="card-img-top imgStyle" src="Event_page/file/dummy.jpg" alt="card image cap">
-								<div class="card-body">
-									<h3 class="card-title">Achievement Name</h3>
-									<span class="date">Date</span>
-									<span class="time">Time</span>
-									<p class="card-text">Lorem ipsum dolor sit amet,  ex ea commodo consequat.</p>
-								</div>
-							</div>
+	<!-- </div> -->
+
+	<!-- <div class="col-lg-12 col-xl-12 col-sm-12 col-xs-12 "> -->
+	<!--<div className=" items">-->
+	<h1 class="heading-1">Achievements</h1>
+	<small>Show your skills in open innovation challenges and case study & business plan competition open for students,
+		professionals & stratups
+		<!-- <span style="float:right;"><button type="button" class="btn btn-outline-dark btn-sm">Explore all</button></span> -->
+	</small>
+
+	<hr class="style13">
+	<div class="row d-flex flex-row flex-nowrap overflow-auto" style="display: flex;" id="culture_row">
+		<%for(let i=0;i<achievement.length;i++){%>
+		<div class="cardbox">
+			<div class=" d-flex flex-column">
+				<div className="user_name align-self-end">
+					<div class="a-card">
+						<img class="card-img-top imgStyle" src="/admin/Image/<%=achievement[i].FileName%>"
+							alt="card image cap">
+						<div class="card-body">
+							<h3 class="card-title"><%=achievement[i].Name%></h3>
+							<span class="date"><%=achievement[i].Date%></span>
+							<p class="card-text"><%=achievement[i].Description%></p>
 						</div>
-					  </div>
-					
-				</div>
-				<div class="cardbox">
-					<div class=" d-flex flex-column">
-					  <div className="user_name align-self-end">
-						  <div class="a-card" >
-							  <img class="card-img-top imgStyle" src="Event_page/file/dummy.jpg" alt="Card image cap">
-							  <div class="card-body">
-								  <h3 class="card-title">Achievement Name</h3>
-								  <span class="date">Date</span>
-									<span class="time">Time</span>
-									<p class="card-text">Lorem ipsum dolor sit amet,  ex ea commodo consequat.</p>							  </div>
-						  </div>
-					  </div>
-					</div>
-				  
-				</div>
-				<div class="cardbox">
-					<div class=" d-flex flex-column">
-					  <div className="user_name align-self-end">
-						  <div class="a-card" >
-							  <img class="card-img-top imgStyle" src="Event_page/file/dummy.jpg" alt="Card image cap">
-							  <div class="card-body">
-								  <h3 class="card-title">Achievement Name</h3>
-								  <span class="date">Date</span>
-									<span class="time">Time</span>
-									<p class="card-text">Lorem ipsum dolor sit amet,  ex ea commodo consequat.</p>								  
-							  </div>
-						  </div>
-					  </div>
 					</div>
 				</div>
-				<div class="cardbox">
-					
-					<div class=" d-flex flex-column">
-					 
-					  <div className="user_name align-self-end">
-						  <div class="a-card">
-							  <img class="card-img-top imgStyle" src="Event_page/file/dummy.jpg" alt="Card image cap">
-							  <div class="card-body">
-								  <h3 class="card-title">Achievement Name</h3>
-								  <span class="date">Date</span>
-									<span class="time">Time</span>
-									<p class="card-text">Lorem ipsum dolor sit amet,  ex ea commodo consequat.</p>								  
-							  </div>
-						  </div>
-					  </div>
-					</div>
-				  
-				</div>
-				<div class="cardbox" id="raw">
-					
-					<div class=" d-flex flex-column">
-					 
-					  <div className="user_name align-self-end">
-						  <div class="a-card" >
-							  <img class="card-img-top imgStyle" src="Event_page/file/dummy.jpg" alt="Card image cap">
-							  <div class="card-body">
-								  <h3 class="card-title">Achievement Name</h3>
-								  <span class="date">Date</span>
-									<span class="time">Time</span>
-									<p class="card-text">Lorem ipsum dolor sit amet,  ex ea commodo consequat.</p>								  
-							  </div>
-						  </div>
-					  </div>
-					</div>
-				  
-				</div>
-				<div class="cardbox">
-					
-					<div class=" d-flex flex-column">
-					 
-					  <div className="user_name align-self-end">
-						  <div class="a-card" >
-							  <img class="card-img-top imgStyle" src="Event_page/file/dummy.jpg" alt="Card image cap">
-							  <div class="card-body">
-								  <h3 class="card-title">Achievement Name</h3>
-								  <span class="date">Date</span>
-									<span class="time">Time</span>
-									<p class="card-text">Lorem ipsum dolor sit amet,  ex ea commodo consequat.</p>								 
-							  </div>
-						  </div>
-					  </div>
-					</div>
-				  
-				</div>
-				 <div class="cardbox">
-					
-					  <div class=" d-flex flex-column">
-					   
-						<div className="user_name align-self-end">
-							<div class="a-card" >
-								<img class="card-img-top imgStyle" src="Event_page/file/dummy.jpg" alt="Card image cap">
-								<div class="card-body">
-									<h3 class="card-title">Achievement Name</h3>
-									<span class="date">Date</span>
-									<span class="time">Time</span>
-									<p class="card-text">Lorem ipsum dolor sit amet,  ex ea commodo consequat.</p>									
-								</div>
-							</div>
-						</div>
-					  </div>
-					
-				  </div>
-				 
-				 
-	
-				<!-- </div>
-			  </div> -->
 			</div>
-	 
-			  
-				<div class="slide_button">
-				  <div class="scrollbtn">
-					<span id="slideLeft" class="ab" type="button"><i class="fas fa-chevron-left fa-2x sicon1"></i></span>
-					<span id="slideRight"  type="button"><i class="fas fa-chevron-right fa-2x sicon2"></i></i></span>
-				  </div>
-				</div>
-			<!--</div>-->
-		  </div>
-		  <hr class="style13">
+		</div>
+		<%}%>
+		<!-- </div>
+			  </div> -->
+	</div>
 
 
-      
-	  <script>
-		const buttonRight1 = document.getElementById('slideRight');
-		const buttonLeft1 = document.getElementById('slideLeft');
-		
-	
-		buttonRight1.onclick = function () {
-		  document.getElementById('culture_row').scrollLeft += 338;
-		  behavior: 'smooth';
-		};
-	
-		buttonLeft1.onclick = function () {
-		  document.getElementById('culture_row').scrollLeft -= 338;
-		  behavior: 'smooth';
-		};
-	
-	   
-		//////// Popular scroll ////////////
-		(function ($) {
-		  $(".left-arrow").hide();
-		  $("#startrow2").on('scroll', function () {
+	<div class="slide_button">
+		<div class="scrollbtn">
+			<span id="slideLeft" class="ab" type="button"><i class="fas fa-chevron-left fa-2x sicon1"></i></span>
+			<span id="slideRight" type="button"><i class="fas fa-chevron-right fa-2x sicon2"></i></i></span>
+		</div>
+	</div>
+	<!--</div>-->
+</div>
+<hr class="style13">
+
+
+
+<script>
+	const buttonRight1 = document.getElementById('slideRight');
+	const buttonLeft1 = document.getElementById('slideLeft');
+
+
+	buttonRight1.onclick = function () {
+		document.getElementById('culture_row').scrollLeft += 338;
+		behavior: 'smooth';
+	};
+
+	buttonLeft1.onclick = function () {
+		document.getElementById('culture_row').scrollLeft -= 338;
+		behavior: 'smooth';
+	};
+
+
+	//////// Popular scroll ////////////
+	(function ($) {
+		$(".left-arrow").hide();
+		$("#startrow2").on('scroll', function () {
 			$val = $(this).scrollLeft();
-	
+
 			if ($(this).scrollLeft() + $(this).innerWidth() >= $(this)[0].scrollWidth) {
-			  $(".right-arrow").hide();
+				$(".right-arrow").hide();
 			} else {
-			  $(".right-arrow").show();
+				$(".right-arrow").show();
 			}
-	
+
 			if ($val == 0) {
-			  $(".left-arrow").hide();
+				$(".left-arrow").hide();
 			} else {
-			  $(".left-arrow").show();
+				$(".left-arrow").show();
 			}
-		  });
-		  console.log('init-scroll: ' + $(".right-arrow").scrollLeft());
-		  $(".right-arrow").on("click", function () {
-			$("#startrow2").animate({ scrollLeft: '+=460' }, 200);
-	
-		  });
-		  $(".left-arrow").on("click", function () {
-			$("#startrow2").animate({ scrollLeft: '-=460' }, 200);
-		  });
-		})(jQuery);
-		//////////////////////
-	   
-	  </script>
-	
+		});
+		console.log('init-scroll: ' + $(".right-arrow").scrollLeft());
+		$(".right-arrow").on("click", function () {
+			$("#startrow2").animate({
+				scrollLeft: '+=460'
+			}, 200);
+
+		});
+		$(".left-arrow").on("click", function () {
+			$("#startrow2").animate({
+				scrollLeft: '-=460'
+			}, 200);
+		});
+	})(jQuery);
+	//////////////////////
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <title>AddMaterial</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 m-auto">
+                <h1 class="text-center display-4 my-4">Add Material to the database</h1>
+                <form action="/admin/addMaterial" method="POST">
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" name="AcademicYear" class="form-control"
+                                placeholder="Academic Year e,g: 2020-2021" aria-label="Year">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col my-4">
+                            <input type="text" name="Name" class="form-control"
+                                placeholder="Line to Show on Website on above link" aria-label="Name">
+                        </div>
+                    </div>
+                    <select class="form-select my-4" name="Field" aria-label="Default select example">
+                        <option selected>Choose Field</option>
+                        <option value="Orientation">Orientation</option>
+                        <option value="Assignment">Assignment</option>
+                        <option value="Presentation">Presentation</option>
+                    </select>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon3">Link:</span>
+                        <input type="text" name="Link" class="form-control" id="basic-url"
+                            aria-describedby="basic-addon3">
+                    </div>
+                    <input type="submit" value="Submit" class="btn btn-primary btn-block">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

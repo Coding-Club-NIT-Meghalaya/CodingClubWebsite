@@ -1,15 +1,19 @@
-const mongoose= require("mongoose");
+const mongoose = require("mongoose");
 
 //Schema setup
 const Schema = mongoose.Schema
 const blogSchema = new Schema({
-    title: String,
-    image: String,
-    body: String,
-    writtenBy: String,
-    created: {
-      type: Date,
-      default: Date.now
-    }
-  });
+  Title: String,
+  AuthorName: String,
+  AuthorEmail: String,
+  Category: String,
+  Content: String,
+  Tags: String,
+  CreatedDate: {
+    type: Date,
+    default: Date.now
+  },
+  Link: String,
+  FileName: String,
+});
 module.exports = mongoose.model("Blog", blogSchema);

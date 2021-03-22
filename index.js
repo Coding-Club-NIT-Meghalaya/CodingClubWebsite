@@ -63,6 +63,9 @@ var Blog = require("./models/blog");
 var TeamMember = require("./models/teamMember");
 var Project = require("./models/project");
 var Event = require("./models/event");
+var Achievement = require("./models/achievement");
+var Materials = require("./models/material");
+var Video = require("./models/video");
 
 
 /////////////Landing/////////////////////////////////////////////////////////////
@@ -71,13 +74,22 @@ app.get("/", function (req, res) {
 });
 ///////////////////Events/////////////////////////////////////////////////////
 app.get("/events", function (req, res) {
+
   Event.find(function (err, obj) {
     if (err)
       res.send("Error occured");
-    else
-      res.render("event", {
-        arr: obj
-      });
+    else {
+      Achievement.find(function (err, obj1) {
+        if (err)
+          res.send("Error Occured");
+        else
+          res.render("event", {
+            arr: obj,
+            achievement: obj1,
+          });
+      })
+
+    }
   }).sort({
     StartDate: 1
   });
@@ -96,16 +108,45 @@ app.post("/admin/addEvent", upload.single('EventPoster'), function (req, res) {
     else
       res.redirect("/admin/addEvent");
   });
-})
+});
+app.get("/admin/addAchievement", function (req, res) {
+  res.render("addAchievement");
+});
+app.post("/admin/addAchievement", upload.single('achievementImage'), function (req, res) {
+  let newAchievement = req.body;
+  console.log(newAchievement);
+  newAchievement["FileName"] = req.file.filename;
+  Achievement.create(newAchievement, (err, newAchievement) => {
+    if (err)
+      res.send("Data Not uploaded");
+    else
+      res.redirect("/admin/addAchievement");
+  });
+});
 //////////////////////////////////// Resources ///////////////////////////////////////////////////////////
 app.get("/resources", function (req, res) {
   const f = Blog.find((err, obj) => {
     if (err) {
       res.send("error occured");
-    } else
-      res.render("resource", {
-        blog: obj
-      });
+    } else {
+      Materials.find((err, obj1) => {
+        if (err)
+          res.send("error Occurred");
+        else {
+          Video.find((err, obj2) => {
+            if (err)
+              res.send("Error Occurred");
+            else {
+              res.render("resource", {
+                blog: obj,
+                Material: obj1,
+                Video: obj2,
+              });
+            }
+          })
+        }
+      })
+    }
   })
 });
 
@@ -115,17 +156,20 @@ app.get("/admin/addBlog", (req, res) => {
 })
 
 //create Blog
-app.post("/admin/blog", function (req, res) {
-  // console.log(req.body.blog);
-  Blog.create(req.body.blog, (err, newBlog) => {
+app.post("/admin/addBlog", upload.single('blogImage'), function (req, res) {
+
+  let newData = req.body;
+  console.log(newData);
+  newData["FileName"] = req.file.filename;
+  Blog.create(newData, (err, newBlog) => {
     if (err) {
       // alert("Please fill the details correctly");
       res.render("addBlog");
     } else {
       res.redirect("/resources");
     }
-  })
-})
+  });
+});
 //Show Blog
 app.get("/admin/resources/blog/:id", (req, res) => {
   let Foundid = req.params.id;
@@ -143,7 +187,103 @@ app.get("/admin/resources/blog/:id", (req, res) => {
     }
   })
 })
+app.get("/admin/addMaterial", function (req, res) {
+  res.render("addMaterial");
+});
+app.post("/admin/addMaterial", function (req, res) {
+  let newData = req.body;
+  console.log(newData);
+  let getYear = newData.AcademicYear;
+  Materials.findOne({
+    Year: getYear
+  }, function (err, foundData) {
+    if (err) {
+      res.send("Error Occurred");
+    } else {
+      if (foundData === null) {
+        let newobj = {
+          Year: getYear,
+          Field: {
+            Orientation: {
+              Event: [],
+            },
+            Assignment: {
+              Event: [],
+            },
+            Presentation: {
+              Event: [],
+            }
+          }
+        }
+        Materials.create(newobj, function (err, newBlog) {
+          if (err) {
+            // alert("Please fill the details correctly");
+            res.send("Error Occured");
+          } else {
+            console.log("Object Added Successfully");
+            var str = "Field." + newData.Field + ".Event";
+            console.log(str);
+            Materials.findOneAndUpdate({
+              Year: getYear
+            }, {
+              $push: {
+                [str]: {
+                  Link: newData.Link,
+                  Name: newData.Name
+                }
+              }
+            }, null, function (err, docs) {
+              if (err) {
+                console.log(err);
+                res.send("Error Occurred");
+              } else {
+                console.log("Original Doc : ", docs);
+                res.send("Successfull");
+              }
+            });
+          }
+        });
 
+      } else {
+        var str = "Field." + newData.Field + ".Event";
+        console.log(str);
+        Materials.findOneAndUpdate({
+          Year: getYear
+        }, {
+          $push: {
+            [str]: {
+              Link: newData.Link,
+              Name: newData.Name
+            }
+          }
+        }, null, function (err, docs) {
+          if (err) {
+            console.log(err);
+            res.send("Error Occurred");
+          } else {
+            console.log("Original Doc : ", docs);
+            res.send("Successfull");
+          }
+        });
+      }
+    }
+  });
+
+});
+app.get("/admin/addVideo", function (req, res) {
+  res.render("addVideo");
+});
+app.post("/admin/addVideo", function (req, res) {
+  let newVideo = req.body;
+  console.log(newVideo);
+  Video.create(newVideo, function (err, obj) {
+    if (err) {
+      res.send("Error Occurred");
+    } else {
+      res.redirect("/admin/addVideo");
+    }
+  })
+});
 ///////////////////////////////////Resources End///////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////teams ///////////////////////////////////////////////////////

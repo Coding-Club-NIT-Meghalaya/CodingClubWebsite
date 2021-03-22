@@ -220,6 +220,7 @@ textarea {
 .about-us {
     box-sizing: border-box;
     padding: 20vh 5vw 20vh 5vw;
+    margin-right: 0%;
 }
 
 #box {
@@ -232,7 +233,7 @@ textarea {
 
 #deslong {
     position: relative;
-    margin: auto;
+    margin-left:12vw;
     padding-top: 10vh;
     width: 65%;
     font-weight: 20;
@@ -246,7 +247,7 @@ textarea {
     position: relative;
     margin: auto;
     padding-top: 2.7vw;
-    width: 83%;
+    width: 80%;
     font-style: normal;
     font-weight: 100;
     font-size: 1.5vw;
@@ -268,7 +269,7 @@ textarea {
 }
 
 #d2 img {
-    width: 15vw;
+    width: 10vw;
 }
 
 #d3 img {
@@ -286,8 +287,8 @@ textarea {
 }
 
 #d3 {
-    bottom: 14vw;
-    left: 53vw;
+    bottom: 18vw;
+    left: 52vw;
 }
 
 
@@ -309,6 +310,16 @@ textarea {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+}
+.card{
+    background: none;
+}
+
+div.card.mx.auto{
+    border:none;
+}
+img.card-img-top{
+    padding:20px;
 }
 
 .border {
@@ -520,13 +531,11 @@ align-items: center;
     /* position: absolute; */
      margin: 0 6vw 0 10vw ;
      
-     
-    font-size: 3.5vw;
-    font-weight: 800;
-    color: rgb(0, 0, 0);
-    
-    align-items:center;
-    text-align: justify;
+     font-size:200%;
+    color:whitesmoke;
+    text-align: center;
+    padding: 30px;
+
     }
     .tablist__link {
         display: inline-block;
@@ -545,7 +554,8 @@ align-items: center;
       .tablist__link[aria-selected="true"],
       .tablist__link:hover,
       .tablist__link:focus {
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(253, 253, 253, 0.733);
+        text-decoration: none;
       }
       
       .tablist__link[aria-selected="true"] .tablist__figure-caption,
@@ -564,11 +574,11 @@ align-items: center;
 
 /******footer***** */
 
-/* footer {
+/*footer {
     color: white;
     background-color: rgb(97, 58, 141);
-    border-radius: 15vh 0vh 0vh 0vh;
-} */
+    border-radius: 15vh 0vh 0vh 0vh;*/
+} 
 
 #work {
     color: white;
@@ -582,8 +592,8 @@ align-items: center;
     display: flex;
     justify-content: space-between;
     padding: 5% 11% 2% 5%;
-    margin-right: 20vw;
-    border-radius: 0vh 20vh 0vh 0vh;
+    /*margin-right: 20vw;
+    border-radius: 0vh 20vh 0vh 0vh;*/
 }
 
 #plants {
@@ -706,10 +716,17 @@ align-items: center;
             
         } */
     .about-us {
-        padding: 0vh 5vw 10vh 5vw;
+        padding-bottom: 10vh;
+        margin-left:0;
+        border:0;
+        
     }
     #deslong {
         padding-top: 5vh;
+    
+    }
+    #box{
+        margin-left:0;
     }
     #cc {
         margin: 0 0 0 0;
@@ -770,6 +787,7 @@ align-items: center;
 footer{
 	/* position:sticky; */
 	bottom: 0;
+    margin-right: 0%;
 }
 
 @media (max-height:800px){
@@ -782,7 +800,7 @@ footer{
 	background-size: cover;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
-	width: 100%;
+	width: auto;
 	text-align: left;
 	font: bold 16px sans-serif;
 
@@ -935,6 +953,7 @@ footer{
 		background-image: url(../images/footer_mobile.svg);
 		background-size: cover;
         background-repeat: no-repeat;
+        margin-right:0;
         
 	}
 
@@ -942,7 +961,7 @@ footer{
 	.footer-distributed .footer-center,
 	.footer-distributed .footer-right{
 		display: block;
-		width: 100%;
+		width: auto;
 		margin-bottom: 40px;
 		text-align: center; 
         
@@ -957,6 +976,7 @@ footer{
         background-repeat: no-repeat;
         padding: 45px 25px 5px 25px;
         text-align: center;
+        
 	}
 	.footer-distributed .footer-right{
 		display: block;
