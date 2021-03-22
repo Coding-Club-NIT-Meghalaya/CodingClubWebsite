@@ -65,6 +65,7 @@ var Project = require("./models/project");
 var Event = require("./models/event");
 var Achievement = require("./models/achievement");
 var Materials = require("./models/material");
+var Video = require("./models/video");
 
 
 /////////////Landing/////////////////////////////////////////////////////////////
@@ -132,10 +133,17 @@ app.get("/resources", function (req, res) {
         if (err)
           res.send("error Occurred");
         else {
-          res.render("resource", {
-            blog: obj,
-            Material: obj1,
-          });
+          Video.find((err, obj2) => {
+            if (err)
+              res.send("Error Occurred");
+            else {
+              res.render("resource", {
+                blog: obj,
+                Material: obj1,
+                Video: obj2,
+              });
+            }
+          })
         }
       })
     }
@@ -213,35 +221,69 @@ app.post("/admin/addMaterial", function (req, res) {
             res.send("Error Occured");
           } else {
             console.log("Object Added Successfully");
+            var str = "Field." + newData.Field + ".Event";
+            console.log(str);
+            Materials.findOneAndUpdate({
+              Year: getYear
+            }, {
+              $push: {
+                [str]: {
+                  Link: newData.Link,
+                  Name: newData.Name
+                }
+              }
+            }, null, function (err, docs) {
+              if (err) {
+                console.log(err);
+                res.send("Error Occurred");
+              } else {
+                console.log("Original Doc : ", docs);
+                res.send("Successfull");
+              }
+            });
           }
         });
 
-      }
-      var str = "Field." + newData.Field + ".Event";
-      console.log(str);
-      Materials.findOneAndUpdate({
-        Year: getYear
-      }, {
-        $push: {
-          [str]: {
-            Link: newData.Link,
-            Name: newData.Name
+      } else {
+        var str = "Field." + newData.Field + ".Event";
+        console.log(str);
+        Materials.findOneAndUpdate({
+          Year: getYear
+        }, {
+          $push: {
+            [str]: {
+              Link: newData.Link,
+              Name: newData.Name
+            }
           }
-        }
-      }, null, function (err, docs) {
-        if (err) {
-          console.log(err);
-          res.send("Error Occurred");
-        } else {
-          console.log("Original Doc : ", docs);
-          res.send("Successfull");
-        }
-      });
+        }, null, function (err, docs) {
+          if (err) {
+            console.log(err);
+            res.send("Error Occurred");
+          } else {
+            console.log("Original Doc : ", docs);
+            res.send("Successfull");
+          }
+        });
+      }
     }
   });
 
 });
-
+app.get("/admin/addVideo", function (req, res) {
+  res.render("addVideo");
+});
+app.post("/admin/addVideo", function (req, res) {
+  let newVideo = req.body;
+  console.log(newVideo);
+  Video.create(newVideo, function (err, obj) {
+    if (err) {
+      res.send("Error Occurred");
+    } else {
+      res.redirect("/admin/addVideo");
+    }
+  })
+});
 ///////////////////////////////////Resources End///////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////teams ///////////////////////////////////////////////////////

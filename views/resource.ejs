@@ -151,18 +151,9 @@
             </div><br>
             <div class="scrollmenu">
               <!-- <div class="cardbox"> -->
-              <iframe class="iframe_video" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
-              </iframe>
-
-              <iframe class="iframe_video" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
-              </iframe>
-
-              <iframe class="iframe_video" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
-              </iframe>
-
-              <iframe class="iframe_video" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
-              </iframe>
-
+              <%for(let i=0;i<Video.length;i++){%>
+              <iframe class="iframe_video" src="<%=Video[i].Link%>"></iframe>
+              <%}%>
             </div>
           </div>
         </article>
