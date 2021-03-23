@@ -66,6 +66,8 @@ var Event = require("./models/event");
 var Achievement = require("./models/achievement");
 var Materials = require("./models/material");
 var Video = require("./models/video");
+var Programming = require("./models/Programming");
+var Webinar = require("./models/Webinar");
 
 
 /////////////Landing/////////////////////////////////////////////////////////////
@@ -82,11 +84,27 @@ app.get("/events", function (req, res) {
       Achievement.find(function (err, obj1) {
         if (err)
           res.send("Error Occured");
-        else
-          res.render("event", {
-            arr: obj,
-            achievement: obj1,
-          });
+        else {
+          Programming.find(function (err, obj2) {
+            if (err)
+              res.send("Error Occurred");
+            else {
+              Webinar.find(function (err, obj3) {
+                if (err)
+                  res.send("Error Occurred");
+                else {
+                  res.render("event", {
+                    arr: obj,
+                    achievement: obj1,
+                    programming: obj2,
+                    webinar: obj3,
+                  });
+                }
+              })
+            }
+          })
+        }
+
       })
 
     }
@@ -122,6 +140,36 @@ app.post("/admin/addAchievement", upload.single('achievementImage'), function (r
     else
       res.redirect("/admin/addAchievement");
   });
+});
+app.get("/admin/addProgramming", function (req, res) {
+  res.render("addProgramming");
+});
+app.post("/admin/addProgramming", upload.single('Image'), function (req, res) {
+  let newProgEvent = req.body;
+  console.log(newProgEvent);
+  newProgEvent["FileName"] = req.file.filename;
+  Programming.create(newProgEvent, function (err, obj) {
+    if (err)
+      res.send("Error Occurred");
+    else {
+      res.redirect("/admin/addProgramming");
+    }
+  })
+});
+app.get("/admin/addWebinar", function (req, res) {
+  res.render("addWebinar");
+});
+app.post("/admin/addWebinar", upload.single('Image'), function (req, res) {
+  let newProgEvent = req.body;
+  console.log(newProgEvent);
+  newProgEvent["FileName"] = req.file.filename;
+  Webinar.create(newProgEvent, function (err, obj) {
+    if (err)
+      res.send("Error Occurred");
+    else {
+      res.redirect("/admin/addProgramming");
+    }
+  })
 });
 //////////////////////////////////// Resources ///////////////////////////////////////////////////////////
 app.get("/resources", function (req, res) {

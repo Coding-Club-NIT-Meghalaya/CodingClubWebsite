@@ -24,7 +24,7 @@
       <nav1 class="col-xl-2 col-lg-2" style="box-shadow: 0px 0px 0px lightgray">
         <ul>
           <%for(let i=0;i<arr.length;i++) { %>
-          <li><a class="abc" href="#project-<%=i+1%>">Project <%=i+1%></a></li>
+          <li><a class="abc" href="#project-<%=i+1%>"><%=arr[i].Name%></a></li>
           <%}%>
         </ul>
       </nav1>
@@ -39,7 +39,7 @@
                 <div class="blog-slider__item swiper-slide">
                   <div class="blog-slider__content">
                     <p>(<%=arr[i].Status%>)</p>
-                    <div class="blog-slider__title"><%=arr[i].Title%></div>
+                    <div class="blog-slider__title"><%=arr[i].Name%></div>
                     <div class="blog-slider__code" style="
                         color: black;
                         font-size: 1rem;
