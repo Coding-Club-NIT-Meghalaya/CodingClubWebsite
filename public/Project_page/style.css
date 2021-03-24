@@ -223,18 +223,22 @@ body {
         /* transform: translate(20%, 5%); */
         width: 100%;
     }
+
     .blog-slider__item {
         flex-direction: row;
         align-items: center;
     }
+
     .web-visible {
         /* display: block; */
         position: relative;
         left: 3%;
     }
+
     .mobile-visible {
         display: none;
     }
+
     .web-visible img {
         /* display: block; */
         transform: translate(0%, 40%);
@@ -246,33 +250,39 @@ body {
         /* transform: translate(30%, 10%); */
         width: 60%;
     }
+
     .blog-slider__item {
         flex-direction: column;
         align-items: center;
     }
+
     .blog-slider__code {
         margin-bottom: 9px;
         display: block;
         font-weight: 500;
     }
+
     .blog-slider__title {
         font-size: 1.1rem;
         font-weight: 700;
         color: #ffffff;
         margin-bottom: 8px;
     }
+
     .blog-slider__text {
         color: black;
         margin-bottom: 3px;
         line-height: 1em;
         font-family: 400;
     }
+
     .blog-slider__text {
         color: black;
         margin-bottom: 5px;
         line-height: 1.5em;
         font-family: 400;
     }
+
     .blog-slider__button {
         display: inline-flex;
         padding: 10px 20px;
@@ -283,24 +293,29 @@ body {
         text-align: center;
         letter-spacing: 1px;
     }
+
     .web-visible {
         display: none;
     }
+
     .mobile-visible {
         display: block;
         transform: translate(18%, -15px);
         width: 255px;
     }
+
     .blog-slider__item.swiper-slide-active .blog-slider__img img {
         width: 220px;
         padding: 2px 10px 2px 25px;
     }
+
     .mobile-visible img {
         /* display: block; */
         transform: translate(16%, -15px);
         width: 255px;
         border-radius: 10px;
     }
+
     .blog-slider__button {
         display: inline-flex;
         width: 70vw;
@@ -311,12 +326,14 @@ body {
         text-align: center;
         letter-spacing: 1px;
     }
+
     .blog-slider__content {
         padding-right: 12px;
         padding-left: 30px;
         /* align-items: center; */
         /* text-align: center; */
     }
+
     .blog-slider__content p {
         left: 74%;
     }
