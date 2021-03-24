@@ -400,10 +400,35 @@ img.card-img-top{
         flex-direction:column;
     }
     .card{
-        margin-bottom:50px;
+        margin-bottom:20vw;
     }
     #card3{
         margin-bottom: 0px;
+    }
+    .whiteBox {
+        
+        width: 70vw;
+        height: 75vw;
+       border-radius: 60px;
+    }
+    .colorBox {
+        margin-top:-65vw;
+        left: 10vw;
+        position: relative;
+        width: 70vw;
+        height: 75vw;
+        border-radius: 60px;
+    }
+    .cards :nth-child(2) .whiteBox img {
+        /* height: 45%; */
+        padding-top: 1vw;
+    }
+    .icondes {
+        font-size: 4vw;
+       
+    }
+    .card{
+        border :0px;
     }
 }
 
