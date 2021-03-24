@@ -106,7 +106,6 @@
                 </div>
                 <%}%>
                 </div>
-              
           </article>
         </section>
         <section class="sec" id="blogs" role="tabpanel" aria-hidden="false">
@@ -118,19 +117,19 @@
               <div class="cardbox d-flex flex-row flex-nowrap">
                 <% let temp = blog.length %>
                 <% for(let i=0; i<temp; i++) {%>
-                <a href="/admin/resources/blog/<%= blog[i].id %> " >
+                <a href="/admin/resources/blog/<%= blog[i].id %> ">
                   <div class="d-flex flex-row flex-nowrap">
                     <div className="user_name align-self-end">
                       <div class="card1">
                         <img class="card-img-top imgStyle" src="/admin/Image/<%=blog[i].FileName%>"
                           alt="Card image cap" />
                         <div class="card-body">
-                          <h3 class="card-title"><%= blog[i].Title %></h3>
+                          <h3 class="card-title" style="font-size: 25px;font-weight:1000;"><%= blog[i].Title %></h3>
                           <p class="card-text">
-                            <%= blog[i].ShortDescription%>
+                            <%= blog[i].ShortDescription.substring(0,80)%>....
                           </p>
                           <p class="card-text">
-                            <small class="text-muted"><%= blog[i].CreatedDate %> </small>
+                            <small class="text-muted"><%= blog[i].CreatedDate.toDateString()%> </small>
                           </p>
                         </div>
                       </div>
@@ -166,15 +165,17 @@
        <%- include("partials/footer2") %>
 
 
-  <!-- required bootstrap javascript -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
-  </script>
+              <!-- required bootstrap javascript -->
+              <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous">
+              </script>
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+                crossorigin="anonymous">
+              </script>
 
-  <script src="resource_page/script.js"></script>
+              <script src="resource_page/script.js"></script>
 </body>
 
 </html>

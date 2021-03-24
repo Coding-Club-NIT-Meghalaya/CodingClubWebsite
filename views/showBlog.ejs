@@ -4,83 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Post</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title><%=blog.Title%></title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,800;1,400&family=Roboto:ital@0;1&display=swap" rel="stylesheet" />
-
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,800;1,400&family=Roboto:ital@0;1&display=swap"
+        rel="stylesheet" />
 
 </head>
-
 
 <style>
     .container {
         background: url(https://images.pexels.com/photos/6450009/pexels-photo-6450009.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
         background-size: cover;
+        margin-top: 60px;
+        padding: 10px;
     }
-    
+
     .jumbotron {
         background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/resource_page/images/titlebg.jpg');
         background-size: 100% 100%;
+        /* margin-top: 60px; */
     }
-    
+
     .content {
         font-size: 1.3rem;
         font-family: montserrat;
         background-color: rgb(226, 219, 235);
         border-radius: 5px;
         line-height: 2;
+        padding: 20px;
+
     }
-    
+
     .date {
         font-size: 1.3rem;
         color: rgb(255, 255, 255);
     }
-    
+
     h1 {
         color: white;
+        font-size: 50px;
     }
-    
+
     #blogimg {
-        width: 70%;
-        padding-left: 30%;
+        height: 500px;
+        width: 100%;
+        background-size: cover;
     }
 </style>
 
-
-
-
-
 <body>
-    <%-include('partials/navbar')%>
-
     <div class="container">
         <div class="jumbotron img-jumbo">
-
             <h1 class="display-5 py-4 "><%= blog.Title  %> </h1>
         </div>
-        <p class="date py-0">Date:15th jan ,23:43 GMT</p>
-        <hr>
-
-        <img src="https://tse2.mm.bing.net/th?id=OIP.4fkQog1pUWWLJxSRWopRUAHaEl&pid=Api&P=0&w=247&h=153" class="img-fluid" id="blogimg" alt="Responsive image">
-        <hr>
-        <div class="content px-3"> 
-            <%- blog.Content  %> 
+        <p class="date py-0"><%=blog.CreatedDate.toDateString()%></p>
+        <div class="content px-3">
+            <%-blog.Content%>
         </div>
         <hr>
-        <blockquote class="blockquote text-right ">
-            <footer class="blockquote-footer py-5 text-dark">DORAEMON MAURYA
-                <br> National institute of technology meghalaya
+        <blockquote class=" blockquote text-right ">
+            <footer class=" blockquote-footer py-5 text-dark" style="font-size:30px;"><a
+                    href="<%=blog.AuthorLinedIn%>"><%=blog.AuthorName%></a>
+                <br> National Institute of Technology,Meghalaya
             </footer>
         </blockquote>
     </div>
-
-
-     <!-- Footer Section -->
-     <%- include("partials/footer2") %>
+    <!-- Footer Section -->
+    <%- include("partials/footer2") %>
 </body>
 
 </html>
