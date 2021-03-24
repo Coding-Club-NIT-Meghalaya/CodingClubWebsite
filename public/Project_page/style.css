@@ -210,7 +210,7 @@ body {
 .blog-slider__img img {
     width: 90%;
     height: auto;
-    padding-top: 20%;
+    padding-top: 15%;
     margin: auto;
     object-fit: cover;
     display: block;
@@ -297,8 +297,9 @@ body {
     }
     .mobile-visible img {
         /* display: block; */
-        transform: translate(6%, -15px);
+        transform: translate(16%, -15px);
         width: 255px;
+        border-radius: 10px;
     }
     .blog-slider__button {
         display: inline-flex;
@@ -355,7 +356,7 @@ body {
 }
 
 .blog-slider__code {
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     display: block;
     font-weight: 500;
 }
