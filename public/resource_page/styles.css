@@ -5,6 +5,12 @@
   box-sizing: border-box;
   
 }
+
+a, a:hover{
+  text-decoration: none; 
+  color: black;
+}
+
 /* ________________________global style______________________________*/
 /*html {*/
 /*  scroll-behavior: smooth;*/
@@ -586,6 +592,9 @@ body {
    margin: 2% 1% 1% 2%;
 }
 .imgStyle{
+    height:  300px;
+    width: 500px;
+    background-size: cover;
     border-radius: 10px;
 }
 @media screen and (max-width: 500px) {

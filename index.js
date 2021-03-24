@@ -218,6 +218,7 @@ app.post("/admin/addBlog", upload.single('blogImage'), function (req, res) {
     }
   });
 });
+
 //Show Blog
 app.get("/admin/resources/blog/:id", (req, res) => {
   let Foundid = req.params.id;

@@ -118,7 +118,7 @@
               <div class="cardbox d-flex flex-row flex-nowrap">
                 <% let temp = blog.length %>
                 <% for(let i=0; i<temp; i++) {%>
-                <a href="/admin/resources/blog/<%= blog[i].id %> ">
+                <a href="/admin/resources/blog/<%= blog[i].id %> " >
                   <div class="d-flex flex-row flex-nowrap">
                     <div className="user_name align-self-end">
                       <div class="card1">
@@ -127,7 +127,7 @@
                         <div class="card-body">
                           <h3 class="card-title"><%= blog[i].Title %></h3>
                           <p class="card-text">
-                            <%= blog[i].Content %>
+                            <%= blog[i].ShortDescription%>
                           </p>
                           <p class="card-text">
                             <small class="text-muted"><%= blog[i].CreatedDate %> </small>

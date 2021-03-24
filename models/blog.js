@@ -8,6 +8,7 @@ const blogSchema = new Schema({
   AuthorEmail: String,
   Category: String,
   Content: String,
+  ShortDescription: String,
   Tags: String,
   CreatedDate: {
     type: Date,
