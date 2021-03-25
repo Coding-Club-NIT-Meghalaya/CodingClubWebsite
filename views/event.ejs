@@ -84,7 +84,7 @@
 
 				<div class="container" id="programming">
 					<h1 class="heading-1">Programming</h1>
-					<small>Show your skills in open innovation challenges and case study & business plan competition
+					<small class="heading-tag">Show your skills in open innovation challenges and case study & business plan competition
 						open for students, professionals & stratups
 					</small>
 
@@ -105,7 +105,9 @@
 									<span class="date">Time:<%=programming[i].Time%></span>
 								</div>
 								<p class="card-text">
-									<%=programming[i].ShortDescription%>
+									<%=programming[i].ShortDescription.substring(0,60)%>... <a
+										href="<%=programming[i].Link%>">Go to
+										event</a>
 								</p>
 								<a href="<%=programming[i].RegistrationLink%>"><button type="button"
 										class="button">Register Now</button></a>
@@ -119,7 +121,7 @@
 							<div class="section-1">
 								<div id="webiner">
 									<h1 class="heading-1">Webinars</h1>
-									<small>Show your skills in open innovation challenges and case study & business plan
+									<small class="heading-tag">Show your skills in open innovation challenges and case study & business plan
 										competition open for students, professionals & stratups
 										<!-- <span style="float:right;"><button type="button" class="btn btn-outline-dark btn-sm">Explore all</button></span> -->
 									</small>
@@ -165,8 +167,8 @@
 					<%-include("partials/gallery")%>
 
 
-		     <!-- Footer Section -->
-			 <%- include("partials/footer2") %>
+					<!-- Footer Section -->
+					<%- include("partials/footer2") %>
 
 
 
