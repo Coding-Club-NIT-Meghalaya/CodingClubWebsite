@@ -15,6 +15,7 @@ var ProgrammingSchema = new Schema({
     Time: String,
     ShortDescription: String,
     RegistrationLink: String,
+    Link: String,
     FileName: String
 });
 

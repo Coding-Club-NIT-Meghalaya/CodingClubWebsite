@@ -167,7 +167,7 @@ app.post("/admin/addWebinar", upload.single('Image'), function (req, res) {
     if (err)
       res.send("Error Occurred");
     else {
-      res.redirect("/admin/addProgramming");
+      res.redirect("/admin/addWebinar");
     }
   })
 });
