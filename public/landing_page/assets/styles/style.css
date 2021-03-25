@@ -307,7 +307,7 @@ textarea {
 .cards {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -393,7 +393,44 @@ img.card-img-top{
     background-color: rgba(225, 0, 255, 0.2);
     ;
 }
+/* ********** what we do mobile view ************ */
 
+@media screen and (max-width:650px){
+    .cards {
+        flex-direction:column;
+    }
+    .card{
+        margin-bottom:20vw;
+    }
+    #card3{
+        margin-bottom: 0px;
+    }
+    .whiteBox {
+        
+        width: 70vw;
+        height: 75vw;
+       border-radius: 60px;
+    }
+    .colorBox {
+        margin-top:-65vw;
+        left: 10vw;
+        position: relative;
+        width: 70vw;
+        height: 75vw;
+        border-radius: 60px;
+    }
+    .cards :nth-child(2) .whiteBox img {
+        /* height: 45%; */
+        padding-top: 1vw;
+    }
+    .icondes {
+        font-size: 4vw;
+       
+    }
+    .card{
+        border :0px;
+    }
+}
 
 
 
@@ -403,8 +440,8 @@ img.card-img-top{
 /*footer {
     color: white;
     background-color: rgb(97, 58, 141);
-    border-radius: 15vh 0vh 0vh 0vh;*/
-} 
+    border-radius: 15vh 0vh 0vh 0vh;
+} */
 
 #work {
     color: white;
@@ -543,6 +580,7 @@ img.card-img-top{
         } */
     .about-us {
         padding-bottom: 10vh;
+        padding-top:2vh;
         margin-left:0;
         border:0;
         
