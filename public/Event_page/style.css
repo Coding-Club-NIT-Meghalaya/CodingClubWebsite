@@ -352,6 +352,7 @@ background: linear-gradient(112.91deg,
     background: url("Event_page/file/dummy.jpg");
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    height: 40vh;
     background-size: cover;
   }
 
@@ -399,6 +400,10 @@ background-color: transparent;
 }
 
 @media screen and (max-width: 800px) {
+  .imgStyle{
+    height: 30vh;
+  }
+
   .scrollbtn{
     overflow-x: hidden;
     overflow-y: hidden;
