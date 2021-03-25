@@ -90,16 +90,17 @@
 
 					<hr class="style13">
 					<!---->
-					<div class="row justify-content-center text-center">
+					<!--<div class="scrollmenu">-->
+					<div class="row d-flex flex-row flex-nowrap overflow-auto" style="display: flex;" id="culture_row">
 						<%for(let i=0;i<programming.length;i++){%>
 					<div class="col-md-3">
-						<div class="card">
+						<div class="card overflow-hidden flex-wrap">
 							<img src="/admin/Image/<%=programming[i].FileName%>" class="card-img-top">
 							<div class="card-body" style="margin-top:0px;">
 								<h4 class="title">
 									<%=programming[i].Title%>
 								</h4>
-								<div class="col">
+								<div class="d-flex flex-column">
 									<span class="date">Start Date:<%=programming[i].StartDate.toDateString()%></span>
 									<span class="date">End Date:<%=programming[i].EndDate.toDateString()%></span>
 									<span class="date">Time:<%=programming[i].Time%></span>
@@ -116,10 +117,72 @@
 					</div>
 					<%}%>	
 				</div>
-			<hr class="style13">
+				<!--</div>-->
+			<br>
+			<!--<div class="slide_button">
+				<div class="scrollbtn">
+					<span id="slideLeft" class="ab" type="button"><i class="fas fa-chevron-left fa-2x sicon1"></i></span>
+					<span id="slideRight" type="button"><i class="fas fa-chevron-right fa-2x sicon2"></i></i></span>
+				</div>
+			</div>-->
+			<!--</div>-->
+		</div><br>
+		<hr class="style13">
+		
+		
+		
+		<script>
+			const buttonRight1 = document.getElementById('slideRight');
+			const buttonLeft1 = document.getElementById('slideLeft');
+		
+		
+			buttonRight1.onclick = function () {
+				document.getElementById('culture_row').scrollLeft += 338;
+				behavior: 'smooth';
+			};
+		
+			buttonLeft1.onclick = function () {
+				document.getElementById('culture_row').scrollLeft -= 338;
+				behavior: 'smooth';
+			};
+		
+		
+			//////// Popular scroll ////////////
+			(function ($) {
+				$(".left-arrow").hide();
+				$("#startrow2").on('scroll', function () {
+					$val = $(this).scrollLeft();
+		
+					if ($(this).scrollLeft() + $(this).innerWidth() >= $(this)[0].scrollWidth) {
+						$(".right-arrow").hide();
+					} else {
+						$(".right-arrow").show();
+					}
+		
+					if ($val == 0) {
+						$(".left-arrow").hide();
+					} else {
+						$(".left-arrow").show();
+					}
+				});
+				console.log('init-scroll: ' + $(".right-arrow").scrollLeft());
+				$(".right-arrow").on("click", function () {
+					$("#startrow2").animate({
+						scrollLeft: '+=460'
+					}, 200);
+		
+				});
+				$(".left-arrow").on("click", function () {
+					$("#startrow2").animate({
+						scrollLeft: '-=460'
+					}, 200);
+				});
+			})(jQuery);
+			//////////////////////
+		</script>
 
 							<div class="section-1">
-								<div id="webiner">
+								<div class="container" id="webiner">
 									<h1 class="heading-1">Webinars</h1>
 									<small class="heading-tag">Show your skills in open innovation challenges and case study & business plan
 										competition open for students, professionals & stratups
@@ -127,17 +190,17 @@
 									</small>
 
 									<hr class="style13">
-
-									<div class="row justify-content-center text-center">
+									<!--<div class="scrollmenu">-->
+									<div class="row d-flex flex-row flex-nowrap overflow-auto" id="culture_row">
 										<%for(let i=0;i<webinar.length;i++){%>
-					<div class="col-md-3">
+					<div class="col-md-4">
 						<div class="card">
 							<img src="/admin/Image/<%=webinar[i].FileName%>" class="card-img-top">
 							<div class="card-body" style="margin-top:0px;">
 								<h4 class="title">
 									<%=webinar[i].Title%>
 								</h4>
-								<div class="col">
+								<div class="d-flex flex-column">
 									<span class="date">Start Date:<%=webinar[i].StartDate.toDateString()%></span>
 									<span class="date">End Date:<%=webinar[i].EndDate.toDateString()%></span>
 									<span class="date">Time:<%=webinar[i].Time%></span>
@@ -148,17 +211,22 @@
 								<a href="<%=webinar[i].RegistrationLink%>"><button type="button" class="button">Register
 										Now</button></a>
 							</div>
-						</div>
+						</div><br>
 					</div>
 					<%}%>	
 										
 
-									</div>
+									</div><br>
 
+								<!--</div>-->
 								</div>
 								<hr class="style13">
-
-
+								</div>
+							
+		
+		
+		
+		
 		</main>
 
 

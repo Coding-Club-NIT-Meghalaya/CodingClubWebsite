@@ -292,6 +292,8 @@ textarea {
 }
 
 
+
+
 /* ******What we do?****** */
 
 .headingPurple {
@@ -433,6 +435,91 @@ img.card-img-top{
 }
 
 
+    /* ********about us mobile view********* */
+    @media screen and (max-width:800px){
+        #box{
+            height:54vw;
+            
+        }
+        #desshort {
+            font-size: 2.2vw;
+            
+        }
+        #d1{
+            bottom:40vw;
+        }
+        #d2{
+            bottom:32vw;
+            left:-8vw;
+        }
+        #d3{
+            bottom:24vw;
+            left:56vw;
+        }
+        #d1 img{
+            width:8vw;
+        }
+        #d2 img{
+            width:8vw;
+        }
+        #d3 img{
+            width:6vw;
+        }
+    }
+    @media screen and (max-width:422px){
+    #box {
+       
+        height: 147vw;
+        
+    }
+    
+    #deslong {
+        
+        width: 90%;
+        font-size: 1.4rem;
+        margin: auto;
+       
+    }
+    
+    #desshort {
+        font-size: 1.2rem;
+        width: 85%;
+        
+    }
+    #d1{
+        bottom:60vw;
+        left:80vw;
+    }
+    #d2{
+        bottom:40vw;
+        left:-11vw;
+    }
+    #d3{
+        bottom:6vw;
+        left:58vw;
+    }
+
+}
+@media screen and (max-width:398px){
+    #box{
+        height: 167vw;
+    }
+}
+@media screen and (max-width:352px){
+    #box{
+        height:189vw;
+    }
+}
+@media screen and (max-width:322px){
+    #box{
+        height:235vw;
+    }
+    #cc{
+        font-size:2.4rem
+    }
+}
+
+
 
 
 /******footer***** */
@@ -508,12 +595,12 @@ img.card-img-top{
 
 
 @media screen and (min-width: 100px) and (max-width: 450px){
-    header{
-        height:40vh; 
-       background-image: url(../images/background_mobile.svg);
+    /* header{
+        height:500px;
+       background-image: url(../images/background_mobile1.svg);
        background-size: cover;
        background-repeat: no-repeat;
-    }
+    } */
     #cc{
         top: 15%;
         left: 10%;
@@ -563,6 +650,7 @@ img.card-img-top{
         background-image: url(../images/backdrop.svg);
         background-size: cover;
         background-repeat: no-repeat;
+        object-fit: cover;
     }
 }
 
@@ -572,7 +660,7 @@ img.card-img-top{
         background-size: cover;
         background-position: bottom;
         background-repeat: no-repeat;
-        height: 500px;
+        height: 550px;
     }
     /* .button{
             padding : 0vw 1vw;
@@ -580,7 +668,7 @@ img.card-img-top{
         } */
     .about-us {
         padding-bottom: 10vh;
-        padding-top:2vh;
+        padding-top:0vh;
         margin-left:0;
         border:0;
         
@@ -625,7 +713,8 @@ img.card-img-top{
     }
     #textPart {
         text-align: center;
-        margin-top: 10vh;
+        margin-top: 25vw;
+        padding-top:12vw;
         /* background-color:black; */
     }
     #flex {
@@ -641,5 +730,10 @@ img.card-img-top{
     /* footer {
         border-radius: 80px 0px 0px 0px;
     } */
+}
+@media screen and (max-width:332px){
+    #cc{
+        font-size:2.4rem
+    }
 }
 
