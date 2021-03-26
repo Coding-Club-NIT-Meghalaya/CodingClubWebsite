@@ -206,7 +206,9 @@
 									<span class="date">Time:<%=webinar[i].Time%></span>
 								</div>
 								<p class="card-text">
-									<%=webinar[i].ShortDescription%>
+									<%=webinar[i].ShortDescription.substring(0,60)%>...<a href="<%=webinar[i].Link%>">Go
+										to
+										event</a>
 								</p>
 								<a href="<%=webinar[i].RegistrationLink%>"><button type="button" class="button">Register
 										Now</button></a>
