@@ -438,7 +438,9 @@ img.card-img-top{
     /* ********about us mobile view********* */
     @media screen and (max-width:800px){
         #box{
-            height:54vw;
+            /* height:54vw; */
+            height:max-content;
+            width:100%;
             
         }
         #desshort {
@@ -467,11 +469,7 @@ img.card-img-top{
         }
     }
     @media screen and (max-width:422px){
-    #box {
-       
-        height: 147vw;
-        
-    }
+  
     
     #deslong {
         
@@ -500,24 +498,7 @@ img.card-img-top{
     }
 
 }
-@media screen and (max-width:398px){
-    #box{
-        height: 167vw;
-    }
-}
-@media screen and (max-width:352px){
-    #box{
-        height:189vw;
-    }
-}
-@media screen and (max-width:322px){
-    #box{
-        height:235vw;
-    }
-    #cc{
-        font-size:2.4rem
-    }
-}
+
 
 
 
