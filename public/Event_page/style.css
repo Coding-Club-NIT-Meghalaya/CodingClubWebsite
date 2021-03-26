@@ -194,6 +194,8 @@ body {
 
   margin-top: 0rem;
   margin-bottom: 0.3rem;
+  color: rgba(0, 0, 0, 0.59);
+  font-weight: 600;
 }
 
 .bottom {
