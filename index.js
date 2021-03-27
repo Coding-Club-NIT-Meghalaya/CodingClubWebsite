@@ -100,16 +100,20 @@ app.get("/events", function (req, res) {
                     webinar: obj3,
                   });
                 }
+              }).sort({
+                StartDate: -1,
               })
             }
+          }).sort({
+            StartDate: -1,
           })
         }
-
+      }).sort({
+        Date: -1,
       })
-
     }
   }).sort({
-    StartDate: 1
+    StartDate: -1
   });
 });
 //add new event route
@@ -195,6 +199,8 @@ app.get("/resources", function (req, res) {
         }
       })
     }
+  }).sort({
+    CreatedDate: -1,
   })
 });
 
