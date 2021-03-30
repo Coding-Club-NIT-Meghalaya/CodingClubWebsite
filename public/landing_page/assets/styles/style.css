@@ -391,6 +391,8 @@ textarea {
 }
 
 
+
+
 /* ******What we do?****** */
 
 .headingPurple {
@@ -406,7 +408,7 @@ textarea {
 .cards {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -492,6 +494,109 @@ img.card-img-top{
     background-color: rgba(225, 0, 255, 0.2);
     ;
 }
+/* ********** what we do mobile view ************ */
+
+@media screen and (max-width:650px){
+    .cards {
+        flex-direction:column;
+    }
+    .card{
+        margin-bottom:20vw;
+    }
+    #card3{
+        margin-bottom: 0px;
+    }
+    .whiteBox {
+        
+        width: 70vw;
+        height: 75vw;
+       border-radius: 60px;
+    }
+    .colorBox {
+        margin-top:-65vw;
+        left: 10vw;
+        position: relative;
+        width: 70vw;
+        height: 75vw;
+        border-radius: 60px;
+    }
+    .cards :nth-child(2) .whiteBox img {
+        /* height: 45%; */
+        padding-top: 1vw;
+    }
+    .icondes {
+        font-size: 4vw;
+       
+    }
+    .card{
+        border :0px;
+    }
+}
+
+
+    /* ********about us mobile view********* */
+    @media screen and (max-width:800px){
+        #box{
+            /* height:54vw; */
+            height:max-content;
+            width:100%;
+            
+        }
+        #desshort {
+            font-size: 2.2vw;
+            
+        }
+        #d1{
+            bottom:40vw;
+        }
+        #d2{
+            bottom:32vw;
+            left:-8vw;
+        }
+        #d3{
+            bottom:24vw;
+            left:56vw;
+        }
+        #d1 img{
+            width:8vw;
+        }
+        #d2 img{
+            width:8vw;
+        }
+        #d3 img{
+            width:6vw;
+        }
+    }
+    @media screen and (max-width:422px){
+  
+    
+    #deslong {
+        
+        width: 90%;
+        font-size: 1.4rem;
+        margin: auto;
+       
+    }
+    
+    #desshort {
+        font-size: 1.2rem;
+        width: 85%;
+        
+    }
+    #d1{
+        bottom:60vw;
+        left:80vw;
+    }
+    #d2{
+        bottom:40vw;
+        left:-11vw;
+    }
+    #d3{
+        bottom:6vw;
+        left:58vw;
+    }
+
+}
 
 
 
@@ -571,12 +676,12 @@ img.card-img-top{
 
 
 @media screen and (min-width: 100px) and (max-width: 450px){
-    header{
-        height:40vh; 
-       background-image: url(../images/background_mobile.svg);
+    /* header{
+        height:500px;
+       background-image: url(../images/background_mobile1.svg);
        background-size: cover;
        background-repeat: no-repeat;
-    }
+    } */
     #cc{
         top: 15%;
         left: 10%;
@@ -626,6 +731,7 @@ img.card-img-top{
         background-image: url(../images/backdrop.svg);
         background-size: cover;
         background-repeat: no-repeat;
+        object-fit: cover;
     }
 }
 
@@ -635,7 +741,7 @@ img.card-img-top{
         background-size: cover;
         background-position: bottom;
         background-repeat: no-repeat;
-        height: 500px;
+        height: 550px;
     }
     /* .button{
             padding : 0vw 1vw;
@@ -643,6 +749,7 @@ img.card-img-top{
         } */
     .about-us {
         padding-bottom: 10vh;
+        padding-top:0vh;
         margin-left:0;
         border:0;
         
@@ -687,7 +794,8 @@ img.card-img-top{
     }
     #textPart {
         text-align: center;
-        margin-top: 10vh;
+        margin-top: 25vw;
+        padding-top:12vw;
         /* background-color:black; */
     }
     #flex {
@@ -704,257 +812,9 @@ img.card-img-top{
         border-radius: 80px 0px 0px 0px;
     } */
 }
-
-
-
-/* footer */
-
-
-footer{
-	/* position:sticky; */
-	bottom: 0;
-    margin-right: 0%;
-}
-
-@media (max-height:800px){
-	footer { position: static; }
-	header { padding-top:40px; }
-}
-.footer-distributed{
-	/* background-color: #292c2f; */
-	background-image: url(../images/footer_desktop.svg);
-	background-size: cover;
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-	box-sizing: border-box;
-	width: auto;
-	text-align: left;
-	font: bold 16px sans-serif;
-
-	padding: 55px 50px;
-	margin-top: 80px;
-}
-
-.footer-distributed .footer-left,
-.footer-distributed .footer-center,
-.footer-distributed .footer-right{
-	display: inline-block;
-	vertical-align: top;
-}
-
-/* Footer left */
-
-.footer-distributed .footer-left{
-	width: 40%;
-}
-
-/* The company logo */
-
-.footer-distributed h3{
-	color:  #EBEBEB;
-	font: normal 36px 'Cookie', cursive;
-	margin: 0;
-}
-
-.footer-distributed h3 span{
-	color:  #5383d3;
-}
-
-/* Footer links */
-
-.footer-distributed .footer-links{
-	color:  #EBEBEB;
-	margin: 20px 0 12px;
-	padding: 0;
-}
-
-.footer-distributed .footer-links a{
-	display:inline-block;
-	line-height: 1.8;
-	text-decoration: none;
-	color:  inherit;
-}
-
-.footer-distributed .footer-company-name{
-	color:  #8f9296;
-	font-size: 14px;
-	font-weight: normal;
-	margin: 0;
-}
-
-/* Footer Center */
-
-.footer-distributed .footer-center{
-	width: 35%;
-}
-
-.footer-distributed .footer-center i{
-	/* background-color:  #33383b; */
-	border:1px solid white;
-	color: #EBEBEB;
-	font-size: 25px;
-	width: 38px;
-	height: 38px;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 42px;
-	margin: 10px 15px;
-	vertical-align: middle;
-}
-
-.footer-distributed .footer-center i.fa-envelope{
-	font-size: 17px;
-	line-height: 38px;
-}
-
-.footer-distributed .footer-center p{
-	display: inline-block;
-	color: #EBEBEB;
-	vertical-align: middle;
-	margin:0;
-}
-
-.footer-distributed .footer-center p span{
-	display:block;
-	font-weight: normal;
-	font-size:14px;
-	line-height:2;
-}
-
-.footer-distributed .footer-center p a{
-	color:  #5383d3;
-	text-decoration: none;;
-}
-
-
-/* Footer Right */
-
-.footer-distributed .footer-right{
-	width: 20%;
-}
-
-.footer-distributed .footer-company-about{
-	line-height: 20px;
-	color:  #EBEBEB;
-	font-size: 13px;
-	font-weight: normal;
-	margin: 0;
-}
-
-.footer-distributed .footer-company-about span{
-	display: block;
-	color:  #ffffff;
-	font-size: 14px;
-	font-weight: bold;
-	margin-bottom: 20px;
-}
-
-.footer-distributed .footer-icons{
-	margin-top: 25px;
-}
-
-.footer-distributed .footer-icons a{
-	display: inline-block;
-	width: 35px;
-	height: 35px;
-	cursor: pointer;
-	/* background-color:  #33383b; */
-	/* border:1px solid white; */
-	border-radius: 2px;
-
-	font-size: 20px;
-	color: #ffffff;
-	text-align: center;
-	line-height: 35px;
-
-	margin-right: 3px;
-	margin-bottom: 5px;
-}
-
-/* If you don't want the footer to be responsive, remove these media queries */
-
-@media (max-width: 880px) {
-
-	.footer-distributed{
-		font: bold 14px sans-serif;
-		background-image: url(../images/footer_mobile.svg);
-		background-size: cover;
-        background-repeat: no-repeat;
-        margin-right:0;
-        
-	}
-
-	.footer-distributed .footer-left,
-	.footer-distributed .footer-center,
-	.footer-distributed .footer-right{
-		display: block;
-		width: auto;
-		margin-bottom: 40px;
-		text-align: center; 
-        
-	}
-}
-
-@media screen and (max-width:425px){
-    .footer-distributed{
-		font: bold 14px sans-serif;
-		background-image: url(../images/footer_mobile.svg);
-		background-size: cover;
-        background-repeat: no-repeat;
-        padding: 45px 25px 5px 25px;
-        text-align: center;
-        
-	}
-	.footer-distributed .footer-right{
-		display: block;
-		width: 100%;
-		text-align: center; 
-	}
-    .footer-right{
-        margin-bottom: 0;
-        /* margin-top:10px; */
+@media screen and (max-width:332px){
+    #cc{
+        font-size:2.4rem
     }
-	.footer-distributed .footer-center i{
-		margin-left: 0;
-        
-	}
-    .footer-distributed .footer-center{
-        width:50%;
-        text-align:center;
-        margin-bottom: 30px;
-        display: inline-block;
-    	vertical-align: top;
-         padding-top:5px; 
-	    font: bold 16px sans-serif;
-        
-
-    }
-    .footer-distributed .footer-left{
-        display: inline-block;
-        width:40%;
-    	vertical-align: top;
-        /* text-align:center; */
-
-
-    }
-    /* Footer links */
-
-.footer-distributed .footer-links{
-	color:  #EBEBEB;
-	margin: 20px 0 12px;
-	padding: 0;
-    list-style:none;
-	text-decoration: none;
-
-}
-.footer-distributed .footer-company-about span{
-	margin-bottom: 10px;
 }
 
-.footer-distributed .footer-links a{
-	display:block;
-	line-height: 1.1;
-	text-decoration: none;
-	color:  inherit;
-    /* text-align: center; */
-}
-}

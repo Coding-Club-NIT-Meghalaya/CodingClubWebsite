@@ -8,7 +8,8 @@
 	<!-- <div class="col-lg-12 col-xl-12 col-sm-12 col-xs-12 "> -->
 	<!--<div className=" items">-->
 	<h1 class="heading-1">Achievements</h1>
-	<small>Show your skills in open innovation challenges and case study & business plan competition open for students,
+	<small class="heading-tag">Show your skills in open innovation challenges and case study & business plan competition
+		open for students,
 		professionals & stratups
 		<!-- <span style="float:right;"><button type="button" class="btn btn-outline-dark btn-sm">Explore all</button></span> -->
 	</small>
@@ -24,7 +25,7 @@
 							alt="card image cap">
 						<div class="card-body">
 							<h3 class="card-title"><%=achievement[i].Name%></h3>
-							<span class="date"><%=achievement[i].Date%></span>
+							<span class="date"><%=achievement[i].Date.toDateString()%></span>
 							<p class="card-text"><%=achievement[i].Description%></p>
 						</div>
 					</div>

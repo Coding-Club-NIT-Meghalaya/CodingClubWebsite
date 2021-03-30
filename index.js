@@ -100,16 +100,20 @@ app.get("/events", function (req, res) {
                     webinar: obj3,
                   });
                 }
+              }).sort({
+                StartDate: -1,
               })
             }
+          }).sort({
+            StartDate: -1,
           })
         }
-
+      }).sort({
+        Date: -1,
       })
-
     }
   }).sort({
-    StartDate: 1
+    StartDate: -1
   });
 });
 //add new event route
@@ -167,7 +171,7 @@ app.post("/admin/addWebinar", upload.single('Image'), function (req, res) {
     if (err)
       res.send("Error Occurred");
     else {
-      res.redirect("/admin/addProgramming");
+      res.redirect("/admin/addWebinar");
     }
   })
 });
@@ -195,6 +199,8 @@ app.get("/resources", function (req, res) {
         }
       })
     }
+  }).sort({
+    CreatedDate: -1,
   })
 });
 
@@ -218,6 +224,7 @@ app.post("/admin/addBlog", upload.single('blogImage'), function (req, res) {
     }
   });
 });
+
 //Show Blog
 app.get("/admin/resources/blog/:id", (req, res) => {
   let Foundid = req.params.id;

@@ -4,94 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Post</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title><%=blog.Title%></title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,800;1,400&family=Roboto:ital@0;1&display=swap" rel="stylesheet" />
-
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,800;1,400&family=Roboto:ital@0;1&display=swap"
+        rel="stylesheet" />
 
 </head>
-
 
 <style>
     .container {
         background: url(https://images.pexels.com/photos/6450009/pexels-photo-6450009.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
         background-size: cover;
+        margin-top: 60px;
+        padding: 10px;
     }
-    
+
     .jumbotron {
         background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/resource_page/images/titlebg.jpg');
         background-size: 100% 100%;
+        /* margin-top: 60px; */
     }
-    
+
     .content {
         font-size: 1.3rem;
         font-family: montserrat;
-        background-color: rgb(226, 219, 235);
+        background-color: rgb(238, 233, 243);
         border-radius: 5px;
         line-height: 2;
+        padding: 20px;
     }
-    
+
     .date {
         font-size: 1.3rem;
         color: rgb(255, 255, 255);
     }
-    
+
     h1 {
         color: white;
+        font-size: 50px;
     }
-    
+
     #blogimg {
-        width: 70%;
-        padding-left: 30%;
+        height: 500px;
+        width: 100%;
+        background-size: cover;
     }
 </style>
-
-
-
-
 
 <body>
     <div class="container">
         <div class="jumbotron img-jumbo">
-
-            <h1 class="display-5 py-4 ">Blog Title</h1>
+            <h1 class="display-5 py-4 "><%= blog.Title  %> </h1>
         </div>
-        <p class="date py-0">Date:15th jan ,23:43 GMT</p>
-        <hr>
-
-        <img src="https://tse2.mm.bing.net/th?id=OIP.4fkQog1pUWWLJxSRWopRUAHaEl&pid=Api&P=0&w=247&h=153" class="img-fluid" id="blogimg" alt="Responsive image">
-        <hr>
-        <div class="content px-3"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste assumenda qui modi, itaque nulla eveniet, sint aspernatur maxime autem sunt suscipit repellendus doloribus facere! Porro quam suscipit culpa praesentium velit? Exercitationem quos cupiditate
-            vel reiciendis eum, dignissimos harum, assumenda, provident consequatur enim quas voluptate laudantium fuga aut repellat. Tenetur velit quidem consequuntur quo voluptatem pariatur aliquam ab et veniam reprehenderit. Magnam magni consequatur
-            animi, nostrum labore deleniti repellendus placeat deserunt Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, praesentium iste id totam sint dolor adipisci architecto? Quisquam iste quidem incidunt nihil, voluptates obcaecati
-            labore reiciendis mollitia quo facilis! Veritatis! Consectetur maxime corrupti eum placeat qui voluptatem aperiam iure temporibus possimus, excepturi quia deleniti, nobis eveniet sunt architecto fuga. Quisquam temporibus error saepe corrupti
-            illum labore aliquid nemo, animi dolor. Quod officia, lore, Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur eum quisquam quae eaque possimus quas, et unde, ipsa illum esse numquam voluptatum in ratione non. Error, quia
-            illo! Voluptas, obcaecati? Earum, odit. Iste rerum voluptates quidem voluptatum molestiae, expedita nam sit alias doloribus delectus distinctio quod earum consectetur a reiciendis! Nisi cumque corrupti vero dolor sint quaerat vitae sequi voluptas.
-            Quod asperiores ullam numquam, tenetur consequatur accusantium deserunt nisi fuga deleniti dolorum cum, nemo tempora tempore, modi totam excepturi ad voluptatibus officiis. Harum vel saepe eveniet dicta ab veritatis cumque. Modi quia a, aliquid,
-            odit ipsam repellat blanditiis perferendis veniam cum consectetur et magnam cumque at, fuga quis enim rerum illum voluptatem ipsum obcaecati fugiat explicabo ut. Consequatur, omnis vitae? Vero voluptatum modi, molestiae nihil ratione, corrupti
-            similique maxime accusantium distinctio voluptate et consequuntur quod pariatur quidem ullam eos sunt culpa corporis. Ipsa eaque ut, minima sit non adipisci explicabo! Quibusdam quo ad deserunt possimus molestiae voluptatibus delectus dolorem
-            obcaecati pariatur tempore, quidem temporibus illo ab, veniam labore quia doloremque autem nam. Harum, maiores! Deleniti quis culpa nam! Nemo, rerum? At voluptatum nemo, non inventore rerum, vel laborum animi sed ipsam assumenda esse magnam
-            autem quae omnis aut, dolore voluptate nam minima! Unde commodi quibusdam asperiores nobis adipisci, et laboriosam? Sequi aliquid molestias deserunt enim praesentium recusandae? Et facere adipisci quasi facilis ipsum quod totam amet quos vitae.
-            Molestiae ab distinctio voluptatum dicta provident ad placeat voluptas optio nobis dolores?sint autem ea obcaecati maiores cumque, laborum, ipsam atque tenetur nobis optio officiis consequuntur illum magnam corrupti perferendis! Porro nobis
-            ipsum est aperiam quidem veritatis maiores eius tempora! Nisi obcaecati expedita quis quibusdam odit ad minus odio tempora, incidunt ratione! Eius, sed praesentium? Expedita eum impedit officia alias deleniti, deserunt tempore praesentium
-            vitae maxime, distinctio commodi sint error. Odit quaerat fuga qui enim dicta amet, vero architecto optio libero porro, asperiores ad, fugit dolore delectus provident quos. Velit officia beatae culpa sunt! Rerum eum reiciendis libero iste
-            earum. Possimus sit iste pariatur veniam, fuga laudantium deleniti mollitia dignissimos obcaecati ipsam aliquid inventore error eveniet excepturi et labore eius? Facilis laudantium quos, iusto voluptas dolorum odio officiis dolore perferendis.quidem
-            id esse vero, possimus maiores officia inventore sequi qui hic quisquam non iure rem eligendi explicabo! Harum, mollitia exercitationem? Repudiandae aspernatur quibusdam illum nesciunt natus velit libero voluptates expedita quidem laudantium
-            distinctio doloribus alias eum consequuntur autem obcaecati quis, sit ex perferendis architecto excepturi, voluptatum dolore. Veritatis magnam, voluptate quibusdam, voluptas vitae impedit nihil voluptatem alias mollitia dignissimos maxime
-            eius.
+        <p class="date py-0"><%=blog.CreatedDate.toDateString()%></p>
+        <div class="content px-3">
+            <%-blog.Content%>
         </div>
         <hr>
-        <blockquote class="blockquote text-right ">
-            <footer class="blockquote-footer py-5 text-dark">DORAEMON MAURYA
-                <br> National institute of technology meghalaya
+        <blockquote class=" blockquote text-right ">
+            <footer class=" blockquote-footer py-5" style="font-size:30px; color: white;padding: 13px;"><a
+                    href="<%=blog.AuthorLinkedIn%>"><%=blog.AuthorName%></a>
+                <br> National Institute of Technology,Meghalaya
             </footer>
         </blockquote>
     </div>
-
+    <!-- Footer Section -->
+    <%- include("partials/footer2") %>
 </body>
 
 </html>
