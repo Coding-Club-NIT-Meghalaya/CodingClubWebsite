@@ -44,17 +44,23 @@
 
       <!-- //////////////////////////////////////////////////////////////////// -->
 
-      <div id="contactForm">
-        <h1>Keep in touch!</h1>
-        <small>We'll get back to you as quickly as possible</small>
-        <form method="POST" autocomplete="off" name="Contact">
-          <input placeholder="Name" name="Name" type="text" required />
-          <input placeholder="Email" name="Email" type="email" required />
-          <input placeholder="Subject" name="subject" type="text" required />
-          <textarea placeholder="Comment" name="comment"></textarea>
-          <input class="formBtn" type="submit" />
-        </form>
-      </div>
+          <div id="contactForm">
+            
+            <div id="id01" class="contactContent">
+              <span value="close" onClick="CloseAndRefresh();" class="close" title="Close">&times;</span>
+              <h2>How can we help you?</h2>
+              <small>We'll get back to you as soon as possible</small>
+              <form method="POST" autocomplete="off" name="Contact">
+                <input placeholder="Name" name="Name" type="text" required />
+                <input placeholder="Email" name="Email" type="email" required />
+                <input placeholder="Subject" name="subject" type="text" required />
+                <textarea placeholder="Message" name="comment"></textarea>
+                <button class="formBtn" type="submit">Submit</button>
+              </form>
+            </div>
+          
+          </div>
+     
       <script>
         const scriptURL =
           "https://script.google.com/macros/s/AKfycbwWvG5mGFe8VyCv0cxKVhxzuxhQGQVauCg_s_JxMap65_j5l552E8ZCt7DYOrzLrwZ74A/exec";
@@ -67,8 +73,9 @@
             body: new FormData(form),
           })
             .then((response) =>
-              alert("Thanks for Contacting us..! We Will Contact You Soon...")
+              alert("Thanks for Contacting us..! We Will Contact You Soon...") ? "" : location.reload()
             )
+            
             .catch((error) => console.error("Error!", error.message));
         });
       </script>
@@ -171,5 +178,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
     <script src="landing_page/assets/scripts/animate.js"></script>
+    <script>
+      function CloseAndRefresh() 
+      {
+        location.reload(true);
+        self.close();
+      }
+    </script>
   </body>
 </html>
