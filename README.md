@@ -86,7 +86,7 @@
 
 
 <a href="https://github.com/Coding-Club-NIT-Meghalaya/
-CodeToGrow/graphs/contributors">
+CodingClubWebsite/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Coding-Club-NIT-Meghalaya/
-CodeToGrow" />
+CodingClubWebsite" />
 </a>
