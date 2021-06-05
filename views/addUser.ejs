@@ -5,28 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
     <title>AddUser</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container shadow my-4 p-4" style="border-radius: 10px;">
         <div class="row">
-            <div class="col-md-6 m-auto">
+            <div class="col-md-10 m-auto">
                 <h1 class="text-center display-4 my-4">Add Team Member to The database</h1>
-                <form action="/admin/addUser" method="POST" enctype="multipart/form-data">
+                <form action="/api/teammember" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col">
-                            <input type="text" name="FirstName" class="form-control" placeholder="First name"
-                                aria-label="First name">
+                            <input type="text" name="FirstName" class="form-control" placeholder="First name" aria-label="First name">
                         </div>
                         <div class="col">
-                            <input type="text" name="LastName" class="form-control" placeholder="Last name"
-                                aria-label="Last name">
+                            <input type="text" name="LastName" class="form-control" placeholder="Last name" aria-label="Last name">
                         </div>
                     </div>
                     <select class="form-select my-4" name="Designation" aria-label="Default select example">
@@ -43,8 +39,7 @@
                     </select>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-default">Designation Name</span>
-                        <input type="text" name="DesignationName" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-default">
+                        <input type="text" name="DesignationName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                     <div class="input-group mb-3">
                         <div class="col">
@@ -57,20 +52,17 @@
                     <label for="basic-url" class="form-label">Your Github Profile Link</label>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon3">https://github.com/users/</span>
-                        <input type="text" name="Github" class="form-control" id="basic-url"
-                            aria-describedby="basic-addon3">
+                        <input type="text" name="Github" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                     </div>
                     <label for="basic-url" class="form-label">Your Linkedin Profile Link</label>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon3">https://linkedin.com/users/</span>
-                        <input type="text" name="LinkedIn" class="form-control" id="basic-url"
-                            aria-describedby="basic-addon3">
+                        <input type="text" name="LinkedIn" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                     </div>
                     <label for="basic-url" class="form-label">Your Facebook Profile Link</label>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon3">https://facebook.com/users/</span>
-                        <input type="text" name="Facebook" class="form-control" id="basic-url"
-                            aria-describedby="basic-addon3">
+                        <input type="text" name="Facebook" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                     </div>
                     <input type="submit" value="Submit" class="btn btn-primary btn-block">
                 </form>

@@ -5,36 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
     <title>AddEventPoster</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container shadow my-4 p-4" style="border-radius: 10px;">
         <div class="row">
-            <div class="col-md-6 m-auto">
+            <div class="col-md-10 m-auto">
                 <h1 class="text-center display-4 my-4">Add Event to The Database</h1>
-                <form action="/admin/addEvent" method="POST" enctype="multipart/form-data">
+                <form action="/api/event" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col my-2">
-                            <input type="text" name="EventName" class="form-control" placeholder="Event Name"
-                                aria-label="Name">
+                            <input type="text" name="EventName" class="form-control" placeholder="Event Name" aria-label="Name">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col my-2">
                             <p class="text-center display-8 my-2">Start Date</p>
-                            <input type="date" name="StartDate" class="form-control" placeholder="StartDate"
-                                aria-label="Start Date">
+                            <input type="date" name="StartDate" class="form-control" placeholder="StartDate" aria-label="Start Date">
                         </div>
                         <div class="col my-2">
                             <p class="text-center display-8 my-2">End Date</p>
-                            <input type="date" name="EndDate" class="form-control" placeholder="EndDate"
-                                aria-label="End Date">
+                            <input type="date" name="EndDate" class="form-control" placeholder="EndDate" aria-label="End Date">
                         </div>
                     </div>
                     <div class="row">
@@ -48,8 +43,7 @@
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon3">Event Link (if any):</span>
-                            <input type="text" name="Link" class="form-control" id="basic-url"
-                                aria-describedby="basic-addon3">
+                            <input type="text" name="Link" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                         </div>
                     </div>
                     <input type="submit" value="Submit" class="btn btn-primary btn-block">
