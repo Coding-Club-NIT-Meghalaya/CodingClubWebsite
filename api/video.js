@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Video = require('../models/video');
-const upload = require('../multer/gridfs');
+const upload = require('../Mongodb/gridfs');
 
 router.get('/video', function(req, res) {
     Video.find((err, obj) => {

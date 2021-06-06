@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Webinar = require('../models/Webinar');
-const upload = require('../multer/gridfs');
+const upload = require('../Mongodb/gridfs');
 
 router.get('/webinar', function(req, res) {
     Webinar.find(function(err, obj) {

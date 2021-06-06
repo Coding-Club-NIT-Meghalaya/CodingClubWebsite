@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Project = require('../models/project');
-const upload = require('../multer/gridfs');
+const upload = require('../Mongodb/gridfs');
 
 router.get("/project", function(req, res) {
     Project.find(function(err, obj) {

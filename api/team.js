@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const TeamMember = require('../models/teamMember');
-const upload = require('../multer/gridfs');
+const upload = require('../Mongodb/gridfs');
 
 router.get("/teammember", function(req, res) {
     TeamMember.find(function(err, obj) {

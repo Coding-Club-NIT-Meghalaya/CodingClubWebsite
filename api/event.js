@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Event = require('../models/event');
-const upload = require('../multer/gridfs');
+const upload = require('../Mongodb/gridfs');
 
 router.get("/event", function(req, res) {
     Event.find(function(err, obj) {

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Materials = require('../models/material');
-const upload = require('../multer/gridfs');
+const upload = require('../Mongodb/gridfs');
 
 router.get('/material', function(req, res) {
     Materials.find((err, obj) => {
