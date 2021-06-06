@@ -6,11 +6,15 @@ const upload = require('../Mongodb/gridfs');
 router.get('/material', function(req, res) {
     Materials.find((err, obj) => {
         if (err)
-            res.json({
-                'msg': "Error Occurred"
+            res.status(500).json({
+                err: err.message,
             });
         else {
-            res.json(obj);
+            res.status(200).json({
+                message: 'Successfull Get Request',
+                count: obj.length,
+                material_data: obj,
+            });
         }
     });
 });
@@ -21,8 +25,8 @@ router.post("/material", function(req, res) {
         Year: getYear
     }, function(err, foundData) {
         if (err) {
-            res.json({
-                'msg': "Error Occurred"
+            res.status(500).json({
+                err: err.message,
             });
         } else {
             if (foundData === null) {
@@ -42,9 +46,8 @@ router.post("/material", function(req, res) {
                 }
                 Materials.create(newobj, function(err, newBlog) {
                     if (err) {
-                        // alert("Please fill the details correctly");
-                        res.json({
-                            'msg': "Error Occurred"
+                        res.status(500).json({
+                            err: err.message,
                         });
                     } else {
                         var str = "Field." + newData.Field + ".Event";
@@ -59,12 +62,15 @@ router.post("/material", function(req, res) {
                             }
                         }, null, function(err, docs) {
                             if (err) {
-                                res.json({
-                                    'msg': "Error Occurred"
+                                res.status(500).json({
+                                    err: err.message,
                                 });
                             } else {
-                                console.log("Original Doc : ", docs);
-                                res.json(docs);
+                                res.status(201).json({
+                                    message: 'Successfull Post Request',
+                                    count: docs.length,
+                                    material_data: docs,
+                                });
                             }
                         });
                     }
@@ -72,7 +78,6 @@ router.post("/material", function(req, res) {
 
             } else {
                 var str = "Field." + newData.Field + ".Event";
-                console.log(str);
                 Materials.findOneAndUpdate({
                     Year: getYear
                 }, {
@@ -84,11 +89,15 @@ router.post("/material", function(req, res) {
                     }
                 }, null, function(err, docs) {
                     if (err) {
-                        res.json({
-                            'msg': "Error Occurred"
+                        res.status(500).json({
+                            err: err.message,
                         });
                     } else {
-                        res.json(docs);
+                        res.status(201).json({
+                            message: 'Successfull Post Request',
+                            count: docs.length,
+                            material_data: docs,
+                        });
                     }
                 });
             }

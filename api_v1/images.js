@@ -30,7 +30,7 @@ router.get('/image/:filename', (req, res) => {
         }
     })
 });
-router.post('/image/del/:filename', (req, res) => {
+router.delete('/image/del/:filename', (req, res) => {
     gfs.files.deleteOne({
         filename: req.params.filename
     }, (err, data) => {

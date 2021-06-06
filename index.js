@@ -24,8 +24,8 @@ app.set("view engine", "ejs");
 const {
     response
 } = require("express");
-app.use('/api', require('./api/project'), require('./api/achievement'), require('./api/event'),
-    require('./api/programmingEvent'), require('./api/images'), require('./api/webinarEvent'), require('./api/blog'), require('./api/material'), require('./api/team'), require('./api/video'));
+app.use('/api/v1/', require('./api_v1/project'), require('./api_v1/achievement'), require('./api_v1/event'),
+    require('./api_v1/programmingEvent'), require('./api_v1/images'), require('./api_v1/webinarEvent'), require('./api_v1/blog'), require('./api_v1/material'), require('./api_v1/team'), require('./api_v1/video'));
 
 app.get("/admin/addEvent", function(req, res) {
     res.render("addEvent");

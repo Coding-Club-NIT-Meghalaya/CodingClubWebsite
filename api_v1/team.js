@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Achievement = require('../models/achievement');
+const TeamMember = require('../models/teamMember');
 const upload = require('../Mongodb/gridfs');
 const db = require('../Mongodb/connection');
 const Grid = require('gridfs-stream');
@@ -10,72 +10,58 @@ db.once('open', () => {
     gfs = Grid(db.db, mongoose.mongo);
     gfs.collection('uploads');
 });
-router.get('/achievement', function(req, res, next) {
-    Achievement.find(function(err, obj) {
+router.get("/teammember", function(req, res) {
+    TeamMember.find(function(err, obj) {
         if (err)
             res.status(500).json({
-                error: {
-                    message: "Unsucessfull GET Request",
-                    details: err,
-                }
+                err: err.message,
             });
-        else {
+        else
             res.status(200).json({
-                message: 'Successful Get Request',
+                message: 'Succesfull get request',
                 count: obj.length,
-                achievement_data: obj,
+                team_data: obj,
             });
-        }
     }).sort({
-        StartDate: -1,
+        Designation: 1
     });
 });
-router.get("/achievement/:id", (req, res, next) => {
+router.get("/teammember/:id", (req, res, next) => {
     let Foundid = req.params.id;
-    Achievement.findOne({
+    TeamMember.findOne({
         _id: Foundid
     }, (err, obj) => {
         if (err) {
             res.status(500).json({
-                error: {
-                    message: "Unsucessfull GET Request",
-                    details: err,
-                }
+                err: err.message,
             });
         } else {
             res.status(200).json({
                 message: 'Successful Get Request',
                 count: obj.length,
-                achievement_data: obj,
+                Team_data: obj,
             });
         }
     });
 });
-router.post("/achievement", upload.single('achievementImage'), function(req, res, next) {
-    let newAchievement = {
-        Name: req.body.Name,
-        Date: Date.now(),
-        Description: req.body.Description,
-        Link: req.body.Link,
-        FileName: req.file.filename,
-    }
-    Achievement.create(newAchievement, (err, obj) => {
+router.post("/teammember", upload.single('profileImage'), function(req, res) {
+    let data = req.body;
+    data["filename"] = req.file.filename;
+    TeamMember.create(data, (err, obj) => {
         if (err)
-            res.json({
-                error: {
-                    message: "Unsuccessfull POST Request",
-                    details: err,
-                }
+            res.status(500).json({
+                err: err.message,
             });
         else
             res.status(201).json({
-                message: 'Successfully Created',
-                added_achievement: obj,
+                message: 'Succesfull post request',
+                count: obj.length,
+                team_data: obj,
             });
     });
 });
-router.delete('/achievement/:id', function(req, res, next) {
-    Achievement.findOne({
+router.delete('/teamMember/:id', function(req, res, next) {
+    TeamMember.findOne({
         _id: req.params.id
     }, (err, obj) => {
         if (err) {
@@ -90,7 +76,7 @@ router.delete('/achievement/:id', function(req, res, next) {
                     err: err.message
                 });
                 else {
-                    Achievement.deleteOne({
+                    TeamMember.deleteOne({
                         _id: req.params.id
                     }, (err, obj) => {
                         if (err) return res.status(404).json({
@@ -107,4 +93,5 @@ router.delete('/achievement/:id', function(req, res, next) {
         }
     });
 });
+
 module.exports = router
