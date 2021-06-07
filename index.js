@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const bodyParser = require("body-parser");
 const morgan = require('morgan');
 const db = require('./Mongodb/connection');
+// var cors = require('cors')
 const port = process.env.PORT || 8000;
 require('dotenv').config();
 const {
@@ -17,6 +18,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(express.urlencoded());
+// app.use(cors());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.set("views", __dirname + "/views");
@@ -27,31 +29,31 @@ const {
 app.use('/api/v1/', require('./api_v1/project'), require('./api_v1/achievement'), require('./api_v1/event'),
     require('./api_v1/programmingEvent'), require('./api_v1/images'), require('./api_v1/webinarEvent'), require('./api_v1/blog'), require('./api_v1/material'), require('./api_v1/team'), require('./api_v1/video'));
 
-app.get("/admin/addEvent", function(req, res) {
+app.get("/admin/addEvent", function (req, res) {
     res.render("addEvent");
 });
-app.get("/admin/addAchievement", function(req, res) {
+app.get("/admin/addAchievement", function (req, res) {
     res.render("addAchievement");
 });
-app.get("/admin/addProgramming", function(req, res) {
+app.get("/admin/addProgramming", function (req, res) {
     res.render("addProgramming");
 });
-app.get("/admin/addWebinar", function(req, res) {
+app.get("/admin/addWebinar", function (req, res) {
     res.render("addWebinar");
 });
 app.get("/admin/addBlog", (req, res) => {
     res.render("addBlog");
 });
-app.get("/admin/addMaterial", function(req, res) {
+app.get("/admin/addMaterial", function (req, res) {
     res.render("addMaterial");
 });
-app.get("/admin/addVideo", function(req, res) {
+app.get("/admin/addVideo", function (req, res) {
     res.render("addVideo");
 });
-app.get("/admin/addUser", function(req, res) {
+app.get("/admin/addUser", function (req, res) {
     res.render("addUser");
 });
-app.get("/admin/addProject", function(req, res) {
+app.get("/admin/addProject", function (req, res) {
     res.render("addProject");
 });
 
