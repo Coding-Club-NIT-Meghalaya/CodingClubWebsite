@@ -6,7 +6,7 @@ const methodOverride = require('method-override');
 const bodyParser = require("body-parser");
 const morgan = require('morgan');
 const db = require('./Mongodb/connection');
-// var cors = require('cors')
+var cors = require('cors');
 const port = process.env.PORT || 8000;
 require('dotenv').config();
 const {
@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(express.urlencoded());
-// app.use(cors());
+app.use(cors());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.set("views", __dirname + "/views");
