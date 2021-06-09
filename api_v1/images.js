@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
+const upload = require('../Mongodb/gridfs');
 const db = require('../Mongodb/connection');
 const Grid = require('gridfs-stream');
+const mongoose = require('mongoose');
+var FroalaEditor = require('../node_modules/wysiwyg-editor-node-sdk/lib/froalaEditor');
 let gfs;
 db.once('open', () => {
     gfs = Grid(db.db, mongoose.mongo);
@@ -30,13 +32,29 @@ router.get('/image/:filename', (req, res) => {
         }
     })
 });
+router.post('/image_upload', upload.single('file'), function(req, res) {
+    var url = "http://localhost:8000/api/v1/image/" + req.file.filename;
+    res.send({
+        link: url
+    });
+})
+router.post('/image_delete', function(req, res) {
+    console.log(req);
+    console.log(req);
+    res.send("Successfull");
+});
 router.delete('/image/del/:filename', (req, res) => {
     gfs.files.deleteOne({
         filename: req.params.filename
     }, (err, data) => {
-        if (err) return res.status(404).json({
-            err: err.message
-        });
+
+        if (err) {
+            console.log(err);
+
+            return res.status(404).json({
+                err: err.message
+            });
+        }
         res.status(200).json({
             message: "File Succesfully Deleted",
         })

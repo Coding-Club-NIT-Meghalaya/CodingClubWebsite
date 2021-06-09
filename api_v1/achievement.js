@@ -53,6 +53,8 @@ router.post("/achievement", upload.single('achievementImage'), function(req, res
         Link: req.body.Link,
         FileName: req.file.filename,
     }
+    console.log(req);
+    console.log(req.file);
     Achievement.create(newAchievement, (err, obj) => {
         if (err)
             res.json({

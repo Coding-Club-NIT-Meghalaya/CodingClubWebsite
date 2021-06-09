@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url" content=<%=url %> />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Your Website Title" />
+    <meta property="og:description" content="Your description" />
+    <meta property="og:image" content=<%=imageurl %> />
+    <title>
+    </title>
+    <link href="../css/froala_style.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,800;1,400&family=Roboto:ital@0;1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/Blog/showblog.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col" style="margin-right: 320px;">
+                <div class="d-flex flex-row bd-highlight">
+                    <i class="far fa-calendar-alt p-1"></i>
+                    <div id="date" class="date mx-2">
+                        <%=blog[0].CreatedDate.toDateString()%>
+                    </div>
+                    <i class="far fa-clock p-1"></i>
+                    <div class="mx-2">10min read</div>
+                </div>
+                <h1 id="title">
+                    <%=blog[0].Title%>
+                </h1>
+                <hr>
+                <div id="blogcontent" class="fr-view">
+                    <%-blog[0].Content%>
+                </div>
+            </div>
+            <div class="col-lg-4" style="position: fixed;float:right;right: 0;">
+                <h2 class="my-4">Tags</h2>
+                <div class="tag-container">
+                    <%for(let i=0;i<match.length;i++){%>
+                        <div class="tag">
+                            #
+                            <%=match[i]%>
+                        </div>
+                        <%}%>
+                </div>
+                <hr size="10">
+                <h2 class="my-4">Author</h2>
+                <div class="author my-4">
+                    <span id="author"><%=blog[0].AuthorName%></span>
+                    <a href="<%=blog[0].AuthorLinkedIn%>"><i class="fab fa-linkedin fa-3x my-3"
+                            style="color: black;"></i></a>
+                    <div id="fb-root">
+                        <h2>Share</h2>
+                        <i class="fas fa-share"></i>
+
+                    </div>
+                    <script>
+                        (function(d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));
+                    </script>
+
+                    <!-- Your share button code -->
+
+                    <div class="fb-share-button" data-href=<%=url %> data-layout="button_count">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/23cfd96e52.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

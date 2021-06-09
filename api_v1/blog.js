@@ -48,6 +48,7 @@ router.get("/blog/:id", (req, res) => {
 router.post("/blog", upload.single('blogImage'), function(req, res) {
     let newData = req.body;
     newData["FileName"] = req.file.filename;
+    console.log(newData);
     Blog.create(newData, (err, obj) => {
         if (err) {
             res.json({
