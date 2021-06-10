@@ -2,6 +2,8 @@ var example = document.querySelector('#example');
 // console.log(example);
 var editor = new FroalaEditor(example, {
     imageUploadURL: "http://localhost:8000/api/v1/image_upload",
+    videoUpload: false,
+    fileUpload: false,
     events: {
         'image.removed': function($img) {
             var xhttp = new XMLHttpRequest();

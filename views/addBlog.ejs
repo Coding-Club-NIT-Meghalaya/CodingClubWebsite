@@ -12,15 +12,15 @@
     <title>AddBlog</title>
 </head>
 
-<body>
-    <div class="container shadow my-4 p-4" style="border-radius: 10px;">
+<body style="background-color: whitesmoke;">
+    <div class="container shadow-lg my-5 p-4" style="border-radius: 10px;">
         <div class="row">
             <div class="col-md-10 m-auto">
-                <h1 class="text-center display-4 my-4">Add Blog Post to The database</h1>
+                <h1 class="text-center display-4 my-4">Welcome to CCNITM Blogs</h1>
                 <form action="/api/v1/blog" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col">
-                            <input type="text" name="Title" class="form-control" placeholder="Title" aria-label="Title">
+                            <input type="text" name="Title" class="form-control" placeholder="Blog Title" aria-label="Title">
                         </div>
                     </div>
                     <div class="row my-4">
@@ -45,18 +45,19 @@
                         <option value="Network Security">Network Security</option>
                         <option value="App Development">App Development</option>
                     </select>
+                    <label for="floatingTextarea2">Write Your Blog Here</label>
                     <div class="form-floating my-4">
-                        <label for="floatingTextarea2">Write Your Blog Here</label>
+
                         <!-- <div name="Content" id="example"></div> -->
                         <textarea id="example" class="form-control" name="Content" placeholder="Write Full Description" id="example" style="height: 100px"></textarea>
                     </div>
                     <div class="form-floating my-4">
                         <textarea class="form-control" name="ShortDescription" placeholder="Write Short Description" id="floatingTextarea2" style="height: 100px"></textarea>
-                        <label for="floatingTextarea2">Short Description of the Blog</label>
+                        <label for="floatingTextarea2">Short Description of the Blog(less then 200 words)</label>
                     </div>
                     <div class="form-floating my-4">
                         <textarea class="form-control" name="Tags" placeholder="Write a Short Description" id="floatingTextarea"></textarea>
-                        <label for="floatingTextarea">Related Tags</label>
+                        <label for="floatingTextarea">Related Tags (Please add a # before every tag)</label>
                     </div>
                     <div class="col my-2">
                         <p>Created Date:</p>
@@ -69,13 +70,13 @@
                     </div>
                     <div class="input-group mb-3">
                         <div class="col">
-                            <label for="file" class="custom-file-label">Choose Top Blog Image</label>
+                            <label for="file" class="custom-file-label">Upload any relevent blog Image</label>
                         </div>
                         <div class="col">
                             <input type="file" name="blogImage" class="form-control" id="inputGroupFile02">
                         </div>
                     </div>
-                    <input type="submit" value="Submit" class="btn btn-primary btn-block">
+                    <input type="submit" value="Submit Blog" class="btn btn-primary btn-block">
                 </form>
             </div>
         </div>
@@ -83,7 +84,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/js/froala_editor.pkgd.min.js">
     </script>
     <script src="../js/plugins/table.min.js"></script>
-    <script src="/Add Blog/script.js"></script>
+    <script src="/Blog/script.js"></script>
 </body>
 
 </html>
