@@ -21,7 +21,7 @@ router.get('/image/:filename', (req, res) => {
             });
         }
         //check if image
-        if (file.contentType == 'image/jpeg' || file.contentType == 'img/png') {
+        if (file.contentType == 'image/jpeg' || file.contentType == 'image/png') {
             //Read output to the browser
             const readStream = gfs.createReadStream(file.filename);
             readStream.pipe(res);
@@ -32,8 +32,10 @@ router.get('/image/:filename', (req, res) => {
         }
     })
 });
+
 router.post('/image_upload', upload.single('file'), function(req, res) {
-    var url = "http://localhost:8000/api/v1/image/" + req.file.filename;
+    var url = "https://codingclubnitm.herokuapp.com/api/v1/image/" + req.file.filename;
+
     res.send({
         link: url
     });
