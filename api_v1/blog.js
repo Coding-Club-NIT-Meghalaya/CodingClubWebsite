@@ -144,4 +144,19 @@ router.delete('/blog/:id', function(req, res, next) {
         }
     });
 });
+router.get("/updateblog/:id", (req, res) => {
+    Blog.findOne({
+        _id: req.params.id
+    }, (err, obj) => {
+        if (err) {
+            res.status(500).json({
+                error: err.message
+            });
+        } else {
+            res.render("updateBlog", {
+                arr: obj
+            })
+        }
+    })
+});
 module.exports = router

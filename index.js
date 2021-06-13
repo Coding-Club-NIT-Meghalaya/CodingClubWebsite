@@ -44,20 +44,18 @@ app.get("/admin/addWebinar", function(req, res) {
 app.get("/admin/addBlog", (req, res) => {
     res.render("addBlog");
 });
-app.get("/admin/updateBlog/:id", (req, res) => {
-    Blog.findOne({
-        _id: req.params.id
-    }, (err, obj) => {
+app.get("/admin/blogmanager", function(req, res) {
+    Blog.find((err, obj) => {
         if (err) {
             res.status(500).json({
                 error: err.message
             });
         } else {
-            res.render("updateBlog", {
-                arr: obj
+            res.render("BlogManager", {
+                blogs: obj,
             })
         }
-    })
+    });
 });
 app.get("/admin/addMaterial", function(req, res) {
     res.render("addMaterial");
