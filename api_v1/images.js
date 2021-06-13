@@ -35,16 +35,10 @@ router.get('/image/:filename', (req, res) => {
 
 router.post('/image_upload', upload.single('file'), function(req, res) {
     var url = "https://codingclubnitm.herokuapp.com/api/v1/image/" + req.file.filename;
-
     res.send({
         link: url
     });
 })
-router.post('/image_delete', function(req, res) {
-    console.log(req);
-    console.log(req);
-    res.send("Successfull");
-});
 router.delete('/image/del/:filename', (req, res) => {
     gfs.files.deleteOne({
         filename: req.params.filename
@@ -58,7 +52,7 @@ router.delete('/image/del/:filename', (req, res) => {
             });
         }
         res.status(200).json({
-            message: "File Succesfully Deleted",
+            message: "Image Succesfully Deleted",
         })
     });
 });

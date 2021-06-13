@@ -44,6 +44,21 @@ app.get("/admin/addWebinar", function(req, res) {
 app.get("/admin/addBlog", (req, res) => {
     res.render("addBlog");
 });
+app.get("/admin/updateBlog/:id", (req, res) => {
+    Blog.findOne({
+        _id: req.params.id
+    }, (err, obj) => {
+        if (err) {
+            res.status(500).json({
+                error: err.message
+            });
+        } else {
+            res.render("updateBlog", {
+                arr: obj
+            })
+        }
+    })
+});
 app.get("/admin/addMaterial", function(req, res) {
     res.render("addMaterial");
 });

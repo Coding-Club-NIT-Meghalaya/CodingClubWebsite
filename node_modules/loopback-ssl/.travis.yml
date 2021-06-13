@@ -1,0 +1,27 @@
+language: node_js
+
+env:
+- CODECOV_TOKEN="565f4dce-707a-4fda-a467-ffcc4e24b661"
+
+node_js:
+  - "8"
+  - "6"
+  - "4"
+
+before_install:
+  - npm install -g eslint
+  - npm install -g eslint-config-loopback
+  - npm install -g istanbul
+  - npm install -g codecov
+
+script:
+  - gulp build
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+  - gulp codacy
+
+branches:
+  only:
+  - master
+  - development

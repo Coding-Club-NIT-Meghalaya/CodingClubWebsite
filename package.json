@@ -27,6 +27,7 @@
     "file-upload": "^0.0.0",
     "froala-editor": "^4.0.1",
     "gridfs-stream": "^1.1.1",
+    "loopback-ssl": "^1.0.4",
     "method-override": "^3.0.0",
     "mongoose": "^5.11.15",
     "morgan": "^1.10.0",

@@ -1,0 +1,11 @@
+{
+  "httpMode": false,
+  "certConfig": {
+    "path": "./test/fixtures/certs/local/q",
+    "key": "local.pem",
+    "cert": "local.crt.pem",
+    "ca": [],
+    "requestCert": true,
+    "rejectUnauthorized": false
+  }
+}

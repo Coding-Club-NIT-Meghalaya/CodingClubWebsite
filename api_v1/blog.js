@@ -5,6 +5,7 @@ const upload = require('../Mongodb/gridfs');
 const db = require('../Mongodb/connection');
 const Grid = require('gridfs-stream');
 const mongoose = require('mongoose');
+const https = require('https')
 let gfs;
 db.once('open', () => {
     gfs = Grid(db.db, mongoose.mongo);
@@ -47,7 +48,8 @@ router.get("/blog/:id", (req, res) => {
 });
 router.post("/blog", upload.single('blogImage'), function(req, res) {
     let newData = req.body;
-    newData["FileName"] = req.file.filename;
+    if (req.file != undefined)
+        newData["FileName"] = req.file.filename;
     console.log(newData);
     Blog.create(newData, (err, obj) => {
         if (err) {
@@ -62,6 +64,52 @@ router.post("/blog", upload.single('blogImage'), function(req, res) {
             });
         }
     });
+});
+router.post('/update/blog/:id', upload.single('blogImage'), function(req, res) {
+    let newData = req.body;
+    console.log(req.body);
+    if (req.file != undefined) {
+        Blog.findOne({
+            _id: req.params.id
+        }, (err, obj) => {
+            if (err) {
+                res.status(500).json({
+                    error: err.message
+                });
+            } else {
+
+                const options = {
+                    hostname: 'codingclubnitm.herokuapp.com',
+                    path: '/api/v1/image/del/' + req.file.filename,
+                    method: 'DELETE'
+                }
+                const hreq = https.request(options, hres => {
+                    console.log(`statusCode: ${hres.statusCode}`)
+                    console.log("sucessfull")
+                })
+                hreq.on('error', error => {
+                    console.error(error)
+                })
+                hreq.end()
+            }
+        })
+        newData["FileName"] = req.file.filename;
+    }
+    Blog.updateOne({
+        _id: req.params.id
+    }, newData, (err, obj) => {
+        if (err) {
+            res.status(500).json({
+                error: err.message,
+            });
+        } else {
+            res.status(201).json({
+                message: 'Successfull Put Request',
+                count: obj.length,
+                blog_data: obj,
+            });
+        }
+    })
 });
 router.delete('/blog/:id', function(req, res, next) {
     Blog.findOne({

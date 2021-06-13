@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
-    <!-- <link rel="stylesheet" href="../node_modules/froala-editor/css/plugins/code_view.css"> -->
     <title>AddBlog</title>
 </head>
 
@@ -19,27 +17,27 @@
         <div class="row">
             <div class="col-md-10 m-auto">
                 <h1 class="text-center display-4 my-4">Welcome to CCNITM Blogs</h1>
-                <form action="/api/v1/blog" method="POST" enctype="multipart/form-data">
+                <form action="/api/v1/update/blog/<%=arr._id %>" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col">
-                            <input type="text" name="Title" class="form-control" placeholder="Blog Title" aria-label="Title" required>
+                            <input type="text" value="<%=arr.Title %>" name="Title" class="form-control" placeholder="Blog Title" aria-label="Title" required>
                         </div>
                     </div>
                     <div class="row my-4">
                         <div class="col">
                             <p>Author Name</p>
-                            <input type="text" name="AuthorName" class="form-control" placeholder="Author Name" aria-label="Author name">
+                            <input type="text" value="<%=arr.AuthorName %>" name="AuthorName" class="form-control" placeholder="Author Name" aria-label="Author name" required>
                         </div>
                         <div class="col">
                             <p>Author Email</p>
-                            <input type="email" name="AuthorEmail" class="form-control" placeholder="Author Email" aria-label="Author Email">
+                            <input type="email" value="<%=arr.AuthorEmail %>" name="AuthorEmail" class="form-control" placeholder="Author Email" aria-label="Author Email" required>
                         </div>
                         <div class="col">
                             <p>Linked Profile Link</p>
-                            <input type="text" name="AuthorLinkedIn" class="form-control" placeholder="Author LinkedIn Profile Link" aria-label="Author Profile">
+                            <input type="text" value="<%=arr.AuthorLinkedIn %>" name="AuthorLinkedIn" class="form-control" placeholder="Author LinkedIn Profile Link" aria-label="Author Profile" required>
                         </div>
                     </div>
-                    <select class="form-select my-4" name="Category" aria-label="Default select example">
+                    <select class="form-select my-4" name="Category" aria-label="Default select example" required>
                         <option selected>Choose Category</option>
                         <option value="Competitive Programming">Competitive Programming</option>
                         <option value="Web Development">Web Development</option>
@@ -50,26 +48,25 @@
                     <label for="floatingTextarea2">Write Your Blog Here (Please do not use copy-paste from outside
                         website)</label>
                     <div class="form-floating my-4">
-
-                        <!-- <div name="Content" id="example"></div> -->
-                        <textarea id="example" class="form-control" name="Content" placeholder="Write Full Description" id="example" style="height: 100px"></textarea>
-                    </div>
-                    <div class="form-floating my-4">
-                        <textarea class="form-control" name="ShortDescription" placeholder="Write Short Description" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <textarea id="example" class="form-control" name="Content" placeholder="Write Full Description" id="example" style="height: 100px" value=<%-arr.Content%></textarea> </div>
+                    <div class=" form-floating my-4">
+                        <textarea class="form-control" name="ShortDescription" placeholder="Write Short Description" id="floatingTextarea2" style="height: 100px"><%=arr.ShortDescription%></textarea>
                         <label for="floatingTextarea2">Short Description of the Blog(less then 200 words)</label>
                     </div>
                     <div class="form-floating my-4">
-                        <textarea class="form-control" name="Tags" placeholder="Write a Short Description" id="floatingTextarea"></textarea>
+                        <textarea class="form-control" name="Tags" placeholder="Write a Short Description" id="floatingTextarea"><%=arr.Tags%></textarea>
                         <label for="floatingTextarea">Related Tags (Please add a # before every tag)</label>
                     </div>
-                    <div class="col my-2">
+                    <div class="col my-2 ">
                         <p>Created Date:</p>
-                        <input type="date" name="CreatedDate" class="form-control" placeholder="Date" aria-label="Date">
+
+
+                        <input type="date" value="" name="CreatedDate" class="form-control" placeholder="Date" aria-label="Date" required>
                     </div>
                     <label for="basic-url" class="form-label">Any Link</label>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon3">Link(if any)</span>
-                        <input type="text" name="Link" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        <input type="text" value="<%=arr.Link%>" name="Link" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                     </div>
                     <div class="input-group mb-3">
                         <div class="col">
@@ -84,12 +81,12 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/js/froala_editor.pkgd.min.js">
+    <script type="text/javascript " src="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/js/froala_editor.pkgd.min.js ">
     </script>
-    <!-- <script src="../node_modules/froala-editor/js/plugins/table.min.js"></script> -->
-    <!-- <script src="../node_modules/froala-editor/js/plugins/code_view.min.js"></script> -->
+    <!-- <script src="../node_modules/froala-editor/js/plugins/table.min.js "></script> -->
+    <!-- <script src="../node_modules/froala-editor/js/plugins/code_view.min.js "></script> -->
 
-    <script src="/Blog/script.js"></script>
+    <script src="/Blog/script.js "></script>
 </body>
 
 </html>
