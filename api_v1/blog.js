@@ -104,9 +104,7 @@ router.post('/update/blog/:id', upload.single('blogImage'), function(req, res) {
             });
         } else {
             res.status(201).json({
-                message: 'Successfull Put Request',
-                count: obj.length,
-                blog_data: obj,
+                message: 'Successfull Updated Blog',
             });
         }
     })

@@ -44,7 +44,30 @@ app.get("/admin/addWebinar", function(req, res) {
 app.get("/admin/addBlog", (req, res) => {
     res.render("addBlog");
 });
+app.post("/admin/blogmanager", function(req, res) {
+    console.log(req.body);
+    Blog.find({
+        $or: [{
+            AuthorName: req.body.Author
+        }, {
+            Title: req.body.Author
+        }]
+    }, (err, obj) => {
+        if (err) {
+            res.status(500).json({
+                error: err.message
+            });
+        } else {
+
+            res.render("BlogManager", {
+                blogs: obj,
+            })
+
+        }
+    });
+})
 app.get("/admin/blogmanager", function(req, res) {
+
     Blog.find((err, obj) => {
         if (err) {
             res.status(500).json({
@@ -56,6 +79,7 @@ app.get("/admin/blogmanager", function(req, res) {
             })
         }
     });
+
 });
 app.get("/admin/addMaterial", function(req, res) {
     res.render("addMaterial");
