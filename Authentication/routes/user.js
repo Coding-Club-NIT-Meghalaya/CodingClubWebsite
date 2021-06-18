@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const user = require('../../models/user');
+const User = require('../../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 
 router.post('/signup', (req, res) => {
-    user.find({
+    console.log(req.body);
+    User.find({
         email: req.body.email
     }).exec().then(user => {
         if (user.length >= 1) {
@@ -20,7 +21,7 @@ router.post('/signup', (req, res) => {
                         error: err.message,
                     });
                 } else {
-                    const obj = new user({
+                    const obj = new User({
                         email: req.body.email,
                         firstname: req.body.firstname,
                         lastname: req.body.lastname,
@@ -45,7 +46,7 @@ router.post('/signup', (req, res) => {
 });
 
 router.delete('/user/:id', (req, res) => {
-    user.deleteOne({
+    User.deleteOne({
         _id: req.params.id
     }, (err, obj) => {
         if (err) {
@@ -62,7 +63,7 @@ router.delete('/user/:id', (req, res) => {
 
 router.post('/login', (req, res, next) => {
     console.log(req.body);
-    user.find({
+    User.find({
         email: req.body.email
     }).exec().then(user => {
         if (user.length < 1) {
@@ -78,10 +79,13 @@ router.post('/login', (req, res, next) => {
                             email: user[0].email,
                             userId: user[0]._id,
                         }, process.env.JWT_KEY, {
-                            expiresIn: '30s',
+                            expiresIn: '300s',
                         });
                         res.cookie("token", token);
-                        res.redirect('/admin');
+                        res.cookie("name", user[0].firstname)
+                        res.render('admin', {
+                            name: req.cookies.name,
+                        });
                     } else {
                         res.render('login');
                     }

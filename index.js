@@ -35,23 +35,23 @@ app.use('/api/v1/', require('./api_v1/project'), require('./api_v1/achievement')
     require('./api_v1/programmingEvent'), require('./api_v1/images'), require('./api_v1/webinarEvent'), require('./api_v1/blog'), require('./api_v1/material'), require('./api_v1/team'), require('./api_v1/video'));
 var Blog = require('./models/blog');
 app.use('/auth', require('./Authentication/routes/user'));
-app.get("/admin/addEvent", function(req, res) {
+app.get("/admin/addEvent", checkAuth, function(req, res) {
     res.render("addEvent");
 });
-app.get("/admin/addAchievement", function(req, res) {
+app.get("/admin/addAchievement", checkAuth, function(req, res) {
     res.render("addAchievement");
 });
-app.get("/admin/addProgramming", function(req, res) {
+app.get("/admin/addProgramming", checkAuth, function(req, res) {
     res.render("addProgramming");
 });
-app.get("/admin/addWebinar", function(req, res) {
+app.get("/admin/addWebinar", checkAuth, function(req, res) {
     res.render("addWebinar");
 });
-app.get("/admin/addBlog", (req, res) => {
+app.get("/admin/addBlog", checkAuth, (req, res) => {
 
     res.render("addBlog");
 });
-app.post("/admin/blogmanager", function(req, res) {
+app.post("/admin/blogmanager", checkAuth, function(req, res) {
     console.log(req.body);
     Blog.find({
         $or: [{
@@ -110,7 +110,7 @@ app.get('/', function(req, res) {
         }
     });
 });
-app.get("/admin/blogmanager", checkAuth, function(req, res) {
+app.get("/admin/blogmanager", checkAuth, checkAuth, function(req, res) {
 
     Blog.find((err, obj) => {
         if (err) {
@@ -125,13 +125,13 @@ app.get("/admin/blogmanager", checkAuth, function(req, res) {
     });
 
 });
-app.get("/admin/addMaterial", function(req, res) {
+app.get("/admin/addMaterial", checkAuth, function(req, res) {
     res.render("addMaterial");
 });
-app.get("/admin/addVideo", function(req, res) {
+app.get("/admin/addVideo", checkAuth, function(req, res) {
     res.render("addVideo");
 });
-app.get("/admin/addUser", function(req, res) {
+app.get("/admin/addUser", checkAuth, function(req, res) {
     res.render("addUser");
 });
 app.get("/blog/:id", function(req, res) {
@@ -160,12 +160,14 @@ app.get('/login', function(req, res) {
     res.render('login');
 })
 app.get('/admin', checkAuth, function(req, res) {
-    res.render('admin');
+    res.render('admin', {
+        name: req.cookies.name,
+    });
 });
-app.get("/admin/addProject", function(req, res) {
+app.get("/admin/addProject", checkAuth, function(req, res) {
     res.render("addProject");
 });
-app.post('/admin/blogpost', function(req, res) {
+app.post('/admin/blogpost', checkAuth, function(req, res) {
     console.log(req.body);
     res.send(req.body);
 });
