@@ -6,12 +6,16 @@ const methodOverride = require('method-override');
 const bodyParser = require("body-parser");
 const morgan = require('morgan');
 const db = require('./Mongodb/connection');
+const checkAuth = require('./Authentication/middleware/check_auth');
 var cors = require('cors');
 const port = process.env.PORT || 8000;
+var cookieParser = require('cookie-parser');
+app.use(cookieParser());
 require('dotenv').config();
 const {
     connected
 } = require("process");
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -20,6 +24,7 @@ app.use(morgan('dev'));
 app.use(express.urlencoded());
 app.use(cors());
 app.use(methodOverride('_method'));
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
@@ -29,6 +34,7 @@ const {
 app.use('/api/v1/', require('./api_v1/project'), require('./api_v1/achievement'), require('./api_v1/event'),
     require('./api_v1/programmingEvent'), require('./api_v1/images'), require('./api_v1/webinarEvent'), require('./api_v1/blog'), require('./api_v1/material'), require('./api_v1/team'), require('./api_v1/video'));
 var Blog = require('./models/blog');
+app.use('/auth', require('./Authentication/routes/user'));
 app.get("/admin/addEvent", function(req, res) {
     res.render("addEvent");
 });
@@ -42,6 +48,7 @@ app.get("/admin/addWebinar", function(req, res) {
     res.render("addWebinar");
 });
 app.get("/admin/addBlog", (req, res) => {
+
     res.render("addBlog");
 });
 app.post("/admin/blogmanager", function(req, res) {
@@ -66,7 +73,44 @@ app.post("/admin/blogmanager", function(req, res) {
         }
     });
 })
-app.get("/admin/blogmanager", function(req, res) {
+app.get('/', function(req, res) {
+
+    res.status(200).json({
+        Blog: {
+            url: "https://codingclubnitm.herokuapp.com/api/v1/blog"
+        },
+        Events: {
+            UpcomingEvent: {
+                url: "https://codingclubnitm.herokuapp.com/api/v1/event"
+            },
+            ProgrammingEvent: {
+                url: "https://codingclubnitm.herokuapp.com/api/v1/programming"
+            },
+            Webinar: {
+                url: "https://codingclubnitm.herokuapp.com/api/v1/webinar"
+            },
+            Achievement: {
+                url: "https://codingclubnitm.herokuapp.com/api/v1/achievement"
+            }
+        },
+        Project: {
+            url: "https://codingclubnitm.herokuapp.com/api/v1/project"
+        },
+        Resources: {
+            Materials: {
+                url: "https://codingclubnitm.herokuapp.com/api/v1/material"
+            },
+            Video: {
+                url: "https://codingclubnitm.herokuapp.com/api/v1/video"
+            }
+        },
+        Teams: {
+            url: "https://codingclubnitm.herokuapp.com/api/v1/teammember"
+
+        }
+    });
+});
+app.get("/admin/blogmanager", checkAuth, function(req, res) {
 
     Blog.find((err, obj) => {
         if (err) {
@@ -112,6 +156,12 @@ app.get("/blog/:id", function(req, res) {
         }
     });
 })
+app.get('/login', function(req, res) {
+    res.render('login');
+})
+app.get('/admin', checkAuth, function(req, res) {
+    res.render('admin');
+});
 app.get("/admin/addProject", function(req, res) {
     res.render("addProject");
 });

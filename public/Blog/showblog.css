@@ -5,6 +5,7 @@ body {
 
 .container {
     margin-top: 60px;
+    margin-left: 40px;
 }
 
 .tag-container {
@@ -38,6 +39,11 @@ body {
     color: rgb(109, 131, 242)
 }
 
+.col {
+    position: static;
+    margin-right: 120px;
+}
+
 #rightcol {
     position: fixed;
     float: right;
@@ -53,6 +59,12 @@ body {
     img {
         max-width: 100%;
     }
+    .col {
+        margin-right: 30px;
+    }
+    .container {
+        margin: 20px;
+    }
 }
 
 @media screen and (max-width: 1500px) {
@@ -63,5 +75,11 @@ body {
     }
     img {
         max-width: 100%;
+    }
+    .col {
+        margin-right: 30px;
+    }
+    .container {
+        margin: 10px;
     }
 }

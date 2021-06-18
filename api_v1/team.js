@@ -60,7 +60,7 @@ router.post("/teammember", upload.single('profileImage'), function(req, res) {
             });
     });
 });
-router.delete('/teamMember/:id', function(req, res, next) {
+router.delete('/teammember/:id', function(req, res, next) {
     TeamMember.findOne({
         _id: req.params.id
     }, (err, obj) => {

@@ -10,7 +10,7 @@
     <title>Blog Manager</title>
 </head>
 
-<body>
+<body style="background-color: rgb(212, 212, 212);">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="https://codingclubnitm.herokuapp.com/admin/blogmanager">Blog Manager</a>
@@ -35,7 +35,7 @@
     </nav>
     <!-- <i class="fas fa-plus fa-3x m-5" style="color: green;"></i> -->
     <%for(let i=0;i<blogs.length;i++){%>
-        <div class="card w-75 m-5">
+        <div class="card w-75 m-5 shadow" style="border-radius: 10px;">
             <div class="card-body">
                 <h5 class="card-title">
                     <%=blogs[i].Title%>
