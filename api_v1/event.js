@@ -5,6 +5,7 @@ const upload = require('../Mongodb/gridfs');
 const db = require('../Mongodb/connection');
 const Grid = require('gridfs-stream');
 const mongoose = require('mongoose');
+const checkAuth = require('../Authentication/middleware/check_auth');
 let gfs;
 db.once('open', () => {
     gfs = Grid(db.db, mongoose.mongo);
@@ -45,7 +46,7 @@ router.get("/event/:id", (req, res, next) => {
         }
     });
 });
-router.post("/event", upload.single('EventPoster'), function(req, res) {
+router.post("/event", checkAuth, upload.single('EventPoster'), function(req, res) {
     let newEvent = req.body;
     newEvent["FileName"] = req.file.filename;
     Event.create(newEvent, (err, obj) => {
@@ -61,7 +62,7 @@ router.post("/event", upload.single('EventPoster'), function(req, res) {
             });
     });
 });
-router.delete('/event/:id', function(req, res, next) {
+router.delete('/event/:id', checkAuth, function(req, res, next) {
     Event.findOne({
         _id: req.params.id
     }, (err, obj) => {

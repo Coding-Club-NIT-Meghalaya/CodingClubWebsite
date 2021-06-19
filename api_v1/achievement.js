@@ -4,6 +4,7 @@ const Achievement = require('../models/achievement');
 const upload = require('../Mongodb/gridfs');
 const db = require('../Mongodb/connection');
 const Grid = require('gridfs-stream');
+const checkAuth = require('../Authentication/middleware/check_auth');
 const mongoose = require('mongoose');
 let gfs;
 db.once('open', () => {
@@ -45,7 +46,7 @@ router.get("/achievement/:id", (req, res, next) => {
         }
     });
 });
-router.post("/achievement", upload.single('achievementImage'), function(req, res, next) {
+router.post("/achievement", checkAuth, upload.single('achievementImage'), function(req, res, next) {
     let newAchievement = {
         Name: req.body.Name,
         Date: Date.now(),
@@ -67,7 +68,7 @@ router.post("/achievement", upload.single('achievementImage'), function(req, res
             });
     });
 });
-router.delete('/achievement/:id', function(req, res, next) {
+router.delete('/achievement/:id', checkAuth, function(req, res, next) {
     Achievement.findOne({
         _id: req.params.id
     }, (err, obj) => {

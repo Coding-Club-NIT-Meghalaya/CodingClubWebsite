@@ -5,6 +5,7 @@ const upload = require('../Mongodb/gridfs');
 const db = require('../Mongodb/connection');
 const Grid = require('gridfs-stream');
 const mongoose = require('mongoose');
+const checkAuth = require('../Authentication/middleware/check_auth');
 let gfs;
 db.once('open', () => {
     gfs = Grid(db.db, mongoose.mongo);
@@ -44,7 +45,7 @@ router.get("/project/:id", (req, res, next) => {
         }
     });
 });
-router.post("/project", upload.single('projectImage'), function(req, res) {
+router.post("/project", checkAuth, upload.single('projectImage'), function(req, res) {
     let data = req.body;
     data["FileName"] = req.file.filename;
     Project.create(data, (err, obj) => {
@@ -61,7 +62,7 @@ router.post("/project", upload.single('projectImage'), function(req, res) {
     });
 });
 
-router.delete('/project/:id', function(req, res, next) {
+router.delete('/project/:id', checkAuth, function(req, res, next) {
     Project.findOne({
         _id: req.params.id
     }, (err, obj) => {

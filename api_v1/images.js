@@ -5,6 +5,7 @@ const db = require('../Mongodb/connection');
 const Grid = require('gridfs-stream');
 const mongoose = require('mongoose');
 var FroalaEditor = require('../node_modules/wysiwyg-editor-node-sdk/lib/froalaEditor');
+const checkAuth = require('../Authentication/middleware/check_auth');
 let gfs;
 db.once('open', () => {
     gfs = Grid(db.db, mongoose.mongo);
@@ -33,13 +34,13 @@ router.get('/image/:filename', (req, res) => {
     })
 });
 
-router.post('/image_upload', upload.single('file'), function(req, res) {
+router.post('/image_upload', checkAuth, upload.single('file'), function(req, res) {
     var url = "https://codingclubnitm.herokuapp.com/api/v1/image/" + req.file.filename;
     res.send({
         link: url
     });
 })
-router.delete('/image/del/:filename', (req, res) => {
+router.delete('/image/del/:filename', checkAuth, (req, res) => {
     gfs.files.deleteOne({
         filename: req.params.filename
     }, (err, data) => {

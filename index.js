@@ -34,6 +34,8 @@ const {
 app.use('/api/v1/', require('./api_v1/project'), require('./api_v1/achievement'), require('./api_v1/event'),
     require('./api_v1/programmingEvent'), require('./api_v1/images'), require('./api_v1/webinarEvent'), require('./api_v1/blog'), require('./api_v1/material'), require('./api_v1/team'), require('./api_v1/video'));
 var Blog = require('./models/blog');
+var Team = require('./models/teamMember');
+const teamMember = require("./models/teamMember");
 app.use('/auth', require('./Authentication/routes/user'));
 app.get("/admin/addEvent", checkAuth, function(req, res) {
     res.render("addEvent");
@@ -68,6 +70,40 @@ app.post("/admin/blogmanager", checkAuth, function(req, res) {
 
             res.render("BlogManager", {
                 blogs: obj,
+            })
+
+        }
+    });
+})
+app.get("/admin/teammanager", checkAuth, function(req, res) {
+
+    teamMember.find((err, obj) => {
+        if (err) {
+            res.status(500).json({
+                error: err.message
+            });
+        } else {
+            res.render("TeamManager", {
+                obj: obj,
+            })
+        }
+    });
+});
+app.post("/admin/teammanager", checkAuth, function(req, res) {
+    console.log(req.body);
+    Team.find({
+        $or: [{
+            FirstName: req.body.firstname
+        }]
+    }, (err, obj) => {
+        if (err) {
+            res.status(500).json({
+                error: err.message
+            });
+        } else {
+
+            res.render("TeamManager", {
+                obj: obj,
             })
 
         }
@@ -110,7 +146,7 @@ app.get('/', function(req, res) {
         }
     });
 });
-app.get("/admin/blogmanager", checkAuth, checkAuth, function(req, res) {
+app.get("/admin/blogmanager", checkAuth, function(req, res) {
 
     Blog.find((err, obj) => {
         if (err) {

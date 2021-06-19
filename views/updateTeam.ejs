@@ -16,17 +16,17 @@
         <div class="row">
             <div class="col-md-10 m-auto">
                 <h1 class="text-center display-4 my-4">Add Team Member to The database</h1>
-                <form action="/api/v1/teammember" method="POST" enctype="multipart/form-data">
+                <form action="/api/v1/update/teammember/<%=arr._id %>" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col">
-                            <input type="text" name="FirstName" class="form-control" placeholder="First name" aria-label="First name">
+                            <input type="text" value="<%=arr.FirstName %>" name="FirstName" class="form-control" placeholder="First name" aria-label="First name" required>
                         </div>
                         <div class="col">
-                            <input type="text" name="LastName" class="form-control" placeholder="Last name" aria-label="Last name">
+                            <input type="text" value="<%=arr.LastName %>" name="LastName" class="form-control" placeholder="Last name" aria-label="Last name" required>
                         </div>
                     </div>
-                    <select class="form-select my-4" name="Designation" aria-label="Default select example">
-                        <option selected>Choose Designation</option>
+                    <select class="form-select my-4" name="Designation" aria-label="Default select example" required>
+                        <option>Choose Designation</option>
                         <option value="1">Head Faculty</option>
                         <option value="2">Club Alumni</option>
                         <option value="3">Club President</option>
@@ -34,12 +34,12 @@
                         <option value="5">Heads</option>
                         <option value="6">Core Team Members</option>
                         <option value="7">Coordinator</option>
-                        <option value="8">Team Members</option>
+                        <option selected value="8">Team Members</option>
                         <option value="9">Volunteers</option>
                     </select>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-default">Designation Name</span>
-                        <input type="text" name="DesignationName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" value="<%=arr.DesignationName %>" name="DesignationName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                     </div>
                     <div class="input-group mb-3">
                         <div class="col">
@@ -52,17 +52,17 @@
                     <label for="basic-url" class="form-label">Your Github Profile Link</label>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon3">https://github.com/users/</span>
-                        <input type="text" name="Github" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        <input type="text" value="<%=arr.Github %>" name="Github" class="form-control" id="basic-url" aria-describedby="basic-addon3" required>
                     </div>
                     <label for="basic-url" class="form-label">Your Linkedin Profile Link</label>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon3">https://linkedin.com/users/</span>
-                        <input type="text" name="LinkedIn" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        <input type="text" value="<%=arr.LinkedIn %>" name="LinkedIn" class="form-control" id="basic-url" aria-describedby="basic-addon3" required>
                     </div>
                     <label for="basic-url" class="form-label">Your Facebook Profile Link</label>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon3">https://facebook.com/users/</span>
-                        <input type="text" name="Facebook" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        <input type="text" value="<%=arr.Facebook %>" name="Facebook" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                     </div>
                     <input type="submit" value="Submit" class="btn btn-primary btn-block">
                 </form>

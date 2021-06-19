@@ -49,37 +49,39 @@
             <a class="btn btn-secondary my-3" href="https://codingclubnitm.herokuapp.com/eventmanager">Event Manager
             </a>
         </ul>
-        <div class="form-container my-5 shadow p-5" style="border-radius: 10px;">
-            <h1>Add New User</h1>
-            <form action="https://codingclubnitm.herokuapp.com/auth/signup" method="POST">
-                <div class="row my-4">
-                    <div class="col">
-                        <p>First Name</p>
-                        <input type="text" name="firstname" class="form-control" placeholder="First Name" aria-label="Author name">
+        <%if(role=='admin'){%>
+            <div class="form-container my-5 shadow p-5" style="border-radius: 10px;">
+                <h1>Add New User</h1>
+                <form action="https://codingclubnitm.herokuapp.com/auth/signup" method="POST">
+                    <div class="row my-4">
+                        <div class="col">
+                            <p>First Name</p>
+                            <input type="text" name="firstname" class="form-control" placeholder="First Name" aria-label="Author name">
+                        </div>
+                        <div class="col">
+                            <p>Last Name</p>
+                            <input type="text" name="lastname" class="form-control" placeholder="Last Name" aria-label="Author name">
+                        </div>
                     </div>
-                    <div class="col">
-                        <p>Last Name</p>
-                        <input type="text" name="lastname" class="form-control" placeholder="Last Name" aria-label="Author name">
+                    <div class="row my-4">
+                        <div class="col">
+                            <p>Email</p>
+                            <input type="email" name="email" class="form-control" placeholder="Email" aria-label="Author Email">
+                        </div>
+                        <div class="col">
+                            <p>Password</p>
+                            <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Author Email">
+                        </div>
                     </div>
-                </div>
-                <div class="row my-4">
-                    <div class="col">
-                        <p>Email</p>
-                        <input type="email" name="email" class="form-control" placeholder="Email" aria-label="Author Email">
-                    </div>
-                    <div class="col">
-                        <p>Password</p>
-                        <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Author Email">
-                    </div>
-                </div>
-                <select class="form-select my-4" name="role" aria-label="Default select example">
+                    <select class="form-select my-4" name="role" aria-label="Default select example">
                     <option selected>Choose Role</option>
                     <option value="admin">Admin</option>
                     <option value="user">User</option>
                 </select>
-                <input type="submit" value="Submit" class="btn btn-primary btn-block">
-            </form>
-        </div>
+                    <input type="submit" value="Submit" class="btn btn-primary btn-block">
+                </form>
+            </div>
+            <%}%>
 
 
     </div>

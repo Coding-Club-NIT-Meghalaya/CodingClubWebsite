@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Materials = require('../models/material');
 const upload = require('../Mongodb/gridfs');
-
+const checkAuth = require('../Authentication/middleware/check_auth');
 router.get('/material', function(req, res) {
     Materials.find((err, obj) => {
         if (err)
@@ -18,7 +18,7 @@ router.get('/material', function(req, res) {
         }
     });
 });
-router.post("/material", function(req, res) {
+router.post("/material", checkAuth, function(req, res) {
     let newData = req.body;
     let getYear = newData.AcademicYear;
     Materials.findOne({

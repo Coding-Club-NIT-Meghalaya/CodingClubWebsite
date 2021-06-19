@@ -5,6 +5,7 @@ const upload = require('../Mongodb/gridfs');
 const db = require('../Mongodb/connection');
 const Grid = require('gridfs-stream');
 const mongoose = require('mongoose');
+const checkAuth = require('../Authentication/middleware/check_auth');
 let gfs;
 db.once('open', () => {
     gfs = Grid(db.db, mongoose.mongo);
@@ -45,7 +46,7 @@ router.get("/webinar/:id", (req, res, next) => {
         }
     });
 });
-router.post("/webinar", upload.single('Image'), function(req, res) {
+router.post("/webinar", checkAuth, upload.single('Image'), function(req, res) {
     let newProgEvent = req.body;
     newProgEvent["FileName"] = req.file.filename;
     Webinar.create(newProgEvent, function(err, obj) {
@@ -62,7 +63,7 @@ router.post("/webinar", upload.single('Image'), function(req, res) {
         }
     })
 });
-router.delete('/webinar/:id', function(req, res, next) {
+router.delete('/webinar/:id', checkAuth, function(req, res, next) {
     Webinar.findOne({
         _id: req.params.id
     }, (err, obj) => {

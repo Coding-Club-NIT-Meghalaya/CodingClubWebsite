@@ -6,6 +6,7 @@ const db = require('../Mongodb/connection');
 const Grid = require('gridfs-stream');
 const mongoose = require('mongoose');
 const https = require('https')
+const checkAuth = require('../Authentication/middleware/check_auth');
 let gfs;
 db.once('open', () => {
     gfs = Grid(db.db, mongoose.mongo);
@@ -109,7 +110,7 @@ router.post('/update/blog/:id', upload.single('blogImage'), function(req, res) {
         }
     })
 });
-router.delete('/blog/:id', function(req, res, next) {
+router.delete('/blog/:id', checkAuth, function(req, res, next) {
     Blog.findOne({
         _id: req.params.id
     }, (err, obj) => {

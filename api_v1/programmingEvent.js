@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Programming = require('../models/Programming');
 const upload = require('../Mongodb/gridfs');
+const checkAuth = require('../Authentication/middleware/check_auth');
 
 router.get('/programming', function(req, res) {
     Programming.find(function(err, obj) {
@@ -20,7 +21,7 @@ router.get('/programming', function(req, res) {
         StartDate: -1,
     });
 });
-router.post("/programming", upload.single('Image'), function(req, res) {
+router.post("/programming", checkAuth, upload.single('Image'), function(req, res) {
     let newProgEvent = req.body;
     console.log(newProgEvent);
     newProgEvent["FileName"] = req.file.filename;

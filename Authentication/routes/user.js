@@ -3,9 +3,10 @@ const router = express.Router();
 const User = require('../../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const checkAuth = require('../middleware/check_auth');
 
 
-router.post('/signup', (req, res) => {
+router.post('/signup', checkAuth, (req, res) => {
     console.log(req.body);
     User.find({
         email: req.body.email
@@ -45,7 +46,7 @@ router.post('/signup', (req, res) => {
     })
 });
 
-router.delete('/user/:id', (req, res) => {
+router.delete('/user/:id', checkAuth, (req, res) => {
     User.deleteOne({
         _id: req.params.id
     }, (err, obj) => {
@@ -83,8 +84,10 @@ router.post('/login', (req, res, next) => {
                         });
                         res.cookie("token", token);
                         res.cookie("name", user[0].firstname)
+                        res.cookie("role", user[0].role)
                         res.render('admin', {
                             name: req.cookies.name,
+                            role: req.cookies.role,
                         });
                     } else {
                         res.render('login');
