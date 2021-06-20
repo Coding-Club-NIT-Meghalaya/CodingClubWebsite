@@ -94,6 +94,8 @@ app.post("/admin/teammanager", checkAuth, function(req, res) {
     Team.find({
         $or: [{
             FirstName: req.body.firstname
+        }, {
+            DesignationName: req.body.firstname
         }]
     }, (err, obj) => {
         if (err) {
@@ -101,7 +103,7 @@ app.post("/admin/teammanager", checkAuth, function(req, res) {
                 error: err.message
             });
         } else {
-
+            console.log(obj);
             res.render("TeamManager", {
                 obj: obj,
             })
@@ -198,15 +200,13 @@ app.get('/login', function(req, res) {
 app.get('/admin', checkAuth, function(req, res) {
     res.render('admin', {
         name: req.cookies.name,
+        role: req.cookies.role,
     });
 });
 app.get("/admin/addProject", checkAuth, function(req, res) {
     res.render("addProject");
 });
-app.post('/admin/blogpost', checkAuth, function(req, res) {
-    console.log(req.body);
-    res.send(req.body);
-});
+
 
 app.use((req, res, next) => {
     const error = new Error('Not Found');

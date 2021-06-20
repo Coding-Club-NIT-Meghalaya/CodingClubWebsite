@@ -12,6 +12,7 @@ db.once('open', () => {
     gfs.collection('uploads');
 });
 router.get("/teammember", function(req, res) {
+
     TeamMember.find(function(err, obj) {
         if (err)
             res.status(500).json({
