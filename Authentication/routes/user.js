@@ -86,7 +86,6 @@ router.post('/password', (req, res, next) => {
                         wrong: 0,
                         msg: "Entered Password or Email is wrong . Please Try Again!!",
                     });
-
                 } else {
                     if (result) {
                         bcrypt.hash(req.body.new_password, 10, (err, hash) => {
@@ -117,6 +116,11 @@ router.post('/password', (req, res, next) => {
                                 });
                             }
                         })
+                    } else {
+                        res.render('changepass', {
+                            wrong: 0,
+                            msg: "Entered Password or Email is wrong . Please Try Again!!",
+                        });
                     }
                 }
             })
