@@ -13,17 +13,18 @@
 <body style="background-color: rgb(212, 212, 212);">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="https://codingclubnitm.herokuapp.com/admin/">Admin</a>
+            <a class="navbar-brand" href="/admin">Admin</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="http://www.codingclubnitm.tech" target="_blank">Club Website</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="" target="_blank"></a>
+                        <a class="nav-link active" aria-current="page" href="/changepass" target="_blank">Change
+                            Password</a>
                     </li>
                 </ul>
                 <div class="d-flex" style="color: aliceblue;">
@@ -35,24 +36,25 @@
         </div>
     </nav>
     <div class="container my-5">
-        <ul class="list-group p-5">
-            <a class="btn btn-secondary my-3" href="https://codingclubnitm.herokuapp.com/admin/blogmanager">
+        <ul class="list-group p-5 shadow p-2" style="border-radius: 10px;">
+            <h1>Website Management</h1>
+            <a class="btn btn-secondary my-3" href="/admin/blogmanager">
                 Blog Manager
             </a>
-            <a class="btn btn-secondary my-3" href="https://codingclubnitm.herokuapp.com/admin/teammanager">
+            <a class="btn btn-secondary my-3" href="/admin/teammanager">
                 Team Manager
             </a>
-            <a class="btn btn-secondary my-3" href="https://codingclubnitm.herokuapp.com/admin/resourcemanager">
+            <a class="btn btn-secondary my-3" href="/admin/resourcemanager">
                 Resource Manager
 
             </a>
-            <a class="btn btn-secondary my-3" href="https://codingclubnitm.herokuapp.com/eventmanager">Event Manager
+            <a class="btn btn-secondary my-3" href="/admin/eventmanager">Event Manager
             </a>
         </ul>
         <%if(role=='admin'){%>
             <div class="form-container my-5 shadow p-5" style="border-radius: 10px;">
-                <h1>Add New User</h1>
-                <form action="https://codingclubnitm.herokuapp.com/auth/signup" method="POST">
+                <h1>Add New Admin/User</h1>
+                <form action="/auth/signup" method="POST">
                     <div class="row my-4">
                         <div class="col">
                             <p>First Name</p>
@@ -76,7 +78,7 @@
                     <select class="form-select my-4" name="role" aria-label="Default select example">
                     <option selected>Choose Role</option>
                     <option value="admin">Admin</option>
-                    <option value="user">User</option>
+                    <option value="user" selected>User</option>
                 </select>
                     <input type="submit" value="Submit" class="btn btn-primary btn-block">
                 </form>

@@ -33,10 +33,12 @@
             </div>
 
             <!-- Login Form -->
-            <form method="POST" action="/auth/login">
+            <form method="POST" action="/auth/password">
                 <input type="text" id="login" class="fadeIn second" name="email" placeholder="Email">
-                <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
-                <input type="submit" class="fadeIn fourth" value="Log In">
+                <input type="password" id="login" class="fadeIn second" name="curr_password" placeholder="Current Password">
+                <input type="password" id="password" class="fadeIn third" name="new_password" placeholder="New Password">
+                <input type="password" id="password" class="fadeIn third" name="new_password2" placeholder="Re type New Password">
+                <input type="submit" class="fadeIn fourth" value="Change Password">
             </form>
 
         </div>

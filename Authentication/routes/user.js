@@ -62,17 +62,92 @@ router.delete('/user/:id', checkAuth, (req, res) => {
     });
 });
 
+router.post('/password', (req, res, next) => {
+
+    if (req.body.new_password != req.body.new_password2) {
+        res.render('changepass', {
+            wrong: 0,
+            msg: "New password not matching in both case",
+        })
+    }
+    console.log(req.body);
+    User.find({
+        email: req.body.email
+    }).exec().then(user => {
+        if (user.length < 1) {
+            res.render('changepass', {
+                wrong: 0,
+                msg: "Entered Password or Email is wrong . Please Try Again!!",
+            });
+        } else {
+            bcrypt.compare(req.body.curr_password, user[0].password, (err, result) => {
+                if (err) {
+                    res.render('changepass', {
+                        wrong: 0,
+                        msg: "Entered Password or Email is wrong . Please Try Again!!",
+                    });
+
+                } else {
+                    if (result) {
+                        bcrypt.hash(req.body.new_password, 10, (err, hash) => {
+                            if (err) {
+                                res.status(500).json({
+                                    error: err.message,
+                                });
+                            } else {
+
+                                User.updateOne({
+                                    email: req.body.email,
+                                }, {
+                                    password: hash
+                                }).then(result => {
+                                    res.cookie("token", '');
+                                    res.cookie("name", '')
+                                    res.cookie("role", '')
+                                    console.log(result);
+                                    res.render('login', {
+                                        wrong: 0,
+                                        msg: "Password Sucessfully Updated .Please Login Again!!"
+                                    });
+
+                                }).catch(err => {
+                                    res.status(500).json({
+                                        error: err.message,
+                                    })
+                                });
+                            }
+                        })
+                    }
+                }
+            })
+        }
+    }).catch(err => {
+        res.render('changepass', {
+            wrong: 0,
+            msg: "Entered Password or Email is wrong . Please Try Again!!",
+        });
+
+    })
+
+});
+
 router.post('/login', (req, res, next) => {
     console.log(req.body);
     User.find({
         email: req.body.email
     }).exec().then(user => {
         if (user.length < 1) {
-            res.render('login');
+            res.render('login', {
+                wrong: 0,
+                msg: "Entered Password or Email is wrong . Please Try Again!!",
+            });
         } else {
             bcrypt.compare(req.body.password, user[0].password, (err, result) => {
                 if (err) {
-                    res.render('login');
+                    res.render('login', {
+                        wrong: 0,
+                        msg: "Entered Password or Email is wrong . Please Try Again!!",
+                    });
 
                 } else {
                     if (result) {
@@ -85,18 +160,23 @@ router.post('/login', (req, res, next) => {
                         res.cookie("token", token);
                         res.cookie("name", user[0].firstname)
                         res.cookie("role", user[0].role)
-                        res.render('admin', {
-                            name: req.cookies.name,
-                            role: req.cookies.role,
-                        });
+                        res.redirect('/admin');
                     } else {
-                        res.render('login');
+                        res.render('login', {
+                            wrong: 0,
+                            msg: "Entered Password or Email is wrong . Please Try Again!!",
+                        });
+
                     }
                 }
             })
         }
     }).catch(err => {
-        res.render('login');
+        res.render('login', {
+            wrong: 0,
+            msg: "Entered Password or Email is wrong . Please Try Again!!",
+        });
+
     })
 
 });

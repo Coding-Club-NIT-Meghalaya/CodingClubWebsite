@@ -194,15 +194,25 @@ app.get("/blog/:id", function(req, res) {
         }
     });
 })
-app.get('/login', function(req, res) {
-    res.render('login');
-})
 app.get('/admin', checkAuth, function(req, res) {
     res.render('admin', {
         name: req.cookies.name,
         role: req.cookies.role,
     });
 });
+app.get('/login', function(req, res) {
+    res.render('login', {
+        wrong: 1,
+        msg: "",
+    });
+})
+app.get('/changepass', function(req, res) {
+    res.render('changepass', {
+        wrong: 1,
+        msg: "",
+    });
+})
+
 app.get("/admin/addProject", checkAuth, function(req, res) {
     res.render("addProject");
 });
