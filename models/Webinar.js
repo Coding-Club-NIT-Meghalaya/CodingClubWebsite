@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 //Schema setup
 const Schema = mongoose.Schema
 var WebinarSchema = new Schema({
-    Title: String,
+    Name: String,
     StartDate: {
         type: Date,
         default: Date.now

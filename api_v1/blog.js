@@ -152,7 +152,7 @@ router.get("/updateblog/:id", (req, res) => {
                 error: err.message
             });
         } else {
-            res.render("updateBlog", {
+            res.render("Admin/Blog Page/updateBlog", {
                 arr: obj
             })
         }

@@ -72,7 +72,7 @@ router.get("/update/teammember/:id", (req, res, next) => {
                 err: err.message,
             });
         } else {
-            res.render("updateTeam", {
+            res.render("Admin/Teams Page/updateTeam", {
                 arr: obj,
             });
         }

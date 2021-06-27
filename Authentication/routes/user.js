@@ -6,6 +6,26 @@ const jwt = require('jsonwebtoken');
 const checkAuth = require('../middleware/check_auth');
 
 
+//**************   Get Requests***************
+
+
+router.get('/login', function(req, res) {
+    res.render('Admin/Login/login', {
+        wrong: 1,
+        msg: "",
+    });
+});
+router.get('/changepass', function(req, res) {
+    res.render('Admin/Login/changepass', {
+        wrong: 1,
+        msg: "",
+    });
+});
+
+
+//******************** */ Post Requests*******************
+
+
 router.post('/signup', checkAuth, (req, res) => {
     console.log(req.body);
     User.find({
@@ -46,26 +66,10 @@ router.post('/signup', checkAuth, (req, res) => {
     })
 });
 
-router.delete('/user/:id', checkAuth, (req, res) => {
-    User.deleteOne({
-        _id: req.params.id
-    }, (err, obj) => {
-        if (err) {
-            res.status(500).json({
-                error: err.message
-            });
-        } else {
-            res.status(200).json({
-                message: "User Deleted"
-            });
-        }
-    });
-});
-
 router.post('/password', (req, res, next) => {
 
     if (req.body.new_password != req.body.new_password2) {
-        res.render('changepass', {
+        res.render('Admin/Login/changepass', {
             wrong: 0,
             msg: "New password not matching in both case",
         })
@@ -75,14 +79,14 @@ router.post('/password', (req, res, next) => {
         email: req.body.email
     }).exec().then(user => {
         if (user.length < 1) {
-            res.render('changepass', {
+            res.render('Admin/Login/changepass', {
                 wrong: 0,
                 msg: "Entered Password or Email is wrong . Please Try Again!!",
             });
         } else {
             bcrypt.compare(req.body.curr_password, user[0].password, (err, result) => {
                 if (err) {
-                    res.render('changepass', {
+                    res.render('Admin/Login/changepass', {
                         wrong: 0,
                         msg: "Entered Password or Email is wrong . Please Try Again!!",
                     });
@@ -104,7 +108,7 @@ router.post('/password', (req, res, next) => {
                                     res.cookie("name", '')
                                     res.cookie("role", '')
                                     console.log(result);
-                                    res.render('login', {
+                                    res.render('Admin/Login/login', {
                                         wrong: 0,
                                         msg: "Password Sucessfully Updated .Please Login Again!!"
                                     });
@@ -117,7 +121,7 @@ router.post('/password', (req, res, next) => {
                             }
                         })
                     } else {
-                        res.render('changepass', {
+                        res.render('Admin/Login/changepass', {
                             wrong: 0,
                             msg: "Entered Password or Email is wrong . Please Try Again!!",
                         });
@@ -126,7 +130,7 @@ router.post('/password', (req, res, next) => {
             })
         }
     }).catch(err => {
-        res.render('changepass', {
+        res.render('Admin/Login/changepass', {
             wrong: 0,
             msg: "Entered Password or Email is wrong . Please Try Again!!",
         });
@@ -141,14 +145,14 @@ router.post('/login', (req, res, next) => {
         email: req.body.email
     }).exec().then(user => {
         if (user.length < 1) {
-            res.render('login', {
+            res.render('Admin/Login/login', {
                 wrong: 0,
                 msg: "Entered Password or Email is wrong . Please Try Again!!",
             });
         } else {
             bcrypt.compare(req.body.password, user[0].password, (err, result) => {
                 if (err) {
-                    res.render('login', {
+                    res.render('Admin/Login/login', {
                         wrong: 0,
                         msg: "Entered Password or Email is wrong . Please Try Again!!",
                     });
@@ -166,7 +170,7 @@ router.post('/login', (req, res, next) => {
                         res.cookie("role", user[0].role)
                         res.redirect('/admin');
                     } else {
-                        res.render('login', {
+                        res.render('Admin/Login/login', {
                             wrong: 0,
                             msg: "Entered Password or Email is wrong . Please Try Again!!",
                         });
@@ -176,13 +180,32 @@ router.post('/login', (req, res, next) => {
             })
         }
     }).catch(err => {
-        res.render('login', {
+        res.render('Admin/Login/login', {
             wrong: 0,
             msg: "Entered Password or Email is wrong . Please Try Again!!",
         });
 
     })
+});
 
+
+//************************ */ Delete Requests******************
+
+
+router.delete('/user/:id', checkAuth, (req, res) => {
+    User.deleteOne({
+        _id: req.params.id
+    }, (err, obj) => {
+        if (err) {
+            res.status(500).json({
+                error: err.message
+            });
+        } else {
+            res.status(200).json({
+                message: "User Deleted"
+            });
+        }
+    });
 });
 
 module.exports = router

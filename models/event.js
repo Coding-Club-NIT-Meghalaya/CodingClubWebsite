@@ -1,19 +1,19 @@
-const mongoose= require("mongoose");
+const mongoose = require("mongoose");
 
 //Schema setup
 const Schema = mongoose.Schema
 var EventSchema = new Schema({
-    EventName: String,
+    Name: String,
     StartDate: {
-      type: Date,
-      default: Date.now
+        type: Date,
+        default: Date.now
     },
     EndDate: {
-      type: Date,
-      default: Date.now
+        type: Date,
+        default: Date.now
     },
     FileName: String,
     Link: String,
-  });
+});
 
-  module.exports = mongoose.model("Event", EventSchema);
+module.exports = mongoose.model("Event", EventSchema);

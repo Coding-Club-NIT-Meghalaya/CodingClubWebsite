@@ -34,83 +34,9 @@ const {
 app.use('/api/v1/', require('./api_v1/project'), require('./api_v1/achievement'), require('./api_v1/event'),
     require('./api_v1/programmingEvent'), require('./api_v1/images'), require('./api_v1/webinarEvent'), require('./api_v1/blog'), require('./api_v1/material'), require('./api_v1/team'), require('./api_v1/video'));
 var Blog = require('./models/blog');
-var Team = require('./models/teamMember');
-const teamMember = require("./models/teamMember");
 app.use('/auth', require('./Authentication/routes/user'));
-app.get("/admin/addEvent", checkAuth, function(req, res) {
-    res.render("addEvent");
-});
-app.get("/admin/addAchievement", checkAuth, function(req, res) {
-    res.render("addAchievement");
-});
-app.get("/admin/addProgramming", checkAuth, function(req, res) {
-    res.render("addProgramming");
-});
-app.get("/admin/addWebinar", checkAuth, function(req, res) {
-    res.render("addWebinar");
-});
-app.get("/admin/addBlog", checkAuth, (req, res) => {
+app.use('/admin', require('./Admin Pannel/admin'), require('./Admin Pannel/teams'), require('./Admin Pannel/blog'), require('./Admin Pannel/event'), require('./Admin Pannel/project'), require('./Admin Pannel/resources'));
 
-    res.render("addBlog");
-});
-app.post("/admin/blogmanager", checkAuth, function(req, res) {
-    console.log(req.body);
-    Blog.find({
-        $or: [{
-            AuthorName: req.body.Author
-        }, {
-            Title: req.body.Author
-        }]
-    }, (err, obj) => {
-        if (err) {
-            res.status(500).json({
-                error: err.message
-            });
-        } else {
-
-            res.render("BlogManager", {
-                blogs: obj,
-            })
-
-        }
-    });
-})
-app.get("/admin/teammanager", checkAuth, function(req, res) {
-
-    teamMember.find((err, obj) => {
-        if (err) {
-            res.status(500).json({
-                error: err.message
-            });
-        } else {
-            res.render("TeamManager", {
-                obj: obj,
-            })
-        }
-    });
-});
-app.post("/admin/teammanager", checkAuth, function(req, res) {
-    console.log(req.body);
-    Team.find({
-        $or: [{
-            FirstName: req.body.firstname
-        }, {
-            DesignationName: req.body.firstname
-        }]
-    }, (err, obj) => {
-        if (err) {
-            res.status(500).json({
-                error: err.message
-            });
-        } else {
-            console.log(obj);
-            res.render("TeamManager", {
-                obj: obj,
-            })
-
-        }
-    });
-})
 app.get('/', function(req, res) {
 
     res.status(200).json({
@@ -148,33 +74,8 @@ app.get('/', function(req, res) {
         }
     });
 });
-app.get("/admin/blogmanager", checkAuth, function(req, res) {
-
-    Blog.find((err, obj) => {
-        if (err) {
-            res.status(500).json({
-                error: err.message
-            });
-        } else {
-            res.render("BlogManager", {
-                blogs: obj,
-            })
-        }
-    });
-
-});
-app.get("/admin/addMaterial", checkAuth, function(req, res) {
-    res.render("addMaterial");
-});
-app.get("/admin/addVideo", checkAuth, function(req, res) {
-    res.render("addVideo");
-});
-app.get("/admin/addUser", checkAuth, function(req, res) {
-    res.render("addUser");
-});
 app.get("/blog/:id", function(req, res) {
     var id = req.params.id;
-
     Blog.find({
         _id: id
     }, function(err, data) {
@@ -185,7 +86,7 @@ app.get("/blog/:id", function(req, res) {
             console.log(match);
             var url = "https://codingclubnitm.herokuapp.com/blog/" + data[0]._id;
             var imageurl = "https://codingclubnitm.herokuapp.com/api/v1/image/23653886ca4150e80f80a4cc5ca82d73.jpg"
-            res.render('showBlog', {
+            res.render('Blog/showBlog', {
                 blog: data,
                 match: match,
                 url: url,
@@ -193,31 +94,7 @@ app.get("/blog/:id", function(req, res) {
             });
         }
     });
-})
-app.get('/admin', checkAuth, function(req, res) {
-    res.render('admin', {
-        name: req.cookies.name,
-        role: req.cookies.role,
-    });
 });
-app.get('/login', function(req, res) {
-    res.render('login', {
-        wrong: 1,
-        msg: "",
-    });
-})
-app.get('/changepass', function(req, res) {
-    res.render('changepass', {
-        wrong: 1,
-        msg: "",
-    });
-})
-
-app.get("/admin/addProject", checkAuth, function(req, res) {
-    res.render("addProject");
-});
-
-
 app.use((req, res, next) => {
     const error = new Error('Not Found');
     error.status = 404;
@@ -231,7 +108,6 @@ app.use((error, req, res, next) => {
         },
     });
 });
-
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin,X-Requested-With,Content-Type,Authorization");

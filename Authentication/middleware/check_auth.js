@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
         req.userData = decoded;
         next();
     } catch (error) {
-        return res.render('login', {
+        return res.render('Admin/Login/login', {
             wrong: 1,
             msg: '',
         });
