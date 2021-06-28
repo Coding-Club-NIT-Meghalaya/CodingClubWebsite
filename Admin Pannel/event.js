@@ -22,10 +22,19 @@ router.get("/addWebinar", checkAuth, function(req, res) {
 });
 
 router.get("/event_manager", checkAuth, function(req, res) {
-    res.render("Admin/Events Page/EventManager");
-
+    Event.find((err, obj) => {
+        if (err) {
+            res.send({
+                "error": err.message
+            });
+        } else {
+            res.render('Admin/Events Page/EventManager', {
+                obj: obj,
+                id: 'Event'
+            });
+        }
+    });
 });
-
 router.get("/event_manager/:id", function(req, res) {
 
     if (req.params.id == 'Event') {
@@ -37,7 +46,8 @@ router.get("/event_manager/:id", function(req, res) {
                 });
             } else {
                 res.render('Admin/Events Page/EventManager', {
-                    obj: obj
+                    obj: obj,
+                    id: req.params.id
                 });
             }
         });
@@ -49,7 +59,8 @@ router.get("/event_manager/:id", function(req, res) {
                 });
             } else {
                 res.render('Admin/Events Page/EventManager', {
-                    obj: obj
+                    obj: obj,
+                    id: req.params.id
                 });
             }
         });
@@ -61,7 +72,8 @@ router.get("/event_manager/:id", function(req, res) {
                 });
             } else {
                 res.render('Admin/Events Page/EventManager', {
-                    obj: obj
+                    obj: obj,
+                    id: req.params.id
                 });
             }
         });
@@ -73,7 +85,8 @@ router.get("/event_manager/:id", function(req, res) {
                 });
             } else {
                 res.render('Admin/Events Page/EventManager', {
-                    obj: obj
+                    obj: obj,
+                    id: req.params.id
                 });
             }
         });

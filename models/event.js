@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 //Schema setup
 const Schema = mongoose.Schema
 var EventSchema = new Schema({
-    Name: String,
+    EventName: String,
     StartDate: {
         type: Date,
         default: Date.now

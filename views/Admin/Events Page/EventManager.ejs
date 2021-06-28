@@ -23,35 +23,70 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="http://www.codingclubnitm.tech" target="_blank">Club Website</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/changepass" target="_blank">Change
                             Password</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
     </nav>
 
     <div class="container my-5">
-        <button type="button" class="btn btn-secondary mx-2" onclick="myfun('Event')">Event</button>
-        <button type="button" class="btn btn-secondary mx-2" onclick="myfun('Programming')">Programming Event</button>
-        <button type="button" class="btn btn-secondary mx-2" onclick="myfun('Webinar')">Webinar Event</button>
-        <button type="button" class="btn btn-secondary mx-2" onclick="myfun('Achievement')">Achievement</button>
+        <button type="button" class="btn btn-secondary m-5" onclick="myfun('Event')">Event</button>
+        <button type="button" class="btn btn-secondary m-5" onclick="myfun('Programming')">Programming Event</button>
+        <button type="button" class="btn btn-secondary m-5" onclick="myfun('Webinar')">Webinar Event</button>
+        <button type="button" class="btn btn-secondary m-5" onclick="myfun('Achievement')">Achievement</button>
+        <% if(id=='Event'){%>
+            <a href="/admin/addEvent" type="button" class="btn btn-success m-5">Add Event</a>
+            <%for(let i=0;i<obj.length;i++){%>
+                <div class="card w-75 m-5 shadow" style="border-radius: 10px;">
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <%=obj[i].EventName%>
+                        </h3>
 
-        <%for(let i=0;i<obj.length;i++){%>
-            <div class="card w-75 m-5 shadow" style="border-radius: 10px;">
-                <div class="card-body">
-                    <h3 class="card-title">
-                        <%=obj[i].Name%>
-                    </h3>
-                    <a href="/<%=obj[i]._id%>" target="_blank" class="btn btn-success">Update</a>
-                    <button id="delete" type="button" class="btn btn-danger" onclick="deleteteam('<%=obj[i]._id%>')">Delete</button>
+                        <button id="delete" type="button" class="btn btn-danger" onclick="deleteEvent('<%=obj[i]._id%>')">Delete</button>
+                    </div>
                 </div>
-            </div>
-            <%}%>
+                <%}}else if(id=='Programming'){%>
+                    <a href="/admin/addProgramming" type="button" class="btn btn-success m-5">Add Programming Event</a>
+                    <%for(let i=0;i<obj.length;i++){%>
+                        <div class="card w-75 m-5 shadow" style="border-radius: 10px;">
+                            <div class="card-body">
+                                <h3 class="card-title">
+                                    <%=obj[i].Title%>
+                                </h3>
 
+                                <button id="delete" type="button" class="btn btn-danger" onclick="deleteProgramming('<%=obj[i]._id%>')">Delete</button>
+                            </div>
+                        </div>
+                        <%}}else if(id=='Webinar'){%>
+                            <a href="/admin/addWebinar" type="button" class="btn btn-success m-5">Add Webinar Event</a>
+                            <%for(let i=0;i<obj.length;i++){%>
+                                <div class="card w-75 m-5 shadow" style="border-radius: 10px;">
+                                    <div class="card-body">
+                                        <h3 class="card-title">
+                                            <%=obj[i].Title%>
+                                        </h3>
+
+                                        <button id="delete" type="button" class="btn btn-danger" onclick="deleteWebinar('<%=obj[i]._id%>')">Delete</button>
+                                    </div>
+                                </div>
+                                <%}}else{%>
+                                    <a href="/admin/addAchievement" type="button" class="btn btn-success m-5">Add Achievement</a>
+                                    <%for(let i=0;i<obj.length;i++){%>
+                                        <div class="card w-75 m-5 shadow" style="border-radius: 10px;">
+                                            <div class="card-body">
+                                                <h3 class="card-title">
+                                                    <%=obj[i].Name%>
+                                                </h3>
+
+                                                <button id="delete" type="button" class="btn btn-danger" onclick="deleteAchievement('<%=obj[i]._id%>')">Delete</button>
+                                            </div>
+                                        </div>
+                                        <%}}%>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
     <script src="/Event/EventManager.js"></script>
