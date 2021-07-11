@@ -14,8 +14,7 @@ db.once('open', () => {
 });
 
 
-router.get("/addBlog", checkAuth, (req, res) => {
-
+router.get("/addBlog", (req, res) => {
     res.render("Admin/Blog Page/addBlog");
 });
 router.post("/blogmanager", checkAuth, function(req, res) {

@@ -49,5 +49,8 @@ router.post("/teammanager", checkAuth, function(req, res) {
         }
     });
 });
+router.get("/addteammember", function(req, res) {
+    res.render("Admin/Teams Page/addteammember")
 
+});
 module.exports = router

@@ -22,6 +22,10 @@ const blogSchema = new Schema({
     FileName: {
         type: String,
         default: "",
+    },
+    Status: {
+        type: String,
+        default: "in-review"
     }
 });
 module.exports = mongoose.model("Blog", blogSchema);

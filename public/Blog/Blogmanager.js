@@ -13,3 +13,14 @@ function deleteblog(id) {
     }
 
 }
+
+function makepublished(id) {
+    console.log("Fired: " + id);
+    let route = "/api/v1/updateblog/" + id;
+    fetch(route, {
+        method: 'PATCH',
+    }).then(res => {
+        window.location.reload()
+        return res.json()
+    });
+}

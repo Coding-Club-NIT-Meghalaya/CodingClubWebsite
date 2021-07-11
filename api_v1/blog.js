@@ -13,7 +13,9 @@ db.once('open', () => {
     gfs.collection('uploads');
 });
 router.get('/blog', function(req, res) {
-    Blog.find((err, obj) => {
+    Blog.find({
+        Status: "published"
+    }, (err, obj) => {
         if (err) {
             res.status(500).json({
                 err: err.message,
@@ -69,6 +71,7 @@ router.post("/blog", upload.single('blogImage'), function(req, res) {
 router.post('/update/blog/:id', upload.single('blogImage'), function(req, res) {
     let newData = req.body;
     console.log(req.body);
+    console.log(req.body.Status)
     if (req.file != undefined) {
         Blog.findOne({
             _id: req.params.id
@@ -157,5 +160,32 @@ router.get("/updateblog/:id", (req, res) => {
             })
         }
     })
+});
+router.patch("/updateblog/:id", (req, res) => {
+    Blog.findOne({
+        _id: req.params.id
+    }, (err, obj) => {
+        var temp_obj = {
+            Status: "published"
+        };
+        if (obj.Status === "published") {
+            temp_obj.Status = "in-review";
+        }
+        Blog.updateOne({
+            _id: req.params.id
+        }, {
+            $set: temp_obj
+        }, (err, obj) => {
+            if (err) {
+                res.status(500).json({
+                    error: err.message
+                });
+            } else {
+                res.json({
+                    "msg": "Successfully Updated"
+                });
+            }
+        });
+    });
 });
 module.exports = router
