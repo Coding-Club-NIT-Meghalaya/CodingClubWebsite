@@ -12,8 +12,6 @@ db.once('open', () => {
     gfs = Grid(db.db, mongoose.mongo);
     gfs.collection('uploads');
 });
-
-
 router.get("/addBlog", (req, res) => {
     res.render("Admin/Blog Page/addBlog");
 });

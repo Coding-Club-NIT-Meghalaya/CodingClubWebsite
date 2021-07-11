@@ -101,7 +101,9 @@ router.post('/update/blog/:id', upload.single('blogImage'), function(req, res) {
     }
     Blog.updateOne({
         _id: req.params.id
-    }, newData, (err, obj) => {
+    }, {
+        $set: newData
+    }, (err, obj) => {
         if (err) {
             res.status(500).json({
                 error: err.message,
