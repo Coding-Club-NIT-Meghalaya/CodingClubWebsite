@@ -1,4 +1,4 @@
-var url = 'https://codingclubnitm.herokuapp.com/api/v1/blog/'
+var url = '/api/v1/blog/'
 
 function deleteblog(id) {
     console.log('Fired')

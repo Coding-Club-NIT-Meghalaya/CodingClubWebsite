@@ -57,7 +57,7 @@
                                 <h3 class="card-title">
                                     <%=obj[i].Title%>
                                 </h3>
-
+                                <a href="/api/v1/updateprogramming/<%=obj[i]._id%>" target="_blank" class="btn btn-success">Update</a>
                                 <button id="delete" type="button" class="btn btn-danger" onclick="deleteProgramming('<%=obj[i]._id%>')">Delete</button>
                             </div>
                         </div>

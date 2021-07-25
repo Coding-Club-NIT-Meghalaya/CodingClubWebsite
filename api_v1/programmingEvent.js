@@ -6,6 +6,7 @@ const Grid = require('gridfs-stream');
 const mongoose = require('mongoose');
 const Programming = require('../models/Programming');
 const checkAuth = require('../Authentication/middleware/check_auth');
+const https = require('https');
 let gfs;
 db.once('open', () => {
     gfs = Grid(db.db, mongoose.mongo);
@@ -81,5 +82,63 @@ router.delete('/programming/:id', checkAuth, function(req, res, next) {
         }
     });
 });
-
+router.get("/updateprogramming/:id", (req, res) => {
+    Programming.findOne({
+        _id: req.params.id
+    }, (err, obj) => {
+        if (err) {
+            res.status(500).json({
+                error: err.message
+            });
+        } else {
+            res.render("Admin/Events Page/updateProgramming", {
+                arr: obj
+            })
+        }
+    })
+});
+router.post('/update/programming/:id', upload.single('Image'), function(req, res) {
+    let newData = req.body;
+    console.log(req.body);
+    if (req.file != undefined) {
+        Programming.findOne({
+            _id: req.params.id
+        }, (err, obj) => {
+            if (err) {
+                res.status(500).json({
+                    error: err.message
+                });
+            } else {
+                const options = {
+                    hostname: 'codingclubnitm.herokuapp.com',
+                    path: '/api/v1/image/del/' + req.file.filename,
+                    method: 'DELETE'
+                }
+                const hreq = https.request(options, hres => {
+                    console.log(`statusCode: ${hres.statusCode}`)
+                    console.log("sucessfull")
+                })
+                hreq.on('error', error => {
+                    console.error(error)
+                })
+                hreq.end()
+            }
+        })
+        newData["FileName"] = req.file.filename;
+    }
+    console.log(newData);
+    Programming.updateOne({
+        _id: req.params.id
+    }, newData, (err, obj) => {
+        if (err) {
+            res.status(500).json({
+                error: err.message,
+            });
+        } else {
+            res.status(201).json({
+                message: 'Successfully Updated',
+            });
+        }
+    })
+});
 module.exports = router

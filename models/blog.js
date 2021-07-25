@@ -18,7 +18,10 @@ const blogSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    Link: String,
+    Link: {
+        type: String,
+        default: ""
+    },
     FileName: {
         type: String,
         default: "",

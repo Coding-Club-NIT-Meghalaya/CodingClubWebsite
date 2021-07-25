@@ -95,4 +95,5 @@ router.delete('/event/:id', checkAuth, function(req, res, next) {
         }
     });
 });
+
 module.exports = router

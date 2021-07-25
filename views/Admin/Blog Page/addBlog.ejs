@@ -15,11 +15,31 @@
     <title>AddBlog</title>
 </head>
 
-<body style="background-color: whitesmoke;">
-    <div class="container shadow-lg my-5 p-4" style="border-radius: 10px;">
+<body style="background-color: rgb(219, 217, 217);">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Blogs</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="http://www.codingclubnitm.tech">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/admin/addBlog" target="_blank">Create New
+                            Blog</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <div class="container shadow-lg p-5 my-5" style="border-radius: 10px;background-color: rgb(250, 251, 251);">
         <div class="row">
-            <div class="col-md-10 m-auto">
-                <h1 class="text-center display-4 my-4">Welcome to CCNITM Blogs</h1>
+            <div class="col-md-14 m-auto">
+                <h1 class="text-center display-4 my-4 fw-bold">Welcome to CCNITM Blogs</h1>
                 <form action="/api/v1/blog" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col">
@@ -28,15 +48,15 @@
                     </div>
                     <div class="row my-4">
                         <div class="col">
-                            <p>Author Name</p>
+                            <p class="fw-bold fs-5">Author Name</p>
                             <input type="text" name="AuthorName" class="form-control" placeholder="Author Name" aria-label="Author name">
                         </div>
                         <div class="col">
-                            <p>Author Email</p>
+                            <p class="fw-bold fs-5">Author Email</p>
                             <input type="email" name="AuthorEmail" class="form-control" placeholder="Author Email" aria-label="Author Email">
                         </div>
                         <div class="col">
-                            <p>Linked Profile Link</p>
+                            <p class="fw-bold fs-5">Linked Profile Link</p>
                             <input type="text" name="AuthorLinkedIn" class="form-control" placeholder="Author LinkedIn Profile Link" aria-label="Author Profile">
                         </div>
                     </div>
@@ -47,9 +67,9 @@
                         <option value="Machine Learning">Machine Learning</option>
                         <option value="Network Security">Network Security</option>
                         <option value="App Development">App Development</option>
+                        <option value="others">Other</option>
                     </select>
-                    <label for="floatingTextarea2">Write Your Blog Here (Please do not use copy-paste from outside
-                        website)</label>
+                    <label class="fw-bold fs-2" for="floatingTextarea2">Write Your Blog Here</label>
                     <div class="form-floating my-4">
 
                         <!-- <div name="Content" id="example"></div> -->
@@ -57,24 +77,27 @@
                     </div>
                     <div class="form-floating my-4">
                         <textarea class="form-control" name="ShortDescription" placeholder="Write Short Description" id="floatingTextarea2" style="height: 100px"></textarea>
-                        <label for="floatingTextarea2">Short Description of the Blog(less then 200 words)</label>
+                        <label class="fw-bold fs-5" for="floatingTextarea2">Short Description of the Blog(less then 200
+                            words)</label>
                     </div>
                     <div class="form-floating my-4">
                         <textarea class="form-control" name="Tags" placeholder="Write a Short Description" id="floatingTextarea"></textarea>
-                        <label for="floatingTextarea">Related Tags (Please add a # before every tag)</label>
+                        <label class="fw-bold fs-5" for="floatingTextarea">Related Tags (Please add a # before every
+                            tag)</label>
                     </div>
-                    <div class="col my-2">
-                        <p>Created Date:</p>
+                    <!-- <div class="col my-2">
+                        <p class="fw-bold fs-5">Created Date:</p>
                         <input type="date" name="CreatedDate" class="form-control" placeholder="Date" aria-label="Date">
                     </div>
-                    <label for="basic-url" class="form-label">Any Link</label>
+                    <label class="fw-bold" for="basic-url" class="form-label">Any Link</label>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon3">Link(if any)</span>
                         <input type="text" name="Link" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                    </div>
+                    </div> -->
                     <div class="input-group mb-3">
                         <div class="col">
-                            <label for="file" class="custom-file-label">Upload any relevent blog Image</label>
+                            <label class="fw-bold fs-5" for="file" class="custom-file-label">Upload any relevent blog
+                                Image</label>
                         </div>
                         <div class="col">
                             <input type="file" name="blogImage" class="form-control" id="inputGroupFile02">
