@@ -11,8 +11,8 @@ db.once('open', () => {
     gfs = Grid(db.db, mongoose.mongo);
     gfs.collection('uploads');
 });
-router.get('/achievement', function(req, res, next) {
-    Achievement.find(function(err, obj) {
+router.get('/achievement', function (req, res, next) {
+    Achievement.find(function (err, obj) {
         if (err)
             res.status(500).json({
                 err: err.message
@@ -25,7 +25,7 @@ router.get('/achievement', function(req, res, next) {
             });
         }
     }).sort({
-        StartDate: -1,
+        Date: -1,
     });
 });
 router.get("/achievement/:id", (req, res, next) => {
@@ -46,7 +46,7 @@ router.get("/achievement/:id", (req, res, next) => {
         }
     });
 });
-router.post("/achievement", checkAuth, upload.single('achievementImage'), function(req, res, next) {
+router.post("/achievement", checkAuth, upload.single('achievementImage'), function (req, res, next) {
     let newAchievement = {
         Name: req.body.Name,
         Date: Date.now(),
@@ -68,7 +68,7 @@ router.post("/achievement", checkAuth, upload.single('achievementImage'), functi
             });
     });
 });
-router.delete('/achievement/:id', checkAuth, function(req, res, next) {
+router.delete('/achievement/:id', checkAuth, function (req, res, next) {
     Achievement.findOne({
         _id: req.params.id
     }, (err, obj) => {

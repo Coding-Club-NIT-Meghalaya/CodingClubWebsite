@@ -3,7 +3,7 @@ const router = express.Router();
 const Materials = require('../models/material');
 const upload = require('../Mongodb/gridfs');
 const checkAuth = require('../Authentication/middleware/check_auth');
-router.get('/material', function(req, res) {
+router.get('/material', function (req, res) {
     Materials.find((err, obj) => {
         if (err)
             res.status(500).json({
@@ -16,14 +16,14 @@ router.get('/material', function(req, res) {
                 material_data: obj,
             });
         }
-    });
+    }).sort({ Year: -1 });
 });
-router.post("/material", checkAuth, function(req, res) {
+router.post("/material", checkAuth, function (req, res) {
     let newData = req.body;
     let getYear = newData.AcademicYear;
     Materials.findOne({
         Year: getYear
-    }, function(err, foundData) {
+    }, function (err, foundData) {
         if (err) {
             res.status(500).json({
                 err: err.message,
@@ -44,7 +44,7 @@ router.post("/material", checkAuth, function(req, res) {
                         }
                     }
                 }
-                Materials.create(newobj, function(err, newBlog) {
+                Materials.create(newobj, function (err, newBlog) {
                     if (err) {
                         res.status(500).json({
                             err: err.message,
@@ -60,7 +60,7 @@ router.post("/material", checkAuth, function(req, res) {
                                     Name: newData.Name
                                 }
                             }
-                        }, null, function(err, docs) {
+                        }, null, function (err, docs) {
                             if (err) {
                                 res.status(500).json({
                                     err: err.message,
@@ -87,7 +87,7 @@ router.post("/material", checkAuth, function(req, res) {
                             Name: newData.Name
                         }
                     }
-                }, null, function(err, docs) {
+                }, null, function (err, docs) {
                     if (err) {
                         res.status(500).json({
                             err: err.message,
