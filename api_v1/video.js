@@ -4,7 +4,7 @@ const Video = require('../models/video');
 const upload = require('../Mongodb/gridfs');
 const checkAuth = require('../Authentication/middleware/check_auth');
 
-router.get('/video', function(req, res) {
+router.get('/video', function (req, res) {
     Video.find((err, obj) => {
         if (err)
             res.status(500).json({
@@ -17,11 +17,11 @@ router.get('/video', function(req, res) {
                 video_data: obj,
             });
         }
-    });
+    }).sort({ _id: -1 });
 });
-router.post("/video", checkAuth, function(req, res) {
+router.post("/video", checkAuth, function (req, res) {
     let newVideo = req.body;
-    Video.create(newVideo, function(err, obj) {
+    Video.create(newVideo, function (err, obj) {
         if (err) {
             res.status(500).json({
                 err: err.message,
@@ -35,7 +35,7 @@ router.post("/video", checkAuth, function(req, res) {
         }
     });
 });
-router.delete('/video/:id', checkAuth, function(req, res, next) {
+router.delete('/video/:id', checkAuth, function (req, res, next) {
     Video.deleteOne({
         _id: req.params.id
     }, (err, obj) => {
